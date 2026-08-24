@@ -161,6 +161,21 @@
   unidade; `review_required` causado somente por warnings não é `stop_reason`;
 - `rejected`, qualquer `error_count > 0`, binding/integridade divergente ou falha durante a
   auto-confirmação nunca chama Send para a unidade seguinte e encerra o runner fail-closed;
+- `browser interaction recapture-response` aceita exatamente uma prova histórica
+  `persisted_unit_ordinal_v1`; a prova corrente `persisted_unit_local_successor_v1` não é
+  reinterpretada silenciosamente como ordinal;
+- uma conversa nova hidratada pode ter baseline estrutural válido com zero user turns e zero
+  assistant turns, sem `turn_anchor`; uma `unit_request` em conversa reutilizada continua exigindo
+  a cauda estrutural estável `user → assistant` antes de `send_attempt_started`.
+
+## Gate de fechamento do M3
+
+- o aceite em browser real foi confirmado pelo usuário em 2026-08-24 além do gate antigo de
+  context load + INTRO + CH01_A; esse cenário antigo não deve ser repetido como gate de fechamento;
+- o cleanup final não abre browser real e não altera código de produção;
+- a suíte completa precisa permanecer verde, junto de Ruff e mypy estrito em `src` e `tests`;
+- com essas evidências, M3 está concluído e M4 pode iniciar sem antecipar geração de imagens,
+  renderer, Google Docs ou UI.
 
 ## QA — Planejamento acadêmico
 

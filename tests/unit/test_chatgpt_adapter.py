@@ -854,7 +854,10 @@ def test_send_captures_hydrated_user_turn_baseline_before_effect_boundary(
     state = adapter._structural_send_proof
     assert state is not None
     assert state.pre_send_user_turn_count == pre_send_user_turn_count
-    assert state.turn_anchor is not None
+    if pre_send_user_turn_count == 0:
+        assert state.turn_anchor is None
+    else:
+        assert state.turn_anchor is not None
     assert checkpoints.index("send_button_enabled") < checkpoints.index(
         "send_trigger_started"
     )

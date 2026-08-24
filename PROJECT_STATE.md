@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
-CURRENT_MILESTONE: M3
-STATUS: IN_PROGRESS
+CURRENT_MILESTONE: M4
+STATUS: READY_TO_START
 SPEC_REVISION: OMEGABRAIN_REAL_PROMPTS_V1
 LAST_REVIEW: 2026-08-24
 
@@ -131,9 +131,9 @@ Nenhum bloqueio técnico conhecido no início do M3.
 
 ## M3 — ChatGPT Plus Browser Automation
 
-O M3 foi iniciado por autorização explícita do usuário em 2026-08-21. A implementação deve
-preservar integralmente os baselines de M0–M2 e permanecer `IN_PROGRESS` até que os gates
-automatizados e o aceite manual real sejam comprovados. O M4 não foi iniciado.
+O M3 foi iniciado por autorização explícita do usuário em 2026-08-21 e concluído em 2026-08-24
+após os gates automatizados e a validação em browser real. Os baselines de M0–M2 permaneceram
+preservados durante o milestone.
 
 Implementação automatizada concluída até M3.12:
 
@@ -217,7 +217,7 @@ Verificação automatizada do M3 após o hardening de proveniência da prova de 
 - hash do contract V3: `a48cd37881e93deef21cc0802bb29db6495d7c92b440067d4505db9abf7a3e1b`.
 - hash do contract V4: `2c3ebe9870a910f62e65397d075274ccfe0bd6af7bc8a5b6613419052612c9be`.
 
-Aceite manual M3.13 pendente:
+Evidências do aceite manual M3.13 e da validação em browser real:
 
 - o bootstrap manual por Google Chrome autenticou e persistiu a sessão exclusivamente no profile
   dedicado `C:\Users\Palha\AppData\Local\HeliosEbookAutomation\chrome-profile`;
@@ -703,11 +703,42 @@ Aceite manual M3.13 pendente:
   desmontagem/reaparecimento, mudança de SHA, conflito de identidade, checkpoint/restart e ausência
   de latch para placeholder. Ruff passou em `src tests` e mypy estrito passou nos 67 arquivos de
   produção. Nenhum browser real ou Send adicional foi executado;
-- ainda faltam context load + INTRO + CH01_A na mesma
-  conversa, restart real e interrupção pós-send real.
+- em 2026-08-24, o usuário confirmou explicitamente que o M3 foi validado em browser real além do
+  gate antigo de context load + INTRO + CH01_A. Esse gate foi substituído pela evidência real mais
+  recente e não deve ser repetido como condição de fechamento;
+- o cleanup final partiu do baseline Git `d8e2082`, alterou somente testes defasados e documentação
+  e não abriu browser real nem modificou código de produção;
+- o teste de recaptura agora materializa explicitamente a prova histórica
+  `persisted_unit_ordinal_v1`, sem confundi-la com o binding corrente
+  `persisted_unit_local_successor_v1`;
+- o teste de conversa nova reconhece baseline estrutural válido `0/0` sem predecessor local; a
+  âncora `user → assistant` continua obrigatória para `unit_request` em conversa reutilizada.
 
-Por esse único gate operacional pendente, M3 permanece `IN_PROGRESS` e não pode ser marcado
-`COMPLETE`.
+Verificação final de fechamento do M3:
+
+- `508 passed` em Python 3.12, sem browser real;
+- Ruff sem erros em `src` e `tests`;
+- mypy estrito sem erros em 112 arquivos de `src` e `tests`;
+- árvore Git do baseline estava limpa antes do cleanup e nenhum arquivo de produção foi alterado.
+
+O M3 está `COMPLETE`. O gate antigo não deve ser reexecutado.
+
+## M4 — Planejamento Visual
+
+O M4 foi autorizado e está preparado para início, mas nenhuma implementação visual foi criada
+neste cleanup. As fontes de verdade já lidas são `MILESTONES.md`, `ARCHITECTURE.md`,
+`docs/SOURCE_WORKFLOW.md`, `docs/OMEGABRAIN_SPEC.md`, `docs/DATA_MODEL.md`, `QA.md` e o snapshot
+imutável `prompts/omega_brain/visual_planning_v1.txt`.
+
+Próximo escopo permitido:
+
+- importar/capturar o planejamento visual preservando o bruto;
+- parsear somente os campos canônicos em `VisualPlan` e `VisualFigure`;
+- enriquecer e validar âncoras literais contra o texto consolidado;
+- implementar persistência, versionamento, idempotência, recovery, schemas e testes do M4.
+
+Continuam fora do escopo do M4: geração de imagens, Image Manager, renderer SVG/Python, Google Docs
+e UI.
 
 ## Regra
 

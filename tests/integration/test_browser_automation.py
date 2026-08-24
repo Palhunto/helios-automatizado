@@ -4,6 +4,7 @@ import json
 from collections.abc import Callable
 from dataclasses import replace
 from pathlib import Path
+from typing import Never
 
 import pytest
 from browser_fakes import (
@@ -43,6 +44,7 @@ from ebook_pipeline.storage.repositories import (
     ProjectRepository,
     StageRunRepository,
 )
+from ebook_pipeline.writing.models import TextProductionSet, TextUnitSubmission
 from ebook_pipeline.writing.repositories import (
     AcknowledgementRepository,
     SubmissionRepository,
@@ -539,7 +541,7 @@ def test_writing_runner_processes_two_accepted_units_in_one_adapter_session(
     production_set_calls = 0
     original_production_set = services.writing.production_set
 
-    def counted_production_set(project: str):
+    def counted_production_set(project: str) -> TextProductionSet:
         nonlocal production_set_calls
         production_set_calls += 1
         return original_production_set(project)
@@ -685,7 +687,9 @@ def test_writing_runner_auto_confirms_warning_review_and_processes_next_unit(
     confirmed_raw_versions: list[tuple[str, int]] = []
     original_confirm = services.writing.confirm_unit
 
-    def tracked_confirm(project: str, unit_id: str, raw_version: int):
+    def tracked_confirm(
+        project: str, unit_id: str, raw_version: int
+    ) -> TextUnitSubmission:
         confirmed_raw_versions.append((unit_id, raw_version))
         return original_confirm(project, unit_id, raw_version)
 
@@ -767,7 +771,7 @@ def test_writing_runner_does_not_confirm_rejected_submission(
     )
     adapter.next_response = "Curto."
 
-    def forbidden_confirm(_project: str, _unit_id: str, _raw_version: int):
+    def forbidden_confirm(_project: str, _unit_id: str, _raw_version: int) -> Never:
         raise AssertionError("rejected submission must not be confirmed")
 
     monkeypatch.setattr(services.writing, "confirm_unit", forbidden_confirm)
@@ -782,7 +786,9 @@ def test_writing_runner_does_not_confirm_rejected_submission(
     with services.database.connection() as connection:
         rejected = SubmissionRepository(connection).latest(context_id, "START")
     assert rejected is not None
-    assert services.writing.unit_validation_report(project_id, rejected)["error_count"] > 0
+    error_count = services.writing.unit_validation_report(project_id, rejected)["error_count"]
+    assert isinstance(error_count, int)
+    assert error_count > 0
 
 
 def test_writing_runner_auto_confirm_failure_is_fail_closed(
@@ -801,7 +807,7 @@ def test_writing_runner_auto_confirm_failure_is_fail_closed(
         "A análise continua com densidade acadêmica adequada."
     )
 
-    def failed_confirm(_project: str, _unit_id: str, _raw_version: int):
+    def failed_confirm(_project: str, _unit_id: str, _raw_version: int) -> Never:
         raise IntegrityError(
             "WRITING_SYNTHETIC_CONFIRM_FAILURE",
             "Synthetic confirmation failure",
@@ -1960,7 +1966,7 @@ def test_unit_reconcile_timeout_reports_last_shared_observation(
             pre_send_turn_anchor=_persisted_unit_turn_anchor(),
         )
     browser.block_orphaned_sending_interaction(project_id, sending.id)
-    expected_evidence = {
+    expected_evidence: dict[str, object] = {
         "ordinal": 1,
         "user_count": 1 if failure_reason == "turn_cardinality_hydrating" else 2,
         "assistant_count": 1 if failure_reason == "turn_cardinality_hydrating" else 2,
@@ -2081,6 +2087,37 @@ def test_observational_recapture_preserves_contaminated_v2_and_is_idempotent(
         browser = _service(services, adapter)
     else:
         browser.reconcile_blocked_interaction(project_id, sending.id)
+    with (
+        services.database.connection() as connection,
+        services.database.transaction(connection),
+    ):
+        # Recapture is intentionally legacy/ordinal; materialize that historical proof exactly.
+        reconciliation_events: list[dict[str, object]] = []
+        for event in BrowserInteractionRepository(connection).events(sending.id):
+            event_evidence = event.get("evidence")
+            if (
+                isinstance(event_evidence, dict)
+                and event_evidence.get("event_type") == "explicit_reconciliation"
+            ):
+                reconciliation_events.append(event)
+        assert len(reconciliation_events) == 1
+        legacy_proof = reconciliation_events[0]
+        legacy_evidence = legacy_proof["evidence"]
+        assert isinstance(legacy_evidence, dict)
+        assert legacy_evidence["proof_kind"] == "persisted_unit_local_successor_v1"
+        legacy_evidence["proof_kind"] = "persisted_unit_ordinal_v1"
+        connection.execute(
+            "UPDATE browser_interaction_events SET evidence_json = ? WHERE id = ?",
+            (
+                json.dumps(
+                    legacy_evidence,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                ),
+                legacy_proof["id"],
+            ),
+        )
     with services.database.connection() as connection:
         before = BrowserInteractionRepository(connection).get(sending.id)
         contaminated_submission = SubmissionRepository(connection).by_preparation_hash(
@@ -2146,8 +2183,10 @@ def test_observational_recapture_preserves_contaminated_v2_and_is_idempotent(
     assert services.store.resolve(
         project.artifact_root, "text/raw/START/v0003.txt"
     ).read_bytes() == clean.encode()
-    assert events[-1]["evidence"]["event_type"] == "response_recaptured"
-    assert events[-1]["evidence"]["previous_response_artifact_id"] == (
+    recapture_evidence = events[-1]["evidence"]
+    assert isinstance(recapture_evidence, dict)
+    assert recapture_evidence["event_type"] == "response_recaptured"
+    assert recapture_evidence["previous_response_artifact_id"] == (
         old_response_artifact_id
     )
 
