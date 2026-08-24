@@ -1,0 +1,155 @@
+# 11. Objetivo geral
+
+Capacitar o estudante a estruturar e aplicar processos de inteligência de mercado e monitoramento competitivo, utilizando fontes, métodos de análise e instrumentos de comunicação capazes de transformar informações de mercado em evidências relevantes para a tomada de decisão empresarial.
+
+---
+
+# 12. Objetivos específicos
+
+Ao longo do ebook, o estudante deverá desenvolver capacidade para:
+
+1. definir o papel e o escopo da inteligência de mercado;
+2. diferenciar inteligência, informação, pesquisa e análise competitiva;
+3. vincular demandas de inteligência a objetivos e decisões de negócio;
+4. formular perguntas de inteligência;
+5. compreender e estruturar o ciclo de inteligência;
+6. selecionar fontes apropriadas às necessidades de informação;
+7. avaliar qualidade, atualização e confiabilidade de fontes;
+8. mapear mercados, segmentos e concorrentes;
+9. distinguir concorrentes diretos, indiretos e potenciais;
+10. estabelecer critérios de priorização para monitoramento;
+11. estruturar mecanismos contínuos de acompanhamento competitivo;
+12. identificar sinais e mudanças relevantes no ambiente;
+13. utilizar métodos de análise competitiva de maneira crítica;
+14. comparar empresas, posicionamentos e movimentos de mercado;
+15. selecionar indicadores gerenciais pertinentes;
+16. estruturar relatórios executivos;
+17. aplicar princípios de visualização de informações;
+18. compreender a função dos dashboards no acompanhamento decisório;
+19. transformar análises em hipóteses, conclusões e recomendações;
+20. avaliar alternativas decisórias com base em evidências;
+21. reconhecer limitações dos dados e das análises;
+22. aplicar princípios éticos à inteligência competitiva.
+
+---
+
+# 13. Competências a desenvolver
+
+## Competência 1 — Formulação de necessidades de inteligência
+
+Converter objetivos empresariais, problemas e decisões em perguntas informacionais específicas.
+
+## Competência 2 — Curadoria de informações
+
+Identificar, selecionar, comparar e avaliar fontes relevantes.
+
+## Competência 3 — Leitura do ambiente competitivo
+
+Interpretar estrutura de mercado, concorrentes, movimentos e sinais competitivos.
+
+## Competência 4 — Análise
+
+Transformar dados dispersos em padrões, relações, hipóteses e interpretações.
+
+## Competência 5 — Síntese
+
+Reduzir complexidade sem eliminar informações essenciais para a decisão.
+
+## Competência 6 — Comunicação gerencial
+
+Apresentar resultados de maneira objetiva, hierarquizada e adequada ao usuário da inteligência.
+
+## Competência 7 — Julgamento crítico
+
+Distinguir evidência, inferência, hipótese, recomendação e incerteza.
+
+## Competência 8 — Apoio à decisão
+
+Relacionar evidências a alternativas, riscos, oportunidades e consequências.
+
+## Competência 9 — Ética informacional
+
+Utilizar métodos de obtenção e análise de informação compatíveis com princípios éticos e legais.
+
+---
+
+# 14. Resultados de aprendizagem
+
+Ao concluir a disciplina, o estudante deverá conseguir:
+
+* estruturar uma demanda de inteligência;
+* criar perguntas prioritárias para investigação;
+* construir um mapa inicial de mercado;
+* selecionar concorrentes relevantes;
+* elaborar uma estrutura de monitoramento competitivo;
+* definir fontes e critérios de avaliação;
+* aplicar ferramentas de análise competitiva;
+* produzir sínteses executivas;
+* selecionar indicadores relevantes;
+* organizar informações para dashboards;
+* elaborar recomendações derivadas da análise;
+* sustentar decisões por meio de evidências;
+* declarar explicitamente limitações e incertezas existentes.
+
+---
+
+# 15. Evidências de aprendizagem
+
+A aprendizagem deverá ser verificável por meio de produtos concretos, como:
+
+* perguntas de inteligência formuladas adequadamente;
+* mapa de mercado;
+* matriz de concorrentes;
+* inventário de fontes;
+* plano de monitoramento;
+* fichas de acompanhamento competitivo;
+* aplicação de métodos analíticos;
+* comparação estruturada de concorrentes;
+* briefing executivo;
+* proposta de indicadores;
+* esboço de dashboard;
+* recomendação gerencial;
+* análise de uma situação decisória.
+
+---
+
+# 18. Estratégia integradora do ebook
+
+[COMPLEMENTO PROPOSTO] O percurso poderá ser articulado por um **Projeto Integrador de Inteligência de Mercado**.
+
+O estudante acompanhará uma organização hipotética ou uma empresa selecionada para fins educacionais e desenvolverá progressivamente um pequeno sistema de inteligência.
+
+O projeto poderá resultar em um **Dossiê de Inteligência Competitiva para Apoio à Decisão**, composto por:
+
+1. problema de negócio;
+2. perguntas de inteligência;
+3. delimitação do mercado;
+4. identificação de concorrentes;
+5. fontes prioritárias;
+6. plano de monitoramento;
+7. análise competitiva;
+8. indicadores;
+9. síntese executiva;
+10. recomendação para decisão.
+
+O projeto não precisa substituir atividades independentes, mas poderá conectá-las.
+
+---
+
+# 41. Síntese do desenho pedagógico
+
+O ebook deverá funcionar como uma trajetória única.
+
+O estudante começa compreendendo que inteligência de mercado não corresponde a acumular informações. Em seguida, aprende a vincular inteligência a problemas concretos de negócio e a formular perguntas adequadas.
+
+Depois, estrutura um processo para obter e analisar informações, delimita o mercado, identifica concorrentes e constrói mecanismos de monitoramento.
+
+Com essa base, passa da observação para a análise competitiva. Posteriormente, aprende a sintetizar as conclusões por meio de relatórios, indicadores, dashboards e visualizações.
+
+O percurso termina com a utilização crítica das evidências na avaliação de alternativas e formulação de recomendações.
+
+A competência final esperada não é apenas **saber utilizar ferramentas de inteligência de mercado**, mas ser capaz de compreender:
+
+**qual decisão precisa ser tomada, que inteligência é necessária, como obtê-la, como analisá-la, como comunicá-la e quais limites precisam ser considerados antes de agir.**
+
+Esse princípio deverá orientar toda a produção posterior do ebook.

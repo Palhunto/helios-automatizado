@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TextUnitSubmissionRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "context_id", "preparation_id", "unit_id", "raw_version", "accepted_version", "disposition", "raw_sha256", "character_count", "warning_count", "raw_path", "validation_report_path"],
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "context_id": {"type": "string", "minLength": 1},
+    "preparation_id": {"type": "string", "minLength": 1},
+    "unit_id": {"type": "string", "minLength": 1},
+    "raw_version": {"type": "integer", "minimum": 1},
+    "accepted_version": {"type": ["integer", "null"], "minimum": 1},
+    "disposition": {"enum": ["processing", "accepted", "review_required", "rejected"]},
+    "raw_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "character_count": {"type": "integer", "minimum": 0},
+    "warning_count": {"type": "integer", "minimum": 0},
+    "raw_path": {"type": "string", "minLength": 1},
+    "validation_report_path": {"type": "string", "minLength": 1},
+    "accepted_path": {"type": ["string", "null"]},
+    "citation_ledger_path": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,3 @@
+﻿Get-Clipboard | Set-Content `
+  "C:\Users\Palha\Desktop\CH02_A_manual.txt" `
+  -Encoding utf8

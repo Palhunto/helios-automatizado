@@ -1,0 +1,1 @@
+{"character_count":9968,"disposition":"review_required","findings":[{"code":"WRITING_REPEATED_FIRST_WORD","evidence":null,"message":"Consecutive paragraphs begin with 'O'","severity":"warning"},{"code":"WRITING_REPEATED_ARTICLE_OPENING","evidence":null,"message":"Consecutive paragraphs begin with articles","severity":"warning"}],"unit_id":"CH02_A"}

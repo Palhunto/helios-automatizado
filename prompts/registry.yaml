@@ -1,0 +1,42 @@
+prompts:
+  - id: omega_academic_planning
+    version: 1
+    status: active
+    path: omega_brain/academic_planning_v1.txt
+    sha256: 15568476f949a1d09769c6ef9906aaf1c0c6cd3a85c258efe84c3bc9e50aeb95
+    domain: academic_planning
+
+  - id: omega_writing
+    version: 1
+    status: active
+    path: omega_brain/writing_v1.txt
+    sha256: 9cb06a7ae45e2df1304a724f209ac0f7aabc6a87dbdc4b07c793d0223dba2524
+    domain: text_production
+
+  - id: omega_visual_planning
+    version: 1
+    status: active
+    path: omega_brain/visual_planning_v1.txt
+    sha256: 4492eadfb29795bc4374b7d685634dd6775c9b3d89f882b55a5d38eccf186708
+    domain: visual_planning
+
+  - id: omega_image_global_style
+    version: 1
+    status: active
+    path: omega_brain/image_global_style_v1.txt
+    sha256: 45252129c7bae3e46a954723e79e2d43d689376cc404b01a140eedb3d3f2e2b1
+    domain: image_generation
+
+  - id: helios_writing_unit_request
+    version: 1
+    status: active
+    path: operational/writing_unit_request_v1.txt
+    sha256: 89117aa1f87f231d3cd1f3066f32fc91b264b2b88e386ff0571f1fbb5726384e
+    domain: text_production_operation
+
+  - id: helios_writing_unit_request
+    version: 2
+    status: active
+    path: operational/writing_unit_request_v2.txt
+    sha256: 8007c31b2793631d08d335d9f74bcf74220f2dad052b86a4275ec16921513b02
+    domain: text_production_operation

@@ -1,0 +1,48 @@
+contracts:
+  - id: omega_writing_production
+    version: 1
+    status: active
+    path: omega_writing_v1.yaml
+    sha256: 9a247d93bcd00c5afa6e41d92ca9d83a5e221933c4168ca130aa18c681d1cb1e
+
+  - id: omega_writing_production
+    version: 2
+    status: active
+    path: omega_writing_v2.yaml
+    sha256: 5d3f06b5d61dff81ab85c6b570431b6f74ddca0e3ac5aad73126ecab2033e232
+
+  - id: omega_writing_production
+    version: 3
+    status: active
+    path: omega_writing_v3.yaml
+    sha256: a48cd37881e93deef21cc0802bb29db6495d7c92b440067d4505db9abf7a3e1b
+
+  - id: omega_writing_production
+    version: 4
+    status: active
+    path: omega_writing_v4.yaml
+    sha256: 2c3ebe9870a910f62e65397d075274ccfe0bd6af7bc8a5b6613419052612c9be
+
+  - id: synthetic_demo
+    version: 1
+    status: example
+    path: synthetic_demo_v1.yaml
+    sha256: 3fb4f3c165991072e4f691210099748dcf882fc346d3afc10dc0c7f21cd9c215
+
+  - id: synthetic_dag
+    version: 1
+    status: example
+    path: synthetic_dag_v1.yaml
+    sha256: 35fa00ffd629d3a26f6fe2368fce6c5a2fe2613c83febca19c219d06d7ef89e8
+
+  - id: synthetic_target_ranges
+    version: 1
+    status: example
+    path: synthetic_target_ranges_v1.yaml
+    sha256: 176a87698fa2bf40e601a9037e528080d35655e56de49704487bb3b98d8248e2
+
+  - id: synthetic_browser
+    version: 1
+    status: example
+    path: synthetic_browser_v1.yaml
+    sha256: e8f9cadf01769d416041d82454982859a7dd83b8f3a1d016e60279e5958a5877

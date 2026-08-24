@@ -1,0 +1,169 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade CH05_B conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+unit_id: CH05_B
+ordem: 11
+caracteres_com_espacos: 9000..10000
+continuity_from: CH05_A
+headings_obrigatorios: Exercícios analíticos e aplicados
+headings_proibidos: nenhum
+heading_final: Exercícios analíticos e aplicados
+listas_permitidas: não
+</especificacao_unidade>
+
+<contexto_da_unidade>
+# CAPÍTULO 5 — MONITORAMENTO DA CONCORRÊNCIA E FONTES DE INFORMAÇÃO ESTRATÉGICA
+
+## Função educacional
+
+Transformar observação ocasional em monitoramento estruturado.
+
+## Objetivo de aprendizagem
+
+Selecionar fontes e organizar um processo contínuo de acompanhamento competitivo.
+
+## Conteúdos centrais
+
+### 1. Monitoramento como processo
+
+Diferença entre consulta pontual e acompanhamento sistemático.
+
+### 2. O que monitorar
+
+Exemplos:
+
+* produtos;
+* preços;
+* posicionamento;
+* canais;
+* campanhas;
+* contratações;
+* expansão;
+* parcerias;
+* tecnologia;
+* comunicação;
+* investimentos;
+* mudanças organizacionais.
+
+### 3. Fontes públicas
+
+* websites corporativos;
+* relatórios;
+* documentos institucionais;
+* bases públicas;
+* órgãos oficiais;
+* publicações especializadas.
+
+### 4. Fontes comerciais e setoriais
+
+* estudos;
+* bases especializadas;
+* associações;
+* eventos;
+* pesquisas.
+
+### 5. Fontes digitais
+
+Conteúdo publicado publicamente por organizações, executivos e mercado.
+
+### 6. Avaliação das fontes
+
+Critérios:
+
+* confiabilidade;
+* atualidade;
+* precisão;
+* independência;
+* cobertura;
+* rastreabilidade.
+
+### 7. Triangulação
+
+Evitar conclusões relevantes apoiadas em uma única fonte frágil.
+
+### 8. Frequência de monitoramento
+
+Diferenciar informações que exigem:
+
+* acompanhamento contínuo;
+* semanal;
+* mensal;
+* trimestral;
+* eventual.
+
+### 9. Sinais competitivos
+
+Distinguir fato isolado de padrão significativo.
+
+### 10. Aspectos éticos
+
+Reforçar práticas legítimas de inteligência.
+
+## Atividade
+
+**“Plano de monitoramento competitivo”**
+
+O estudante deverá escolher concorrentes prioritários e definir:
+
+* variável monitorada;
+* fonte;
+* frequência;
+* responsável;
+* sinal de alerta;
+* finalidade decisória.
+
+## Evidência
+
+Plano estruturado de monitoramento.
+
+## Recurso visual
+
+**Título:** Arquitetura de monitoramento da concorrência.
+
+Concorrente → Variável → Fonte → Frequência → Sinal → Interpretação → Ação.
+
+## Conexão
+
+A coleta e o monitoramento produzem matéria-prima. O próximo capítulo ensina a transformá-la em interpretação.
+
+---
+
+</contexto_da_unidade>
+
+<continuidade>
+<unidade_anterior id="CH05_A">
+Editar
+
+O monitoramento competitivo começa quando o mapa do mercado deixa de ser apenas uma representação estática e passa a orientar observação recorrente. Depois de identificar quais atores exercem maior pressão, quais substitutos podem ganhar relevância e quais entrantes merecem atenção, a organização precisa decidir quais variáveis acompanhar e por quais fontes. Essa passagem é importante porque observar concorrentes de maneira ocasional tende a produzir percepções fragmentadas, dependentes do acaso ou da memória dos gestores. Monitorar, em sentido estruturado, significa estabelecer critérios prévios para registrar mudanças, comparar períodos e identificar sinais cuja combinação possa exigir nova análise ou decisão.
+
+A diferença entre consulta pontual e acompanhamento sistemático está justamente na continuidade. Uma busca realizada depois que um movimento competitivo já se tornou evidente pode responder a uma dúvida específica, mas oferece pouca capacidade de antecipação. O monitoramento cria uma linha de base contra a qual mudanças posteriores podem ser avaliadas. Se preços, canais, campanhas, lançamentos e investimentos são observados segundo critérios estáveis, a organização consegue distinguir eventos recorrentes de alterações anormais. Essa memória reduz a dependência de impressões e permite reconstruir a sequência de movimentos que antecedeu determinada mudança no mercado.
+
+Definir o que monitorar exige coerência com as perguntas de inteligência e com a priorização realizada no mapeamento. Produtos e serviços podem indicar mudanças de portfólio, entrada em novas categorias ou abandono de segmentos. Preços podem revelar reposicionamento, pressão competitiva ou tentativas de estimular demanda. Canais mostram como a empresa busca alcançar clientes e podem sinalizar expansão geográfica, digitalização ou mudanças na estratégia comercial. Campanhas e comunicação ajudam a observar públicos, atributos enfatizados e promessas de valor. Nenhuma dessas variáveis possui importância universal; sua relevância deriva do tipo de decisão que a organização pretende apoiar.
+
+A seleção de fontes começa pelas informações publicamente disponíveis e legitimamente acessíveis. Websites corporativos, relatórios, comunicados institucionais, documentos regulatórios, registros de órgãos oficiais e bases públicas oferecem evidências importantes sobre atividades, resultados, expansão, estrutura societária e movimentos formais das organizações. Publicações especializadas acrescentam contexto setorial e podem conectar fatos dispersos. Entretanto, o valor de uma fonte pública não decorre simplesmente de estar disponível. É necessário compreender quem produziu a informação, para qual finalidade e com quais limites. Comunicação corporativa, por exemplo, pode ser precisa sobre um lançamento e ainda representar a interpretação interessada da própria empresa sobre seu significado.
+
+Fontes comerciais e setoriais ampliam essa capacidade ao oferecer estudos, bases especializadas, pesquisas, relatórios de associações e informações produzidas por instituições que acompanham determinados mercados. Em alguns casos, essas fontes permitem comparar empresas e setores com maior regularidade do que seria possível por coleta própria. Seu uso, porém, exige avaliar metodologia, cobertura e atualização. Um estudo pode ser tecnicamente robusto e ainda representar apenas determinada região ou segmento. Uma base pode utilizar critérios de classificação diferentes daqueles adotados pela organização. A adequação deve ser julgada em relação à pergunta, não ao prestígio genérico da fonte.
+
+Fontes digitais acrescentam velocidade e granularidade, mas também aumentam o risco de ruído. Conteúdos publicados por empresas, executivos, funcionários, clientes, parceiros e veículos especializados podem revelar mudanças de posicionamento, lançamentos, contratações, eventos e respostas do mercado. Ao mesmo tempo, plataformas digitais favorecem repetição, conteúdo promocional, informação incompleta e interpretações sem verificação. Uma publicação em rede social pode funcionar como evidência de que determinada mensagem foi comunicada publicamente, mas não comprova sozinha os efeitos da campanha nem a intenção estratégica mais ampla da organização.
+
+Avaliar fontes exige considerar confiabilidade, atualidade, precisão, independência, cobertura e rastreabilidade. Confiabilidade relaciona-se ao histórico e à autoridade da origem para tratar daquele tipo de informação. Atualidade pergunta se o dado ainda representa as condições relevantes para a decisão. Precisão examina quão bem a evidência mede ou descreve o fenômeno. Independência considera se diferentes fontes realmente oferecem confirmações autônomas ou apenas reproduzem a mesma origem. Cobertura verifica quais segmentos, períodos ou territórios estão contemplados. Rastreabilidade permite retornar à evidência original e reconstruir o percurso que levou à interpretação.
+
+A triangulação surge como mecanismo de redução de fragilidade. Conclusões relevantes não deveriam depender de uma única fonte fraca quando existe possibilidade razoável de confirmação por evidências independentes. Se uma empresa anuncia expansão para determinada região, o monitoramento pode buscar registros locais, contratações, movimentações imobiliárias, comunicação comercial ou sinais de operação efetiva. A convergência aumenta a confiança no fato observado. Ainda assim, triangulação não elimina a necessidade de distinguir constatação e interpretação. Confirmar a abertura de uma unidade não comprova, por si só, que a empresa pretende dominar aquele território.
+
+Frequência é outro componente do desenho. Informações diferentes mudam em ritmos distintos e não precisam ser observadas com a mesma periodicidade. Variáveis altamente dinâmicas, como preços em determinados mercados digitais, podem exigir acompanhamento frequente. Campanhas ou lançamentos podem ser revisados semanalmente. Indicadores setoriais podem ser acompanhados mensal ou trimestralmente. Mudanças estruturais específicas podem justificar observação eventual acionada por sinais. A periodicidade deve equilibrar velocidade do fenômeno, importância decisória, custo de coleta e risco de perceber a mudança tarde demais.
+
+O conceito de sinal competitivo é central porque fatos isolados não possuem automaticamente significado estratégico. Uma contratação, uma promoção, uma mudança de preço ou uma nova campanha podem ser eventos pontuais. Quando diferentes evidências convergem ao longo do tempo, porém, podem revelar padrão. A interpretação precisa considerar sequência, persistência, coerência entre movimentos e compatibilidade com capacidades conhecidas. Day e Schoemaker (2006) chamam atenção para a importância de perceber sinais periféricos antes que se tornem evidentes. No monitoramento, isso exige sensibilidade sem abandonar critérios de validação: detectar cedo não significa concluir cedo demais.
+
+Os aspectos éticos permanecem transversais. Monitoramento competitivo legítimo utiliza informações obtidas por meios permitidos, respeita confidencialidade e evita engano, invasão ou apropriação indevida. O fato de tecnologias digitais facilitarem coleta não elimina responsabilidades. Informações publicamente acessíveis ainda precisam ser tratadas de maneira compatível com normas, direitos e finalidades legítimas. Além disso, ética envolve não manipular registros para sustentar narrativas previamente desejadas e preservar a distinção entre evidência confirmada, hipótese e rumor.
+
+Um plano de monitoramento competitivo reúne essas decisões em uma arquitetura operacional. Para cada concorrente ou ator prioritário, é necessário associar variáveis relevantes, fontes adequadas, frequência de observação, responsabilidade, critérios de alerta e finalidade decisória. O valor dessa estrutura está em tornar explícita a razão pela qual determinado dado é acompanhado. Quando não existe vínculo com uma pergunta ou possível ação, a variável corre o risco de tornar-se apenas mais um registro acumulado. Quando há coerência, o monitoramento produz uma base histórica capaz de sustentar análise comparativa e detectar mudanças com maior antecedência.
+
+A maturidade do processo aparece quando o monitoramento consegue ser simultaneamente seletivo e revisável. Seletivo porque recursos precisam concentrar-se nos atores e variáveis mais relevantes; revisável porque mercados, estratégias e prioridades mudam. Um concorrente secundário pode tornar-se prioritário, uma fonte pode perder qualidade, uma variável antes importante pode deixar de influenciar decisões e novos sinais podem exigir acompanhamento. O plano não deve ser tratado como documento fixo, mas como instrumento de inteligência ajustado conforme o próprio mercado observado.
+
+Ao final, monitorar concorrência significa criar continuidade entre mapa competitivo, fontes, registros e alertas. Produtos, preços, canais, campanhas, contratações, parcerias, tecnologia e investimentos são acompanhados porque podem indicar mudanças relevantes na posição dos atores. A etapa seguinte será interpretar essa matéria-prima com métodos capazes de comparar padrões e transformar sinais em análise competitiva fundamentada.
+</unidade_anterior>
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

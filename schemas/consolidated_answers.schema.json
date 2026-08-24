@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ConsolidatedAnswers",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "version", "header_status", "answers"],
+  "$defs": {
+    "block": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "text", "source_order"],
+      "properties": {
+        "status": {
+          "enum": ["CONFIRMADO", "COMPLEMENTO_PROPOSTO", "PREMISSA_EDITORIAL", "PENDENTE", "CONFLITO"]
+        },
+        "text": {"type": "string", "minLength": 1},
+        "source_order": {"type": "integer", "minimum": 1}
+      }
+    },
+    "answerBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question_number", "blocks"],
+      "properties": {
+        "question_number": {"type": "integer", "minimum": 1, "maximum": 5},
+        "blocks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/block"}}
+      }
+    }
+  },
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "version": {"type": "integer", "minimum": 1},
+    "header_status": {"enum": ["present", "normalized_variant", "missing"]},
+    "answers": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/answerBase"}, {"properties": {"question_number": {"const": 1}}}]},
+        {"allOf": [{"$ref": "#/$defs/answerBase"}, {"properties": {"question_number": {"const": 2}}}]},
+        {"allOf": [{"$ref": "#/$defs/answerBase"}, {"properties": {"question_number": {"const": 3}}}]},
+        {"allOf": [{"$ref": "#/$defs/answerBase"}, {"properties": {"question_number": {"const": 4}}}]},
+        {"allOf": [{"$ref": "#/$defs/answerBase"}, {"properties": {"question_number": {"const": 5}}}]}
+      ],
+      "items": false
+    }
+  }
+}

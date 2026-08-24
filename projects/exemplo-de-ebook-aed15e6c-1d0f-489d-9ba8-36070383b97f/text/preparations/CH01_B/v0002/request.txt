@@ -1,0 +1,122 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade CH01_B conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+unit_id: CH01_B
+ordem: 3
+caracteres_com_espacos: 9000..10000
+continuity_from: CH01_A
+headings_obrigatorios: Exercícios analíticos e aplicados
+headings_proibidos: nenhum
+heading_final: Exercícios analíticos e aplicados
+listas_permitidas: não
+</especificacao_unidade>
+
+<contexto_da_unidade>
+# CAPÍTULO 1 — DEFINIÇÕES E ESCOPO DA INTELIGÊNCIA DE MERCADO CONTEMPORÂNEA
+
+## Função educacional
+
+Criar a linguagem conceitual necessária para todo o restante do ebook.
+
+## Objetivo de aprendizagem
+
+Distinguir inteligência de mercado de coleta de dados, pesquisa, monitoramento e análise isolada.
+
+## Conteúdos centrais
+
+### 1. Dados, informação, conhecimento e inteligência
+
+Mostrar a progressão entre elementos brutos e informação utilizável na decisão.
+
+### 2. O que caracteriza inteligência de mercado
+
+* propósito;
+* relevância;
+* análise;
+* contexto;
+* síntese;
+* orientação à decisão.
+
+### 3. Inteligência de mercado e inteligência competitiva
+
+Explicar áreas de sobreposição e diferenças de ênfase sem criar fronteiras artificiais.
+
+### 4. Inteligência de mercado e pesquisa de mercado
+
+Distinguir investigações específicas de processos permanentes de acompanhamento.
+
+### 5. Inteligência e análise estratégica
+
+Mostrar como a inteligência alimenta processos estratégicos sem substituir a decisão do gestor.
+
+### 6. Inteligência como capacidade organizacional
+
+Introduzir continuidade, processos, pessoas, tecnologia e cultura de decisão.
+
+### 7. Inteligência não é espionagem
+
+Estabelecer limites éticos e conceituais desde o início.
+
+## Aplicação
+
+Classificar diferentes atividades empresariais de acordo com sua função informacional.
+
+## Atividade
+
+**“Da informação à inteligência”**
+
+O estudante recebe fragmentos de dados sobre um mercado e precisa indicar:
+
+* quais são apenas dados;
+* quais constituem informações contextualizadas;
+* quais análises seriam possíveis;
+* quais informações adicionais seriam necessárias;
+* o que poderia ser considerado inteligência útil.
+
+## Recurso visual
+
+**Título:** Da disponibilidade de dados à inteligência para decisão.
+
+**Formato:** fluxo conceitual.
+
+**Estrutura:** Dados → Informação → Análise → Inteligência → Decisão.
+
+## Conexão com o próximo capítulo
+
+Uma vez compreendido o que é inteligência, torna-se necessário determinar **inteligência para qual finalidade**.
+
+---
+
+</contexto_da_unidade>
+
+<continuidade>
+<unidade_anterior id="CH01_A">
+Para compreender o que distingue inteligência de mercado de outras atividades informacionais, é necessário começar pelo modo como os registros sobre a realidade empresarial adquirem significado. Um número isolado, uma data ou um preço observado constituem dados enquanto permanecem como representações elementares de um fenômeno. Esses registros podem ser corretos e ainda assim dizer pouco ao gestor. Saber que as vendas de uma categoria caíram 8% em determinado período, por exemplo, não permite concluir, sem contexto adicional, se houve perda de participação, retração do mercado, sazonalidade, alteração de preço, problema de distribuição ou deslocamento da demanda para uma solução substituta. O dado é indispensável, mas seu valor decisório depende das relações estabelecidas com outros elementos.
+
+Quando esses registros são organizados em torno de uma referência, passam a adquirir significado como informação. A queda de vendas torna-se mais informativa quando comparada ao histórico, ao setor, aos canais e aos movimentos de competidores. Informação, portanto, não é apenas dado armazenado em formato mais sofisticado; ela resulta de seleção, estruturação e contextualização. A discussão sobre dados, informação, conhecimento e sabedoria mostra que essas categorias não formam uma escada automática em que maior volume de dados conduz necessariamente a melhor compreensão. Rowley (2007), ao revisar a chamada hierarquia DIKW, identifica diferentes interpretações sobre as transições entre esses conceitos. Para a inteligência de mercado, a consequência prática é clara: acumulação não substitui transformação analítica.
+
+Conhecimento acrescenta outra camada porque envolve capacidade de interpretar a informação à luz de experiências, conceitos e entendimento do contexto organizacional. Uma equipe comercial pode conhecer particularidades de clientes ausentes de uma base transacional, enquanto analistas podem reconhecer que duas séries que variam simultaneamente não necessariamente mantêm relação causal. Choo (2002) associa o uso organizacional da informação à construção de sentido, criação de conhecimento e tomada de decisão, destacando que organizações não apenas processam registros, mas interpretam ambientes marcados por ambiguidade. Nesse processo, conhecimento não elimina a necessidade de evidência. Ao contrário, oferece estruturas para formular interpretações e também para questioná-las.
+
+A inteligência emerge quando dados, informações e conhecimento são mobilizados para responder a uma necessidade concreta de compreensão ou decisão. Essa passagem não ocorre apenas porque um analista produziu uma conclusão. É necessário que exista propósito, que as evidências sejam relevantes para a questão formulada, que o contexto seja considerado, que a análise diferencie observações de inferências e que os resultados sejam sintetizados de modo útil ao usuário. Se uma empresa avalia entrar em um novo segmento, uma descrição extensa dos concorrentes pode ser informativa, mas só se converte em inteligência quando ajuda a esclarecer aspectos ligados à decisão, como intensidade competitiva, espaços de posicionamento, barreiras, comportamento da demanda e riscos de reação. A orientação à decisão não significa recomendar uma ação em todas as situações, mas produzir compreensão capaz de melhorar o julgamento.
+
+Essa definição ajuda a evitar uma confusão recorrente entre coleta e inteligência. Sistemas podem capturar preços, publicações e indicadores em tempo real sem que um processo de inteligência esteja estabelecido. Coletar significa obter registros potencialmente relevantes; monitorar significa observá-los segundo certa continuidade; analisar envolve procurar relações, diferenças, padrões ou explicações; produzir inteligência exige conectar essas operações a uma necessidade informacional e transformar os resultados em compreensão acionável. As atividades se complementam, mas suas funções são distintas. Confundi-las tende a gerar a impressão de que capacidade tecnológica de observação equivale, por si só, a maturidade analítica.
+
+O propósito funciona como um dos principais critérios de distinção. Uma organização pode possuir o mesmo conjunto de dados e utilizá-lo para finalidades diferentes. Informações sobre preços de concorrentes podem servir a uma descrição histórica, ao acompanhamento de posicionamento ou à avaliação de uma possível resposta comercial. A relevância de cada evidência muda conforme a pergunta. Por isso, inteligência não pode ser definida apenas pelo tipo de fonte utilizada nem pelo formato final do produto. Um relatório extenso pode conter pouca inteligência se não reduzir incerteza relevante, enquanto uma síntese breve pode ser útil se explicitar evidências, implicações e lacunas. A utilidade depende da correspondência entre informação produzida, problema analisado e usuário responsável por agir.
+
+Contexto e síntese são igualmente essenciais. Um crescimento de 15% em determinada métrica pode parecer expressivo, mas sua interpretação depende da base de comparação, do comportamento do mercado, da metodologia de medição e das condições que cercam o período observado. Sem contexto, números precisos podem produzir conclusões imprecisas. Por outro lado, contextualizar não significa acrescentar indiscriminadamente mais variáveis. A síntese exige reduzir a complexidade sem apagar as evidências que sustentam o raciocínio. Esse trabalho exige distinguir o central, o complementar e o incerto. Em inteligência de mercado, síntese não é simplificação superficial; trata-se de construir uma representação administrável do problema preservando as relações necessárias para que o tomador de decisão compreenda a conclusão e seus limites.
+
+Também é importante reconhecer que o termo inteligência de mercado convive com conceitos próximos cujas fronteiras variam entre autores, setores e práticas profissionais. Inteligência competitiva, inteligência de negócios, inteligência do concorrente e inteligência de marketing aparecem na literatura com sobreposições consideráveis. López-Robles et al. (2022) identificam a multiplicidade de definições associadas à inteligência competitiva e sua proximidade com expressões empregadas para diferentes formas de inteligência organizacional. Interessa menos estabelecer divisões rígidas do que compreender a ênfase de cada prática. Inteligência de mercado será empregada em sentido amplo para abranger informações e interpretações sobre mercados, clientes, setores, concorrentes e demais variáveis externas relevantes para decisões de negócio.
+
+A inteligência competitiva apresenta forte interseção com esse campo, sobretudo quando o foco recai sobre forças competitivas, movimentos de concorrentes, substitutos, entrantes e transformações capazes de alterar a posição relativa da organização. Em algumas abordagens, inteligência de mercado aparece como componente da inteligência competitiva; em outras, funciona como conceito mais abrangente para leitura do mercado. Essa diversidade terminológica não exige uma escolha universal. O ponto central é preservar a função analítica: identificar quais dimensões do ambiente precisam ser observadas, por que são relevantes e como podem alterar decisões. Tahmasebifard (2018) descreve a inteligência competitiva como processo de coleta, processamento e análise de informações destinado a apoiar decisões, reforçando que seu valor ultrapassa a simples vigilância de concorrentes.
+
+A expressão inteligência do concorrente, por sua vez, pode ser utilizada de maneira mais restrita para designar o acompanhamento de organizações específicas. Conhecer portfólio, preços, canais ou expansão de um concorrente pode ser necessário, porém a análise torna-se limitada quando ignora o sistema em que esse ator opera. Uma alteração de preço pode responder ao comportamento de clientes, a novos entrantes, a custos, a mudanças tecnológicas ou a uma estratégia própria de posicionamento. Concentrar-se apenas na empresa observada cria risco de atribuir causalidade a sinais cuja origem está no ambiente mais amplo. A inteligência de mercado, por isso, precisa conectar atores e contexto. Concorrentes são componentes relevantes do sistema competitivo, não o único objeto legítimo de observação.
+
+Distinção semelhante deve ser feita em relação à pesquisa de mercado. Pesquisas são instrumentos fundamentais para investigar questões específicas sobre consumidores, preferências, percepção, demanda, comportamento, produtos ou mercados. Podem empregar métodos qualitativos ou quantitativos e produzir evidências valiosas para decisões empresariais. Entretanto, uma pesquisa possui normalmente problema delimitado, desenho metodológico, período de coleta e produto analítico definidos. A inteligência de mercado pode incorporar seus resultados, mas tende a operar de maneira mais contínua e integradora, combinando investigações pontuais com monitoramento recorrente, fontes secundárias, dados internos e sinais do ambiente. Pesquisa de mercado e inteligência, portanto, não são alternativas concorrentes: a primeira pode constituir uma das fontes e modalidades de investigação mobilizadas pela segunda.
+
+A diferença fica mais clara quando se observa a temporalidade. Uma organização interessada em avaliar a aceitação de um novo conceito de produto pode conduzir uma pesquisa específica para compreender percepções e intenções do público. Depois do lançamento, novas questões podem surgir a partir de vendas, avaliações de clientes, reações de concorrentes, mudanças de preço ou desempenho de canais. O sistema de inteligência precisa incorporar essas evidências ao longo do tempo, comparar o que foi esperado com o que ocorreu e redefinir necessidades informacionais. Seu caráter contínuo não significa investigar tudo, mas manter capacidade de atualizar a compreensão quando o ambiente ou a decisão se modifica. Essa continuidade prepara a passagem do conhecimento sobre o mercado para processos mais amplos de análise estratégica e julgamento gerencial.
+</unidade_anterior>
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

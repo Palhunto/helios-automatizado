@@ -1,0 +1,177 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade CH05_A conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+unit_id: CH05_A
+ordem: 10
+caracteres_com_espacos: 9000..10000
+continuity_from: CH04_B
+headings_obrigatorios: nenhum
+headings_proibidos: Exercícios analíticos e aplicados
+heading_final: nenhum
+listas_permitidas: não
+</especificacao_unidade>
+
+<contexto_da_unidade>
+# CAPÍTULO 5 — MONITORAMENTO DA CONCORRÊNCIA E FONTES DE INFORMAÇÃO ESTRATÉGICA
+
+## Função educacional
+
+Transformar observação ocasional em monitoramento estruturado.
+
+## Objetivo de aprendizagem
+
+Selecionar fontes e organizar um processo contínuo de acompanhamento competitivo.
+
+## Conteúdos centrais
+
+### 1. Monitoramento como processo
+
+Diferença entre consulta pontual e acompanhamento sistemático.
+
+### 2. O que monitorar
+
+Exemplos:
+
+* produtos;
+* preços;
+* posicionamento;
+* canais;
+* campanhas;
+* contratações;
+* expansão;
+* parcerias;
+* tecnologia;
+* comunicação;
+* investimentos;
+* mudanças organizacionais.
+
+### 3. Fontes públicas
+
+* websites corporativos;
+* relatórios;
+* documentos institucionais;
+* bases públicas;
+* órgãos oficiais;
+* publicações especializadas.
+
+### 4. Fontes comerciais e setoriais
+
+* estudos;
+* bases especializadas;
+* associações;
+* eventos;
+* pesquisas.
+
+### 5. Fontes digitais
+
+Conteúdo publicado publicamente por organizações, executivos e mercado.
+
+### 6. Avaliação das fontes
+
+Critérios:
+
+* confiabilidade;
+* atualidade;
+* precisão;
+* independência;
+* cobertura;
+* rastreabilidade.
+
+### 7. Triangulação
+
+Evitar conclusões relevantes apoiadas em uma única fonte frágil.
+
+### 8. Frequência de monitoramento
+
+Diferenciar informações que exigem:
+
+* acompanhamento contínuo;
+* semanal;
+* mensal;
+* trimestral;
+* eventual.
+
+### 9. Sinais competitivos
+
+Distinguir fato isolado de padrão significativo.
+
+### 10. Aspectos éticos
+
+Reforçar práticas legítimas de inteligência.
+
+## Atividade
+
+**“Plano de monitoramento competitivo”**
+
+O estudante deverá escolher concorrentes prioritários e definir:
+
+* variável monitorada;
+* fonte;
+* frequência;
+* responsável;
+* sinal de alerta;
+* finalidade decisória.
+
+## Evidência
+
+Plano estruturado de monitoramento.
+
+## Recurso visual
+
+**Título:** Arquitetura de monitoramento da concorrência.
+
+Concorrente → Variável → Fonte → Frequência → Sinal → Interpretação → Ação.
+
+## Conexão
+
+A coleta e o monitoramento produzem matéria-prima. O próximo capítulo ensina a transformá-la em interpretação.
+
+---
+
+</contexto_da_unidade>
+
+<continuidade>
+<unidade_anterior id="CH04_B">
+Editar
+
+A utilidade do mapa competitivo depende menos de sua aparência final do que das escolhas analíticas que o sustentam. Depois de identificar atores possíveis, a organização precisa distinguir quem merece acompanhamento prioritário, quais dimensões realmente explicam proximidade competitiva e em que medida diferentes empresas disputam o mesmo cliente, orçamento ou necessidade. Um mapa que apenas reúne nomes conhecidos pode reforçar percepções antigas. Critérios explícitos permitem comparar posições, detectar movimentos e revisar hipóteses quando novas evidências surgem.
+
+A priorização começa pela compreensão de que participação de mercado representa apenas uma fotografia parcial da relevância competitiva. Um concorrente dominante merece atenção porque possui escala, visibilidade e capacidade de influenciar preços ou padrões de oferta, mas empresas menores podem representar ameaça maior quando crescem rapidamente, ocupam nichos estratégicos ou introduzem modelos que reduzem barreiras de entrada. Crescimento e capacidade de inovação precisam ser interpretados junto à base existente e à proximidade com os segmentos atendidos. Uma expansão distante do público prioritário pode importar menos que um avanço moderado sobre clientes estratégicos.
+
+A proximidade competitiva procura responder em que grau dois atores disputam condições semelhantes de escolha. Essa proximidade pode aparecer na sobreposição de clientes, no uso dos mesmos canais, em faixas de preço comparáveis, em propostas de valor próximas ou no atendimento à mesma necessidade. Nenhuma dessas dimensões, isoladamente, define a competição de forma universal. Em mercados complexos, empresas podem estar próximas em uma variável e distantes em outra. Um concorrente pode disputar o mesmo público, mas utilizar canal diferente; outro pode oferecer preço semelhante para uma necessidade apenas parcialmente equivalente. O trabalho analítico consiste em reconhecer quais combinações efetivamente influenciam a decisão do cliente.
+
+Ameaça potencial exige raciocínio semelhante. Não basta identificar que uma empresa poderia entrar em determinado mercado; é necessário avaliar se possui incentivos, ativos e compatibilidade suficientes para tornar essa entrada plausível. Marca reconhecida, base de clientes, capacidade tecnológica, distribuição, capital ou conhecimento regulatório podem reduzir obstáculos e aproximar atores atualmente externos. A análise também deve considerar o movimento inverso: empresas aparentemente próximas podem carecer de recursos para sustentar expansão ou responder a mudanças. O mapa, portanto, não deve representar apenas presença atual, mas diferentes graus de capacidade competitiva e possibilidade de movimento.
+
+A sobreposição de clientes oferece um critério especialmente relevante porque conecta o mapeamento à lógica da demanda. Se duas organizações disputam sistematicamente os mesmos compradores, sua proximidade tende a ser maior, mesmo quando produtos ou modelos apresentam diferenças. Entretanto, sobreposição não precisa ser total. Mercados podem conter zonas de competição intensa e áreas de baixa interação. Uma empresa pode concorrer fortemente por clientes corporativos e quase não disputar consumidores finais. Reconhecer essas zonas evita classificar atores de maneira absoluta e permite construir uma visão mais granular do ambiente, coerente com a segmentação realizada anteriormente.
+
+A atuação geográfica também precisa ser incorporada como dimensão dinâmica. Um concorrente relevante em determinada região pode ser irrelevante em outra, enquanto plataformas digitais reduzem parte dessas fronteiras ao alcançar clientes sem presença física proporcional. Ao comparar atores, a inteligência deve observar não apenas onde eles estão, mas onde possuem capacidade de expansão, cobertura logística, reconhecimento ou acesso a canais. Território deixa de ser mero ponto no mapa quando influencia custos, disponibilidade, velocidade de atendimento e intensidade da disputa. Em alguns mercados, a geografia é central; em outros, funciona apenas como uma das variáveis de posicionamento.
+
+Esses critérios ganham utilidade quando são convertidos em dimensões comparáveis. Um mapa competitivo pode representar preço e especialização, cobertura e conveniência, amplitude de portfólio e intensidade tecnológica ou qualquer outra combinação coerente com a questão analisada. A escolha dos eixos deve derivar da decisão, e não da facilidade de obter dados. Se a organização avalia reposicionamento, atributos percebidos e público atendido podem ser mais úteis que tamanho absoluto. Se investiga expansão regional, presença geográfica e força dos canais podem oferecer leitura mais relevante. Um bom mapa não contém todas as variáveis possíveis; seleciona as que melhor revelam diferenças estrategicamente significativas.
+
+As camadas da concorrência ajudam a preservar essa complexidade. No centro está a empresa analisada; mais próximos aparecem atores que disputam de forma direta clientes e necessidades semelhantes; em seguida surgem concorrentes indiretos, substitutos e entrantes potenciais. Essa estrutura não deve ser interpretada como hierarquia fixa. Um substituto pode aproximar-se rapidamente quando muda o comportamento do consumidor, e um entrante potencial pode tornar-se concorrente direto após lançamento ou aquisição. O valor da representação está em tornar visível que a competição ocorre em diferentes graus de proximidade e que esses graus podem mudar.
+
+A atividade “Quem realmente compete conosco?” traduz esse raciocínio em aplicação. O estudante precisa começar por explicitar qual mercado está sendo analisado e por qual motivo essa delimitação é adequada à decisão. Em seguida, deve reconhecer diferentes atores e classificá-los de acordo com o tipo de pressão competitiva exercida, evitando basear a escolha apenas em semelhança de produto. A etapa de priorização exige justificar por que determinados concorrentes merecem acompanhamento mais intenso, relacionando participação, crescimento, inovação, ameaça potencial, sobreposição de clientes e atuação geográfica. Por fim, o mapa simplificado deve representar as dimensões escolhidas e deixar claro o raciocínio usado para posicionar cada ator.
+
+A revisão periódica é indispensável porque atores mudam de posição. Uma empresa pode ampliar portfólio, reduzir preço, entrar em novos canais ou abandonar determinado segmento. Um substituto pode ganhar aceitação e aproximar-se da competição direta. Mudanças regulatórias podem facilitar entrada de novos participantes, enquanto consolidações podem reduzir o número de competidores e aumentar seu poder. O mapa competitivo, portanto, deve ser entendido como representação temporal. Ele registra uma configuração válida sob determinadas condições e precisa ser atualizado quando sinais mostram alteração relevante dessas condições.
+
+Essa atualização conecta diretamente o mapeamento ao monitoramento competitivo. Depois de definir quem deve ser observado e por quê, torna-se possível selecionar variáveis, fontes e frequências adequadas a cada ator. Concorrentes prioritários podem exigir acompanhamento mais detalhado; substitutos emergentes podem ser observados por sinais específicos; entrantes potenciais podem demandar atenção a movimentos de investimento, distribuição ou lançamento. O mapeamento reduz a dispersão do monitoramento porque transforma o universo amplo do mercado em um conjunto estruturado de objetos de inteligência.
+
+Esse deslocamento prepara a próxima etapa da inteligência de mercado. Identificar concorrentes e representá-los de maneira coerente resolve apenas o problema de quem observar. Para que o conhecimento permaneça atualizado, será necessário definir o que acompanhar em cada ator, quais fontes utilizar, com que frequência registrar mudanças e como distinguir acontecimentos pontuais de sinais competitivos relevantes. O mapa competitivo fornece a arquitetura inicial; o monitoramento transforma essa arquitetura em acompanhamento sistemático do ambiente.
+
+Exercícios analíticos e aplicados
+
+Considere uma empresa que sempre definiu seus concorrentes apenas como organizações que vendem produtos praticamente idênticos. Analise os riscos dessa delimitação e explique como necessidade atendida, público, canal e modelo de negócio poderiam revelar concorrentes indiretos ou substitutos ignorados pelo mapeamento atual.
+
+Imagine um mercado no qual a empresa líder mantém elevada participação, enquanto um ator menor cresce rapidamente em um segmento prioritário e apresenta forte sobreposição de clientes. Compare a relevância competitiva dos dois atores e discuta por que participação de mercado, isoladamente, seria insuficiente para decidir quem deve receber maior intensidade de monitoramento.
+
+Avalie uma situação em que um mapa competitivo utiliza preço e qualidade como eixos apenas porque esses dados são fáceis de obter, embora a decisão estratégica envolva expansão geográfica e canais digitais. Explique por que a escolha das dimensões compromete a utilidade do mapa e proponha critérios mais coerentes com a necessidade decisória.
+
+Considere uma empresa de serviços presenciais que passa a perder clientes para uma solução digital que utiliza tecnologia, experiência e estrutura de custos diferentes. Discuta como esse ator deve ser classificado inicialmente e em que condições poderia migrar de substituto ou concorrente indireto para uma posição de competição direta.
+
+Examine um mapa competitivo construído há dois anos que continua sendo utilizado sem revisão, apesar de mudanças em preços, canais, novos entrantes e hábitos de clientes. Analise quais sinais justificariam atualização da representação e explique como o mapa revisado deveria orientar a definição de prioridades para o monitoramento competitivo.
+</unidade_anterior>
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

@@ -1,0 +1,32 @@
+id: synthetic_dag
+version: 1
+separator: "\n\n"
+validation:
+  allow_lists: false
+  forbidden_phrases: []
+  linguistic_warnings:
+    repeated_first_word: true
+    repeated_initial: true
+    repeated_article: true
+    initial_run_length: 3
+    articles: [o, a, os, as, um, uma]
+units:
+  - unit_id: A
+    order: 1
+    min_characters: 20
+    max_characters: 200
+  - unit_id: B
+    order: 2
+    min_characters: 20
+    max_characters: 200
+    continuity_from: [A]
+  - unit_id: C
+    order: 3
+    min_characters: 20
+    max_characters: 200
+    continuity_from: [A]
+  - unit_id: D
+    order: 4
+    min_characters: 20
+    max_characters: 200
+    continuity_from: [B, C]

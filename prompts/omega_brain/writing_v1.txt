@@ -1,0 +1,35 @@
+Estou produzindo um ebook e construí este planejamento para ele. Estude todo o conteúdo presente no <planejamento></planejamento>, para depois produzir por partes ele por completo.
+
+Primeiro, gere um breve resumo de 4 linhas de tudo o que você entendeu do planejamento e depois me confirme que todo contexto já foi avaliado. 
+
+<planejamento>
+
+{{PLANEJAMENTO_ACADEMICO_E_RESPOSTAS_CONSOLIDADAS}}
+
+</planejamento>
+
+<instruções>
+ESTRUTURA (controle interno; não mencionar no texto):
+Ebook com 10 capítulos e 18 partes: Introdução (1 parte), 8 capítulos centrais (2 partes cada), Conclusão (1 parte). Quando eu solicitar uma “parte”, gere somente o trecho correspondente, mantendo continuidade direta com o trecho anterior, sem re introduções desnecessárias.
+
+FORMA:
+Texto contínuo de livro didático universitário. Proibido: emojis, linguagem informal, listas, marcadores, tópicos enumerados ou qualquer enumeração (inclui “-”, “•”, “1)”, “(a)”, etc.). Evitar parágrafos excessivamente curtos e redundâncias estruturais.
+
+CONTEÚDO:
+Não resumir e não simplificar. Desenvolver cada tópico com fundamentação teórica, articulação entre autores e implicações organizacionais. Sempre que possível, integrar exemplos concretos e casos reais (empresas/setores/decisões observáveis), conectados analiticamente aos conceitos.
+
+CITAÇÕES:
+Quando citar estudos, usar autor-data no corpo do texto: Sobrenome (Ano). Priorizar literatura dos últimos 10 anos; usar poucos clássicos apenas quando indispensáveis. Evitar “estudos mostram” sem referência explícita; alegações empíricas relevantes devem estar ancoradas em autor-data.
+
+EXERCÍCIOS:
+Ao final da segunda parte de cada capítulo central (Capítulos 1 a 8), incluir uma seção final intitulada “Exercícios analíticos e aplicados”, com questões de pós-graduação (análise, trade-offs, métricas, desenho de solução). Introdução e Conclusão não contêm exercícios.
+
+EXTENSÃO OBRIGATÓRIA:
+Cada parte deve ter 9.000 a 10.000 caracteres (com espaços). Não encerrar antes de atingir 9.000; se faltar, expandir com maior densidade teórica, contrapontos e/ou exemplos reais, sem repetição.
+
+ANTI-REPETIÇÃO NO INÍCIO DOS PARÁGRAFOS (obrigatório):
+Não iniciar mais de 1 parágrafos consecutivos com a mesma palavra. Não iniciar mais de 1 parágrafos consecutivos com artigos (“O/A/Os/As/Um/Uma”). Evitar também que muitos parágrafos seguidos comecem com a mesma letra; reescreva o início do parágrafo para variar (conectores analíticos, oração subordinada, contraste, foco em evidência, sujeito alternativo).
+
+CHECAGEM SILENCIOSA ANTES DE ENVIAR:
+Confirmar: (i) 9.000–10.000 caracteres com espaços, (ii) sem listas/enumerações, (iii) sem menção a “partes”, (iv) autor-data quando houver estudos, (v) exercícios apenas onde indicado, (vi) variedade nos inícios de parágrafos. Entregar somente o texto.
+</instruções>

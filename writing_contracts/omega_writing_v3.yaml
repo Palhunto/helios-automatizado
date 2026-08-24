@@ -1,0 +1,177 @@
+id: omega_writing_production
+version: 3
+separator: "\n\n"
+validation:
+  allow_lists: false
+  forbidden_phrases:
+    - primeira parte
+    - segunda parte
+    - nesta parte
+  linguistic_warnings:
+    repeated_first_word: true
+    repeated_initial: true
+    repeated_article: true
+    initial_run_length: 3
+    articles: [o, a, os, as, um, uma]
+units:
+  - unit_id: INTRO
+    order: 1
+    character_count: &academic_character_count
+      target: {min: 9000, max: 10000}
+      accepted: {min: 7500, max: 11500}
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context:
+      projection_version: 1
+      sections:
+        - {heading_pattern: '^objetivo geral$', required: true}
+        - {heading_pattern: '^s[ií]ntese da disciplina$', required: false}
+        - {heading_pattern: '^perfil dos estudantes$', required: false}
+        - {heading_pattern: '^tema(?:,| ) recorte e limites$', required: false}
+  - unit_id: CH01_A
+    order: 2
+    character_count: *academic_character_count
+    continuity_from: [INTRO]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_01
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?1(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH01_B
+    order: 3
+    character_count: *academic_character_count
+    continuity_from: [CH01_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_01
+  - unit_id: CH02_A
+    order: 4
+    character_count: *academic_character_count
+    continuity_from: [CH01_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_02
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?2(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH02_B
+    order: 5
+    character_count: *academic_character_count
+    continuity_from: [CH02_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_02
+  - unit_id: CH03_A
+    order: 6
+    character_count: *academic_character_count
+    continuity_from: [CH02_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_03
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?3(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH03_B
+    order: 7
+    character_count: *academic_character_count
+    continuity_from: [CH03_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_03
+  - unit_id: CH04_A
+    order: 8
+    character_count: *academic_character_count
+    continuity_from: [CH03_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_04
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?4(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH04_B
+    order: 9
+    character_count: *academic_character_count
+    continuity_from: [CH04_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_04
+  - unit_id: CH05_A
+    order: 10
+    character_count: *academic_character_count
+    continuity_from: [CH04_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_05
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?5(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH05_B
+    order: 11
+    character_count: *academic_character_count
+    continuity_from: [CH05_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_05
+  - unit_id: CH06_A
+    order: 12
+    character_count: *academic_character_count
+    continuity_from: [CH05_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_06
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?6(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH06_B
+    order: 13
+    character_count: *academic_character_count
+    continuity_from: [CH06_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_06
+  - unit_id: CH07_A
+    order: 14
+    character_count: *academic_character_count
+    continuity_from: [CH06_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_07
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?7(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH07_B
+    order: 15
+    character_count: *academic_character_count
+    continuity_from: [CH07_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_07
+  - unit_id: CH08_A
+    order: 16
+    character_count: *academic_character_count
+    continuity_from: [CH07_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context: &chapter_08
+      projection_version: 1
+      sections:
+        - heading_pattern: '^cap[ií]tulo 0?8(?:\b|\s*[-:])'
+          ancestor_pattern: '^planejamento (?:de cada|dos) cap[ií]tulos?$'
+  - unit_id: CH08_B
+    order: 17
+    character_count: *academic_character_count
+    continuity_from: [CH08_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+    academic_context: *chapter_08
+  - unit_id: CONCLUSION
+    order: 18
+    character_count: *academic_character_count
+    continuity_from: [CH08_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+    academic_context:
+      projection_version: 1
+      sections:
+        - {heading_pattern: '^objetivo geral$', required: true}
+        - {heading_pattern: '^resultados de aprendizagem$', required: false}
+        - {heading_pattern: '^evid[eê]ncias de aprendizagem$', required: false}
+        - {heading_pattern: '^crit[eé]rios de revis[aã]o$', required: false}

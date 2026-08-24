@@ -1,0 +1,184 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade CH07_B conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+unit_id: CH07_B
+ordem: 15
+caracteres_com_espacos: 9000..10000
+continuity_from: CH07_A
+headings_obrigatorios: Exercícios analíticos e aplicados
+headings_proibidos: nenhum
+heading_final: Exercícios analíticos e aplicados
+listas_permitidas: não
+</especificacao_unidade>
+
+<contexto_da_unidade>
+# CAPÍTULO 7 — RELATÓRIOS GERENCIAIS, DASHBOARDS E VISUALIZAÇÃO PARA APOIO À DECISÃO
+
+## Função educacional
+
+Ensinar a transformar resultados analíticos em comunicação gerencial compreensível e acionável.
+
+## Objetivo de aprendizagem
+
+Selecionar indicadores e estruturar relatórios e visualizações alinhados à decisão.
+
+## Conteúdos centrais
+
+### 1. O problema da sobrecarga informacional
+
+Mais informação não significa melhor comunicação.
+
+### 2. Hierarquia da informação
+
+Separar:
+
+* mensagem principal;
+* evidências;
+* detalhes;
+* anexos.
+
+### 3. Relatórios executivos
+
+Estrutura possível:
+
+* questão;
+* conclusão;
+* evidência;
+* implicação;
+* recomendação.
+
+### 4. Indicadores
+
+Um indicador deve estar relacionado a uma pergunta gerencial.
+
+### 5. Indicadores de acompanhamento competitivo
+
+Exemplos deverão ser contextualizados e não apresentados como universais.
+
+### 6. Dashboards
+
+Função de acompanhar condições e mudanças relevantes.
+
+### 7. Dashboard não é relatório completo
+
+Distinguir monitoramento visual de análise aprofundada.
+
+### 8. Visualização
+
+Princípios:
+
+* clareza;
+* hierarquia;
+* comparação;
+* consistência;
+* redução de ruído;
+* escala adequada.
+
+### 9. Seleção do gráfico
+
+O formato deve depender da relação que se pretende mostrar:
+
+* evolução;
+* comparação;
+* composição;
+* distribuição;
+* correlação.
+
+### 10. Storytelling analítico
+
+Organizar a comunicação em torno de uma questão decisória, sem manipular evidências.
+
+### 11. Alertas e exceções
+
+Destacar mudanças que realmente exigem atenção.
+
+## Atividade
+
+**“Da análise ao briefing executivo”**
+
+O estudante deverá transformar uma análise extensa em:
+
+* mensagem principal;
+* três evidências;
+* dois indicadores;
+* uma implicação;
+* uma recomendação.
+
+## Evidência
+
+Relatório executivo ou protótipo conceitual de dashboard.
+
+## Recurso visual
+
+**Título:** Pirâmide da comunicação gerencial.
+
+Topo: decisão/recomendação.
+
+Depois:
+
+* implicação;
+* evidências;
+* indicadores;
+* dados de suporte.
+
+## Recurso complementar
+
+Comparação entre uma visualização sobrecarregada e uma estrutura informacional organizada, sem depender de uma plataforma específica.
+
+## Conexão
+
+O capítulo seguinte examinará como evidências comunicadas adequadamente entram efetivamente no processo decisório.
+
+---
+
+</contexto_da_unidade>
+
+<continuidade>
+<unidade_anterior id="CH07_A">
+Transformar análise em comunicação gerencial exige reconhecer que a qualidade técnica do conteúdo não garante, por si só, sua utilidade para quem decide. Um relatório pode conter evidências robustas, métodos adequados e interpretações consistentes e ainda fracassar se apresentar informação em volume excessivo, hierarquia confusa ou formato incompatível com a necessidade do usuário. A comunicação da inteligência não constitui etapa decorativa posterior à análise. Ela integra a produção de valor, porque é por meio dela que conclusões, incertezas e implicações se tornam disponíveis ao julgamento gerencial.
+
+A sobrecarga informacional representa um dos principais obstáculos. Gestores operam sob restrições de tempo e atenção e recebem dados de múltiplos sistemas, reuniões e relatórios. Acrescentar páginas, indicadores ou gráficos não melhora necessariamente a compreensão. Eppler e Mengis (2004) discutem como o excesso de informação pode reduzir a capacidade de processamento e prejudicar decisões. Na inteligência de mercado, o problema surge quando todas as evidências recebem peso semelhante. A comunicação precisa distinguir aquilo que modifica a compreensão do problema daquilo que apenas documenta o percurso analítico.
+
+Hierarquizar informação significa estabelecer uma relação clara entre mensagem principal, evidências, detalhes e materiais de suporte. A mensagem principal responde ao que o usuário precisa compreender naquele momento; as evidências demonstram por que essa leitura merece confiança; detalhes acrescentam contexto; anexos preservam informações úteis sem competir com o núcleo da comunicação. Essa organização não elimina complexidade, mas a distribui em níveis de leitura.
+
+Um relatório executivo pode começar pela questão que motivou a análise e avançar diretamente para a conclusão, em vez de reproduzir cronologicamente todas as etapas de coleta. Se a investigação buscava compreender por que um concorrente ganhou participação em determinado segmento, o gestor precisa saber primeiro qual padrão foi identificado, quais evidências sustentam essa interpretação e que implicações surgem para a organização. A descrição metodológica continua relevante, mas sua posição deve refletir a função decisória do documento. O relatório não é um diário do analista.
+
+A estrutura entre questão, conclusão, evidência, implicação e recomendação cria continuidade lógica. A questão delimita o problema; a conclusão apresenta a interpretação central; a evidência a sustenta; a implicação demonstra por que o resultado importa; a recomendação propõe ação quando a análise permite fazê-lo. Em situações de elevada incerteza, pode ser mais responsável indicar opções, condições ou necessidade de monitoramento adicional.
+
+Essa separação evita apresentar recomendações como consequências inevitáveis dos dados. Evidências são interpretadas à luz da pergunta, do contexto e dos métodos empregados. Uma queda de preço de concorrentes pode sustentar respostas distintas conforme posicionamento, margens e perfil dos clientes. O relatório deve permitir que o gestor identifique onde termina a evidência e onde começa o julgamento.
+
+Indicadores desempenham papel importante porque condensam fenômenos complexos em medidas acompanháveis. Entretanto, um indicador só é útil quando associado a uma pergunta gerencial. A escolha não deveria começar pelo que o sistema consegue medir, mas pela condição que a organização precisa observar. Se a questão envolve perda de competitividade em determinado canal, indicadores sobre participação naquele canal, preço relativo, disponibilidade e conversão podem ser mais úteis que métricas agregadas do mercado. Indicadores desconectados de perguntas produzem monitoramento sem interpretação.
+
+Métricas competitivas relevantes variam entre setores e decisões. Frequência de lançamento pode ser central em mercados de inovação rápida e secundária em categorias de ciclo longo. Crescimento de presença digital pode sinalizar expansão em alguns modelos e apenas mudança de comunicação em outros. Um bom indicador possui definição clara, fonte identificável, periodicidade adequada e relação explícita com alguma condição que importa ao negócio.
+
+Indicadores de acompanhamento competitivo também precisam ser interpretados em conjunto. A variação de uma métrica isolada pode gerar alertas falsos. Se um concorrente aumenta participação em mídia digital, isso não significa necessariamente crescimento de vendas ou mudança estrutural de posicionamento. Quando essa evidência aparece junto de expansão de canais, aumento de tráfego, novas contratações e alterações no portfólio, a interpretação se fortalece. O painel deve ajudar a perceber relações e exceções, não induzir leitura automática de cada número.
+
+Dashboards são úteis porque organizam indicadores de modo recorrente e permitem reconhecer mudanças com rapidez. Few (2013) enfatiza sua função como exibição visual concisa das informações necessárias para monitorar objetivos ou condições. Na inteligência de mercado, um dashboard pode reunir sinais sobre concorrentes, preços, canais e desempenho. Seu valor está em tornar visível o estado atual e destacar mudanças que mereçam investigação.
+
+Dashboard, entretanto, não substitui relatório analítico. A visualização mostra o que mudou ou onde existe exceção, mas frequentemente não explica causas, consequências ou alternativas. Um painel pode revelar que um concorrente reduziu preços e ampliou presença em um canal, mas compreender se isso representa reposicionamento, ação promocional temporária ou reação a outro movimento exige análise adicional. Tratar dashboard como inteligência completa confunde monitoramento com explicação.
+
+Essa distinção orienta o desenho da informação. Dashboards priorizam acompanhamento, relatórios executivos desenvolvem contexto e interpretação, e alertas chamam atenção para mudanças que exigem análise. O sistema torna-se mais eficiente quando cada produto possui finalidade específica.
+
+A visualização de dados contribui para essa eficiência ao explorar capacidades perceptivas de comparação. Tufte (2001) defende representações que maximizem a relação entre informação relevante e elementos gráficos, evitando ruído desnecessário. Para inteligência de mercado, clareza significa permitir que o usuário identifique rapidamente a relação principal sem esforço para decifrar decoração, legendas excessivas ou escalas inadequadas. A função da visualização é tornar padrões mais compreensíveis, não demonstrar sofisticação gráfica.
+
+Hierarquia visual complementa essa clareza. Elementos mais importantes devem receber maior destaque, enquanto detalhes secundários permanecem disponíveis sem competir pela atenção. Consistência em escalas, nomenclaturas e organização reduz esforço cognitivo e facilita comparação recorrente.
+
+A seleção do gráfico deve depender da relação que se deseja comunicar. Séries temporais são adequadas para evolução; barras favorecem comparação entre categorias; representações de composição mostram participação de partes em um total; distribuições revelam dispersão; diagramas de dispersão ajudam a observar relações entre variáveis. Escolher um formato apenas porque parece atraente compromete a comunicação. Cleveland e McGill (1984) demonstraram diferenças na precisão com que pessoas percebem propriedades gráficas, reforçando que certas codificações facilitam comparações mais exatas.
+
+Escalas merecem atenção porque podem alterar a percepção. Cortes de eixo, intervalos inconsistentes ou proporções inadequadas podem amplificar ou minimizar variações. Mesmo sem intenção de manipular, escolhas gráficas ruins induzem interpretações equivocadas. A visualização deve preservar a magnitude relevante e declarar transformações necessárias. Em inteligência de mercado, onde pequenas mudanças podem parecer estrategicamente significativas, a responsabilidade sobre escala torna-se maior.
+
+Redução de ruído não significa empobrecimento. Elementos decorativos, efeitos tridimensionais e excesso de cores podem competir com os dados. Um gráfico simples comunica melhor quando direciona atenção à comparação essencial. Ao mesmo tempo, simplificação não deve remover contexto indispensável. Uma queda de participação precisa ser acompanhada do período, base de cálculo e universo relevante. O desafio está em eliminar elementos que não ajudam a interpretar, preservando aqueles necessários para evitar leitura enganosa.
+
+Storytelling analítico acrescenta uma dimensão narrativa à comunicação, mas precisa ser compreendido com cautela. Organizar evidências em torno de uma questão decisória ajuda o usuário a acompanhar o raciocínio, porém narrativa não deve significar selecionar apenas dados que sustentam uma história desejada. Uma boa estrutura mostra o problema, apresenta evidências convergentes e divergentes, explicita incertezas e conduz às implicações de maneira lógica. A narrativa serve à compreensão; não deve transformar análise em persuasão desvinculada da evidência.
+
+Alertas e exceções completam essa arquitetura ao concentrar atenção em mudanças que realmente exigem avaliação. Nem toda variação merece destaque. Limiares podem ser definidos por magnitude, persistência, combinação de sinais ou impacto potencial. Um alerta adequado indica o que mudou, por que isso importa e qual grau de confiança existe na interpretação preliminar. Quando todos os indicadores aparecem permanentemente em situação de atenção, o sistema perde capacidade de distinguir prioridade.
+
+A transformação da análise em briefing executivo depende da aplicação conjunta desses princípios. Uma análise extensa deve ser condensada em mensagem central, evidências fundamentais, indicadores pertinentes, implicação e eventual recomendação. Essa condensação exige julgamento, pois o analista precisa decidir o que preservar e o que deslocar para níveis secundários. Uma síntese de qualidade organiza as informações necessárias para que o gestor compreenda a situação, avalie a força das evidências e identifique quais decisões podem ser afetadas.
+
+A comunicação gerencial fecha, assim, a passagem entre análise e uso. Relatórios estruturam raciocínio aprofundado; indicadores permitem acompanhamento; dashboards tornam mudanças visíveis; visualizações facilitam comparação; alertas destacam exceções. Cada recurso possui função própria e deve permanecer vinculado à pergunta original. Quando essa arquitetura é bem construída, o usuário não recebe apenas dados organizados, mas uma representação inteligível daquilo que merece atenção. A etapa seguinte será examinar como essas evidências, uma vez comunicadas, são combinadas com objetivos, alternativas, riscos e julgamento para efetivamente sustentar decisões.
+</unidade_anterior>
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

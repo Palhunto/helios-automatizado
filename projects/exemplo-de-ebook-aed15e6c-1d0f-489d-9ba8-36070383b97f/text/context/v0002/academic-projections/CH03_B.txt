@@ -1,0 +1,102 @@
+# CAPÍTULO 3 — CICLO DA INTELIGÊNCIA DE MERCADO: COLETA, TRATAMENTO, ANÁLISE E DISSEMINAÇÃO
+
+## Função educacional
+
+Apresentar inteligência de mercado como processo contínuo.
+
+## Objetivo de aprendizagem
+
+Estruturar um fluxo de inteligência desde a demanda até o uso da informação.
+
+## Conteúdos centrais
+
+### 1. Planejamento da inteligência
+
+* problema;
+* pergunta;
+* usuário;
+* prazo;
+* fontes;
+* produto esperado.
+
+### 2. Coleta
+
+Obtenção sistemática de informações relevantes.
+
+### 3. Tratamento
+
+* organização;
+* classificação;
+* padronização;
+* eliminação de duplicidades;
+* contextualização.
+
+### 4. Validação
+
+Avaliação de:
+
+* origem;
+* consistência;
+* atualidade;
+* confirmação por outras fontes.
+
+### 5. Análise
+
+Identificação de:
+
+* padrões;
+* relações;
+* diferenças;
+* tendências;
+* sinais;
+* explicações possíveis.
+
+### 6. Síntese
+
+Transformação da análise em informação compreensível para o usuário.
+
+### 7. Disseminação
+
+Entrega da inteligência de acordo com público, urgência e finalidade.
+
+### 8. Feedback
+
+Verificar se a inteligência respondeu à necessidade original.
+
+### 9. Atualização contínua
+
+O ciclo como processo recorrente.
+
+## Atividade
+
+**“Desenho de um ciclo de inteligência”**
+
+O estudante deverá construir o fluxo necessário para responder a uma demanda gerencial.
+
+## Evidência
+
+Mapa do processo contendo entrada, etapas, responsáveis, fontes e produto de inteligência.
+
+## Recurso visual principal
+
+**Título:** Ciclo da Inteligência de Mercado.
+
+Planejamento → Coleta → Tratamento → Análise → Disseminação → Feedback → novo ciclo.
+
+## Recurso visual complementar
+
+**Título:** Onde a inteligência pode falhar.
+
+Mostrar pontos críticos:
+
+* pergunta inadequada;
+* fonte ruim;
+* informação desatualizada;
+* análise enviesada;
+* comunicação insuficiente.
+
+## Conexão
+
+Definido o processo, o estudante avançará para o objeto principal da observação: o mercado e sua estrutura competitiva.
+
+---

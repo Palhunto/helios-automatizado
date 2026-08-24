@@ -1,0 +1,42 @@
+# DECISIONS.md
+
+Não apagar decisões; marcar como substituídas quando necessário.
+
+- **D-001 Local-first — aceito.** Primeiro produto é local, um operador.
+- **D-002 Python — aceito.** Linguagem principal.
+- **D-003 SQLite — aceito.** Estado operacional inicial.
+- **D-004 Filesystem — aceito.** Conteúdo pesado fica em arquivos; DB guarda metadados/estado.
+- **D-005 ChatGPT Plus primário — aceito.** Sem migração API-first.
+- **D-006 Playwright — aceito para M3.** Apenas onde necessário e sem burlar proteções.
+- **D-007 Idempotência obrigatória — aceito.** Rerun não duplica output.
+- **D-008 Prompts versionados — aceito.** Snapshots usados em produção são imutáveis.
+- **D-009 Sem cota de imagem por página — aceito.** Figura depende de ganho pedagógico real.
+- **D-010 Renderer híbrido — aceito para M6.** SVG/Python para diagramas adequados; IA para síntese pictórica quando necessária.
+- **D-011 Google Docs API primeiro — aceito para M7.** Browser é fallback mínimo para funções não expostas adequadamente.
+- **D-012 UI só depois do core — aceito.** UI em M9.
+- **D-013 Planejamento acadêmico é domínio próprio — aceito.** Questionário, respostas consolidadas e planejamento são unidades distintas.
+- **D-014 Produção textual dirigida por contract — revisado no M2.** O formato `omega_writing_production@1` possui 18 unidades, mas quantidade, IDs, ordem, limites, headings, exercícios e continuidade são dados do Writing Production Contract versionado, não invariantes da engine.
+- **D-015 Marcadores editoriais não são status operacionais — aceito.** CONFIRMADO/PENDENTE/etc. pertencem ao conteúdo; pending/running/done/etc. pertencem ao workflow.
+- **D-016 Âncoras visuais são enriquecimento operacional — aceito.** O prompt visual original é preservado; a localização literal única é obtida/validada em subetapa separada.
+- **D-017 Validação textual híbrida — aceito.** Regras objetivas são validadas por código; qualidade acadêmica e adequação de citações continuam semânticas.
+- **D-018 Citation Ledger — revisado no M2.** Ocorrências autor-data de alta confiança são preservadas com offsets e proveniência para uso futuro. `Citation Ledger != Reference Reconciliation`: o M2 não cria bibliografia nem afirma correspondência entre menção e obra.
+- **D-019 Fonte de verdade dos prompts — aceito.** `prompts/omega_brain/*_vN.txt` preserva os prompts reais; wrappers operacionais futuros são separados.
+- **D-020 M0 continua sem integrações externas — aceito.** A revisão do workflow não altera o escopo da fundação.
+- **D-021 `sqlite3` + migrations SQL no M0 — aceito.** O schema inicial usa standard library, arquivos SQL numerados, hash imutável e transações; ORM/Alembic ficam sem adoção até existir necessidade real.
+- **D-022 Estado de projeto não é duplicado no M0 — aceito.** `Project` guarda identidade e localização; estado operacional pertence a `StageRun`, e milestone de desenvolvimento permanece em `PROJECT_STATE.md`.
+- **D-023 Recovery explícito no M0 — aceito.** `project validate` é somente leitura e `project recover` é a operação mutável de reconciliação; nenhuma leitura altera estado implicitamente.
+- **D-024 Redação observada do questionário — aceito.** O contrato canônico vem de `omega_academic_planning@1`, mas a redação recebida é preservada. Estrutura válida com divergência semântica gera revisão explícita, nunca substituição automática pelo snapshot.
+- **D-025 Autorização acadêmica sem override no M1 — aceito.** Qualquer `[CONFLITO]` nas respostas atuais bloqueia a autorização do plano; `[PENDENTE]` não bloqueia. O M1 não possui override.
+- **D-026 Âncoras determinísticas das respostas — aceito.** Cabeçalho é opcional; número ou título canônico identifica a seção. Quando ambos aparecem, precisam concordar. Exigem-se exatamente cinco respostas únicas em ordem.
+- **D-027 Proveniência acadêmica versionada — aceito.** Bruto e aceito têm versões independentes, hashes e artefatos imutáveis; cada plano referencia as respostas e a autorização usadas, e versões antigas permanecem preservadas.
+- **D-028 Contexto de redação imutável — aceito.** Cada WritingContext congela Answers, Plan, prompt de redação, contract e prompt operacional por identidade/versão/hash. `omega_writing@1` aparece somente no pacote inicial; unidades posteriores usam um request prompt separado, depois de acknowledgement e confirmação explícita.
+- **D-029 Currentness por proveniência — aceito.** `current` e `stale` não são persistidos. O Production Set seleciona accepted submissions em ordem topológica e exige igualdade exata entre as dependências da preparação e as seleções atuais. Mudança upstream propaga incompatibilidade downstream deterministicamente.
+- **D-030 Disposição editorial separada do run — aceito.** `StageRun.done` prova conclusão mecânica, não aceitação textual. Raw rejeitado ou em revisão é preservado; versões accepted são monotônicas e nunca sobrescritas.
+- **D-031 Faixas de redação separadas por contract — aceito no M2.** Em `omega_writing_production@2`, `target` orienta exclusivamente o request ao LLM e `accepted` define o hard limit do validator. A engine não conhece margens numéricas nem IDs de unidades; o V1 e seu SHA permanecem imutáveis.
+- **D-032 Evidência de StageRun concluído — aceito no M3.** Artifact é exigido por padrão. Operação sem artifact só é válida quando uma regra tipada por estágio/operação comprova entidade durável no SQLite, vínculo ao input e proveniência completa. `writing.context.confirm` é uma decisão desse tipo; prefixo ou UUID isolado nunca bastam.
+- **D-033 Runtime de projeto versionado — aceito no M3.** `config/project.yaml` permanece o snapshot histórico imutável. Mudanças operacionais autorizadas são snapshots canônicos encadeados por SHA, registrados como Artifact de StageRun próprio; o browser consome a versão efetiva validada, não uma edição in-place do YAML.
+- **D-034 Abandono de efeito externo não comprovável — aceito no M3.** Uma BrowserInteraction ambígua permanece `blocked`; abandono explícito é uma resolução append-only com operador, timestamp e motivo, sem afirmar que o request não foi enviado. Nova interação e novo StageRun supersedem a tentativa bloqueada, preservando todas as evidências anteriores. `retry` continua exclusivo para repair de resposta rejeitada.
+- **D-035 Prova DOM para envio e reprobe de bloqueio — aceito no M3.** `conversation_path` prova apenas a conversa, não o envio. `sending` permanece até o user turn do fingerprint exato aparecer no DOM; somente então a interação vira `sent`. Um bloqueio histórico `BROWSER_SEND_NOT_PROVABLE` com path/fingerprint íntegros e sem abandono pode ser reinspecionado por recovery explícito, reativando a mesma interação apenas quando a evidência externa for encontrada e nunca chamando send novamente.
+- **D-036 Ação explícita do controle de envio — aceito no M3.** Envio normal usa prioritariamente `data-testid=send-button`, nunca Enter. O adapter comprova composer preenchido, botão visível/enabled, conclusão da ação Playwright e limpeza do composer, com erros tipados por fronteira. Recovery é estritamente observacional para interações externas: `prepared` não é enviado por recovery e exige run explícito.
+- **D-037 Reconciliação observacional de envio comprovado — aceito no M3.** Uma interaction não abandonada bloqueada por `BROWSER_SEND_NOT_PROVABLE` pode ser reconciliada por comando explícito e ID quando a conversa ainda não foi vinculada. A operação nunca envia, cria tentativa ou escolhe conversa por heurística fraca: exige `/c/<uuid>`, fingerprint integral do primeiro turno e resposta correspondente completa. Só então vincula a conversa, captura/importa a resposta existente e conclui a mesma interaction e StageRun; ausência, ambiguidade ou divergência preservam o bloqueio sem mutação.
+- **D-038 Abandono encerra a linhagem de attempts — aceito no M3.** Quando não há interaction ativa, a última `context_load` terminal explicitamente `operator_abandoned` não consome permanentemente o orçamento de execuções futuras. Uma nova execução cria outra conversation, outro StageRun e BrowserInteraction `prepared` em attempt 1, com `supersedes_interaction_id` para a abandonada; todo histórico anterior permanece imutável. Bloqueio sem resolução ou efeito externo ainda ambíguo continua impedindo nova linhagem.

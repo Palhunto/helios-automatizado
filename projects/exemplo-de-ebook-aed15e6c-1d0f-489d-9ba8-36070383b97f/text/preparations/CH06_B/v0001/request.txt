@@ -1,0 +1,152 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade CH06_B conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+unit_id: CH06_B
+ordem: 13
+caracteres_com_espacos: 9000..10000
+continuity_from: CH06_A
+headings_obrigatorios: Exercícios analíticos e aplicados
+headings_proibidos: nenhum
+heading_final: Exercícios analíticos e aplicados
+listas_permitidas: não
+</especificacao_unidade>
+
+<contexto_da_unidade>
+# CAPÍTULO 6 — MÉTODOS E FERRAMENTAS DE ANÁLISE COMPETITIVA
+
+## Função educacional
+
+Desenvolver capacidade analítica, evitando a aplicação mecânica de matrizes.
+
+## Objetivo de aprendizagem
+
+Selecionar e aplicar métodos de análise de acordo com a questão estratégica investigada.
+
+## Conteúdos centrais
+
+### 1. Ferramenta não substitui pergunta
+
+O método deve ser selecionado após a definição do problema.
+
+### 2. Benchmarking competitivo
+
+Comparação estruturada entre organizações ou práticas.
+
+### 3. Perfil do concorrente
+
+Dimensões possíveis:
+
+* oferta;
+* posicionamento;
+* preço;
+* clientes;
+* canais;
+* recursos;
+* movimentos recentes.
+
+### 4. Grupos estratégicos
+
+Identificação de empresas com padrões competitivos semelhantes.
+
+### 5. Análise das forças competitivas
+
+[COMPLEMENTO PROPOSTO] Utilização do modelo das cinco forças de Michael Porter quando compatível com o problema analisado.
+
+### 6. Análise de posicionamento competitivo
+
+Comparação por atributos relevantes para o mercado.
+
+### 7. Matrizes comparativas
+
+Utilização de critérios claramente definidos.
+
+### 8. Tendências e sinais
+
+Separar:
+
+* evidência observada;
+* interpretação;
+* hipótese;
+* implicação.
+
+### 9. Construção de cenários simples
+
+Considerar possíveis movimentos futuros sem tratar projeções como previsões certas.
+
+### 10. Limites das ferramentas
+
+Nenhuma matriz deverá ser apresentada como representação completa da realidade.
+
+## Atividade
+
+**“Análise de três concorrentes”**
+
+O estudante aplica pelo menos dois métodos ao mesmo conjunto de organizações e compara o que cada método revela.
+
+## Evidência
+
+Análise estruturada com:
+
+* dados;
+* critérios;
+* interpretação;
+* limitações;
+* conclusão.
+
+## Recurso visual
+
+**Título:** Da pergunta ao método analítico.
+
+Pergunta → tipo de evidência → método → interpretação → implicação.
+
+## Recurso complementar
+
+Matriz comparativa de concorrentes apresentada como exemplo didático.
+
+## Conexão
+
+Uma análise tecnicamente boa pode perder valor caso não seja comunicada adequadamente ao gestor.
+
+---
+
+</contexto_da_unidade>
+
+<continuidade>
+<unidade_anterior id="CH06_A">
+Editar
+
+A matéria-prima produzida pelo monitoramento só adquire valor estratégico quando é submetida a métodos capazes de organizar comparações, testar interpretações e tornar explícitas implicações competitivas. Esse passo não deve ser confundido com aplicar automaticamente uma matriz conhecida. A escolha do método precisa ocorrer depois da definição da pergunta, porque problemas diferentes exigem tipos distintos de evidência. Uma organização que deseja entender por que perde clientes para determinado concorrente enfrenta uma questão diferente daquela que procura avaliar a atratividade estrutural de um setor. Utilizar a mesma ferramenta em ambas as situações pode gerar aparência de análise sem produzir compreensão adequada.
+
+O princípio fundamental é que ferramenta não substitui pergunta. Métodos são estruturas de raciocínio que ajudam a selecionar dimensões, ordenar evidências e tornar relações mais visíveis. Seu valor depende da correspondência entre aquilo que se pretende compreender e aquilo que o método consegue representar. Uma matriz comparativa pode examinar diferenças de preço, canal e portfólio, mas não explica automaticamente por que essas diferenças existem. Da mesma forma, um modelo de forças competitivas pode ajudar a avaliar pressões estruturais de um setor, mas não oferece resposta precisa sobre a próxima campanha de um concorrente específico. A análise começa pela questão e usa a ferramenta como meio, não como finalidade.
+
+O benchmarking competitivo é um exemplo de método cuja utilidade depende da definição do objeto comparado. Benchmarking não significa simplesmente identificar “quem faz melhor”, porque esse julgamento exige critérios previamente estabelecidos. Podem ser observadas práticas, indicadores, processos, ofertas, tempos de resposta, canais ou experiência do cliente. O risco aparece quando organizações diferentes são colocadas lado a lado sem considerar contexto, escala, público e modelo de negócio. Se concorrentes lançam produtos com maior frequência, a comparação deve investigar não apenas a quantidade de lançamentos, mas o processo que sustenta essa capacidade e os resultados observados. Camp (1989) contribuiu para consolidar o benchmarking como prática sistemática de comparação e aprendizagem.
+
+Outro instrumento relevante é o perfil do concorrente. Seu objetivo é organizar evidências sobre uma empresa específica para compreender como ela compete e quais movimentos merecem atenção. Oferta, posicionamento, preços, clientes, canais, recursos e movimentos recentes constituem dimensões possíveis, mas não formam roteiro obrigatório. Em uma investigação sobre risco de entrada em segmento premium, capacidade de marca, portfólio e canais podem ser mais relevantes que detalhes operacionais sem relação direta com a decisão. O perfil também deve separar fatos observáveis de inferências. Contratações, expansão digital e uma parceria tecnológica são evidências; interpretá-las como preparação para lançar nova solução constitui hipótese. Essa distinção permite atualizar o perfil sem converter expectativas em fatos.
+
+Grupos estratégicos ampliam a análise ao deslocar o foco de empresas isoladas para conjuntos de organizações que apresentam padrões competitivos semelhantes. Porter (1980) utiliza o conceito para mostrar que, dentro de um mesmo setor, empresas podem competir por caminhos distintos, combinando preço, diferenciação, escopo, canais ou outros atributos. Um mercado pode apresentar empresas orientadas a baixo custo, outras concentradas em nichos premium e outras apoiadas em amplitude de portfólio. Contudo, categorias não devem ser impostas antes da análise. Se os critérios escolhidos não explicam diferenças reais de comportamento competitivo, os grupos se tornam apenas rótulos. O método é útil quando ajuda a compreender proximidade, mobilidade entre posições e intensidade da disputa.
+
+A análise das forças competitivas oferece outro nível de leitura ao examinar pressões estruturais que ultrapassam concorrentes específicos. O modelo de Porter (1980) considera rivalidade entre empresas existentes, ameaça de novos entrantes, ameaça de substitutos e poder de fornecedores e compradores. Seu uso é pertinente quando a pergunta envolve atratividade do setor, fontes de pressão sobre margens ou mudanças na estrutura competitiva. Ele não deve ser tratado como checklist descritivo. Cada força precisa ser sustentada por evidências que permitam avaliar intensidade e implicações.
+
+Um setor com muitos concorrentes não necessariamente apresenta rivalidade intensa se houver crescimento elevado, diferenciação e espaço para expansão. Em contraste, poucos atores podem competir agressivamente quando o mercado está estagnado e os custos de mudança do cliente são baixos. Ameaça de entrada também depende de barreiras como capital, acesso a canais, regulação, marca e economias de escala. O modelo ganha poder analítico quando obriga a examinar mecanismos, não apenas contar participantes. Sua limitação aparece quando é usado como representação completa da dinâmica competitiva ou aplicado sem considerar mudanças tecnológicas e institucionais.
+
+A análise de posicionamento competitivo concentra-se nas diferenças percebidas entre ofertas e empresas em dimensões que influenciam escolha ou percepção de valor. Preço, especialização, conveniência, qualidade percebida, amplitude de portfólio, inovação ou experiência podem funcionar como critérios, desde que sejam pertinentes ao mercado. O objetivo não é produzir um gráfico visualmente atraente, mas representar como os atores se distribuem em atributos capazes de explicar proximidade, diferenciação e espaços potencialmente pouco ocupados.
+
+Essa abordagem exige cuidado na escolha das dimensões. Se os eixos forem definidos apenas pela disponibilidade de dados, o resultado pode ser tecnicamente correto e estrategicamente irrelevante. Além disso, posicionamento pretendido e posicionamento percebido não são equivalentes. A empresa pode comunicar inovação, mas clientes e canais podem associá-la a confiabilidade ou preço. Quando possível, evidências de mercado devem confrontar o discurso institucional com a percepção externa, permitindo identificar desalinhamentos entre a posição declarada e aquela efetivamente reconhecida.
+
+Matrizes comparativas são instrumentos flexíveis para consolidar diferentes dimensões em uma mesma estrutura. Sua principal vantagem é tornar visíveis semelhanças, lacunas e contrastes entre atores. Entretanto, a aparência ordenada de uma matriz pode criar falsa sensação de objetividade quando critérios são vagos ou escalas não possuem base consistente. Termos como “alto”, “médio” e “baixo” precisam derivar de regras claras; notas numéricas exigem justificativa; pesos devem refletir a pergunta analisada. A matriz organiza julgamento, mas não elimina julgamento.
+
+Ao trabalhar com sinais e tendências, a análise precisa manter separados evidência observada, interpretação, hipótese e implicação. Uma redução de preço registrada durante três meses é evidência. A leitura de que o concorrente está buscando maior volume constitui interpretação. A possibilidade de que essa estratégia pressione margens do setor é hipótese enquanto não houver confirmação suficiente. A consequência potencial para a empresa, como necessidade de rever proposta de valor ou política comercial, corresponde à implicação. Misturar esses níveis aumenta o risco de transformar narrativa plausível em certeza.
+
+Tendências requerem observação temporal. Variações pontuais não devem ser projetadas automaticamente para o futuro. É necessário verificar persistência, amplitude, consistência entre fontes e relação com fatores externos. Um aumento de contratações pode representar expansão, reposição de equipe ou mudança operacional. Quando combinado a investimentos, abertura de novos canais e comunicação estratégica, o padrão adquire maior força. A análise competitiva transforma monitoramento em interpretação justamente ao conectar sinais sem ultrapassar aquilo que as evidências permitem sustentar.
+
+Cenários simples podem ser utilizados quando a pergunta envolve possíveis movimentos futuros e existe incerteza relevante. O objetivo não é prever com exatidão, mas organizar alternativas plausíveis e examinar como diferentes combinações de eventos afetariam a organização. Um cenário pode considerar intensificação da rivalidade, entrada de novo ator ou aceleração de tecnologia substituta. Cada possibilidade deve partir de premissas explícitas e sinais observáveis, permitindo reconhecer condições sob as quais a interpretação precisará ser revista.
+
+A construção de cenários é especialmente útil quando decisões precisam ser tomadas antes que todas as evidências estejam disponíveis. Em vez de ocultar incerteza, o método a incorpora. Schoemaker (1995) argumenta que cenários ajudam organizações a pensar sistematicamente sobre futuros plausíveis e desafiar pressupostos. Em inteligência de mercado, seu uso deve permanecer simples e conectado à decisão, evitando transformar possibilidades em previsões determinísticas. A questão relevante é como a organização responderia se determinadas condições se materializassem e quais sinais indicariam essa aproximação.
+
+Nenhuma dessas ferramentas representa a realidade de forma completa. Benchmarking destaca comparações; perfis aprofundam atores; grupos estratégicos mostram padrões; forças competitivas examinam pressões estruturais; matrizes organizam critérios; cenários exploram futuros plausíveis. Cada método ilumina uma parte do problema e deixa outras em segundo plano. A capacidade analítica consiste em reconhecer essas limitações e, quando necessário, combinar métodos de forma complementar. O passo adequado não é procurar a matriz mais conhecida, mas relacionar pergunta, tipo de evidência, método, interpretação e implicação. É dessa articulação que surgem análises competitivas capazes de transformar os sinais acumulados pelo monitoramento em compreensão útil para o julgamento gerencial.
+</unidade_anterior>
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

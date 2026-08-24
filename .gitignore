@@ -1,0 +1,39 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Databases / runtime state
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated/runtime artifacts
+artifacts/
+tmp/
+temp/
+
+# Browser profiles / authentication
+chrome-profile/
+browser-profile/
+playwright/.auth/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

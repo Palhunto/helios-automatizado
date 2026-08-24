@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ImageManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "assets"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "figure_id",
+          "status",
+          "attempts"
+        ],
+        "properties": {
+          "figure_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "renderer": {
+            "enum": [
+              "svg",
+              "image_ai",
+              "manual_review",
+              null
+            ]
+          },
+          "prompt_hash": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "style_prompt_hash": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "file_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "file_sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "running",
+              "done",
+              "failed",
+              "pending_retry",
+              "blocked",
+              "skipped"
+            ]
+          },
+          "attempts": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

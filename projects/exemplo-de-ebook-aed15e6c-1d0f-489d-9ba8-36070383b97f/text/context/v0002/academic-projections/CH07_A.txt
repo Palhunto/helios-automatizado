@@ -1,0 +1,118 @@
+# CAPÍTULO 7 — RELATÓRIOS GERENCIAIS, DASHBOARDS E VISUALIZAÇÃO PARA APOIO À DECISÃO
+
+## Função educacional
+
+Ensinar a transformar resultados analíticos em comunicação gerencial compreensível e acionável.
+
+## Objetivo de aprendizagem
+
+Selecionar indicadores e estruturar relatórios e visualizações alinhados à decisão.
+
+## Conteúdos centrais
+
+### 1. O problema da sobrecarga informacional
+
+Mais informação não significa melhor comunicação.
+
+### 2. Hierarquia da informação
+
+Separar:
+
+* mensagem principal;
+* evidências;
+* detalhes;
+* anexos.
+
+### 3. Relatórios executivos
+
+Estrutura possível:
+
+* questão;
+* conclusão;
+* evidência;
+* implicação;
+* recomendação.
+
+### 4. Indicadores
+
+Um indicador deve estar relacionado a uma pergunta gerencial.
+
+### 5. Indicadores de acompanhamento competitivo
+
+Exemplos deverão ser contextualizados e não apresentados como universais.
+
+### 6. Dashboards
+
+Função de acompanhar condições e mudanças relevantes.
+
+### 7. Dashboard não é relatório completo
+
+Distinguir monitoramento visual de análise aprofundada.
+
+### 8. Visualização
+
+Princípios:
+
+* clareza;
+* hierarquia;
+* comparação;
+* consistência;
+* redução de ruído;
+* escala adequada.
+
+### 9. Seleção do gráfico
+
+O formato deve depender da relação que se pretende mostrar:
+
+* evolução;
+* comparação;
+* composição;
+* distribuição;
+* correlação.
+
+### 10. Storytelling analítico
+
+Organizar a comunicação em torno de uma questão decisória, sem manipular evidências.
+
+### 11. Alertas e exceções
+
+Destacar mudanças que realmente exigem atenção.
+
+## Atividade
+
+**“Da análise ao briefing executivo”**
+
+O estudante deverá transformar uma análise extensa em:
+
+* mensagem principal;
+* três evidências;
+* dois indicadores;
+* uma implicação;
+* uma recomendação.
+
+## Evidência
+
+Relatório executivo ou protótipo conceitual de dashboard.
+
+## Recurso visual
+
+**Título:** Pirâmide da comunicação gerencial.
+
+Topo: decisão/recomendação.
+
+Depois:
+
+* implicação;
+* evidências;
+* indicadores;
+* dados de suporte.
+
+## Recurso complementar
+
+Comparação entre uma visualização sobrecarregada e uma estrutura informacional organizada, sem depender de uma plataforma específica.
+
+## Conexão
+
+O capítulo seguinte examinará como evidências comunicadas adequadamente entram efetivamente no processo decisório.
+
+---

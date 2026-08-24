@@ -1,0 +1,1 @@
+{"character_count":95,"disposition":"rejected","findings":[{"code":"WRITING_CHARACTER_COUNT_INVALID","evidence":{"actual":95,"maximum":11500,"minimum":7500},"message":"Character count 95 is outside 7500..11500","severity":"error"}],"unit_id":"CH02_A"}

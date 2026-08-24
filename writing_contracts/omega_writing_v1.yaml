@@ -1,0 +1,131 @@
+id: omega_writing_production
+version: 1
+separator: "\n\n"
+validation:
+  allow_lists: false
+  forbidden_phrases:
+    - primeira parte
+    - segunda parte
+    - nesta parte
+  linguistic_warnings:
+    repeated_first_word: true
+    repeated_initial: true
+    repeated_article: true
+    initial_run_length: 3
+    articles: [o, a, os, as, um, uma]
+units:
+  - unit_id: INTRO
+    order: 1
+    min_characters: 9000
+    max_characters: 10000
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH01_A
+    order: 2
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [INTRO]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH01_B
+    order: 3
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH01_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CH02_A
+    order: 4
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH01_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH02_B
+    order: 5
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH02_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CH03_A
+    order: 6
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH02_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH03_B
+    order: 7
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH03_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CH04_A
+    order: 8
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH03_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH04_B
+    order: 9
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH04_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CH05_A
+    order: 10
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH04_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH05_B
+    order: 11
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH05_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CH06_A
+    order: 12
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH05_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH06_B
+    order: 13
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH06_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CH07_A
+    order: 14
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH06_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH07_B
+    order: 15
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH07_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CH08_A
+    order: 16
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH07_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]
+  - unit_id: CH08_B
+    order: 17
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH08_A]
+    required_headings: [Exercícios analíticos e aplicados]
+    final_heading: Exercícios analíticos e aplicados
+  - unit_id: CONCLUSION
+    order: 18
+    min_characters: 9000
+    max_characters: 10000
+    continuity_from: [CH08_B]
+    forbidden_headings: [Exercícios analíticos e aplicados]

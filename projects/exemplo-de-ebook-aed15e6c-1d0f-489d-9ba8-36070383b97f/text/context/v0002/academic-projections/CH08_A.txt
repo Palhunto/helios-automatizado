@@ -1,0 +1,107 @@
+# CAPÍTULO 8 — TOMADA DE DECISÃO BASEADA EM DADOS E INTELIGÊNCIA COMPETITIVA APLICADA
+
+## Função educacional
+
+Integrar o percurso completo da disciplina.
+
+## Objetivo de aprendizagem
+
+Utilizar inteligência de mercado para avaliar alternativas e formular recomendações fundamentadas.
+
+## Conteúdos centrais
+
+### 1. Informação não decide
+
+A decisão permanece uma responsabilidade gerencial.
+
+### 2. Decisão orientada por evidências
+
+Combinação entre:
+
+* dados;
+* contexto;
+* análise;
+* objetivos;
+* experiência;
+* restrições.
+
+### 3. Separar fato, interpretação e recomendação
+
+Estrutura essencial para a qualidade da inteligência.
+
+### 4. Incerteza
+
+Nem toda informação estará disponível.
+
+### 5. Qualidade da evidência
+
+Avaliar grau de confiança das conclusões.
+
+### 6. Alternativas
+
+A inteligência deverá ajudar a comparar caminhos possíveis.
+
+### 7. Riscos e oportunidades
+
+Avaliar consequências potenciais.
+
+### 8. Trade-offs
+
+Decisões frequentemente envolvem benefícios e perdas simultâneas.
+
+### 9. Vieses decisórios
+
+[COMPLEMENTO PROPOSTO] Introduzir de forma aplicada riscos como confirmação seletiva, excesso de confiança e interpretação enviesada de evidências.
+
+### 10. Recomendações
+
+Uma recomendação deverá explicitar:
+
+* decisão considerada;
+* evidências;
+* interpretação;
+* benefícios;
+* riscos;
+* incertezas;
+* condições para revisão.
+
+### 11. Inteligência como processo contínuo
+
+Uma decisão altera as necessidades futuras de monitoramento.
+
+## Caso integrador
+
+**Caso hipotético: “Entrar, reagir ou esperar?”**
+
+Uma organização percebe:
+
+* crescimento de um segmento;
+* entrada de novo concorrente;
+* alteração de preços;
+* mudança de canal;
+* sinais contraditórios sobre demanda.
+
+O estudante deverá utilizar as informações disponibilizadas para:
+
+1. definir a decisão;
+2. identificar fatos;
+3. separar hipóteses;
+4. avaliar fontes;
+5. comparar concorrentes;
+6. analisar alternativas;
+7. identificar riscos;
+8. formular recomendação;
+9. indicar informações adicionais;
+10. propor monitoramento futuro.
+
+## Evidência
+
+Memorando executivo de decisão.
+
+## Recurso visual
+
+**Título:** Inteligência aplicada à decisão.
+
+Evidências + Contexto + Objetivos + Alternativas + Riscos → Julgamento → Decisão → Monitoramento.
+
+---

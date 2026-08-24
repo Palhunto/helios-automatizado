@@ -1,0 +1,34 @@
+id: synthetic_browser
+version: 1
+separator: "\n---\n"
+validation:
+  allow_lists: false
+  forbidden_phrases: []
+  linguistic_warnings:
+    repeated_first_word: true
+    repeated_initial: true
+    repeated_article: true
+    initial_run_length: 3
+    articles: [o, a, os, as, um, uma]
+units:
+  - unit_id: START
+    order: 1
+    character_count:
+      target: {min: 40, max: 240}
+      accepted: {min: 30, max: 320}
+    academic_context:
+      projection_version: 7
+      sections:
+        - heading_pattern: '^cap[ií]tulo 1$'
+          ancestor_pattern: '^planejamento dos cap[ií]tulos$'
+  - unit_id: END
+    order: 2
+    character_count:
+      target: {min: 30, max: 180}
+      accepted: {min: 20, max: 240}
+    continuity_from: [START]
+    academic_context:
+      projection_version: 7
+      sections:
+        - heading_pattern: '^cap[ií]tulo 2$'
+          ancestor_pattern: '^planejamento dos cap[ií]tulos$'

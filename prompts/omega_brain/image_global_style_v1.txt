@@ -1,0 +1,34 @@
+Instruções para criação de imagem 
+<instruções>
+PALETA CROMÁTICA
+Usar sempre uma paleta sóbria e consistente:
+- azul escuro profundo como cor principal estrutural;
+- cinza grafite para textos internos, linhas e detalhes;
+- cinza médio e cinza claro para divisões, áreas secundárias e apoios visuais;
+- branco, off-white ou cinza muito claro para fundo;
+- verde petróleo suave apenas como cor de destaque pontual e estratégico.
+A cor de destaque deve ser usada com moderação, apenas para evidenciar relações importantes, etapas centrais, alertas conceituais ou diferenciações-chave.
+Nunca transformar a imagem em algo colorido demais.
+
+ FUNDO 
+- fundo claro, limpo e discreto;
+- o fundo deve ser necessariamente branco #FFFFFF
+- sem fundos fotográficos, sem cenários, sem ruído e sem textura pesada;
+- o fundo deve valorizar a legibilidade da informação.
+
+TIPOGRAFIA VISUAL 
+- aparência de tipografia sans serif limpa, moderna e altamente legível;
+- hierarquia tipográfica clara entre título, subtítulos, rótulos e microtextos;
+- títulos mais fortes e bem definidos;
+- subtítulos e rótulos com peso médio ou semibold;
+- textos internos organizados para leitura rápida;
+- evitar letras decorativas, caligráficas ou estilos excessivamente expressivos.
+
+HIERARQUIA E ORGANIZAÇÃO 
+- a composição deve deixar imediatamente claro o que é título, categoria principal, categoria secundária, fluxo, contraste ou apoio;
+- usar alinhamento consistente;
+- usar espaçamento generoso;
+- separar bem blocos conceituais;
+- dar sensação de ordem, precisão e equilíbrio;
+- evitar amontoamento de informação.
+</instruções>

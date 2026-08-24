@@ -1,0 +1,205 @@
+# 3. Ementa de trabalho
+
+[PREMISSA EDITORIAL — NÃO CORRESPONDE A EMENTA INSTITUCIONAL OFICIAL]
+
+Fundamentos e escopo da inteligência de mercado contemporânea. Relação entre inteligência de mercado, estratégia e objetivos organizacionais. Estruturação do ciclo de inteligência: necessidades informacionais, coleta, tratamento, análise, síntese e disseminação. Mapeamento de mercados e identificação de concorrentes. Monitoramento competitivo e avaliação de fontes de informação. Métodos e ferramentas de análise competitiva. Construção de relatórios gerenciais, indicadores, dashboards e visualizações orientadas à decisão. Utilização de dados e inteligência competitiva na avaliação de alternativas, oportunidades, ameaças e movimentos de mercado. Limites, ética e qualidade da informação aplicada ao processo decisório.
+
+---
+
+# 4. Tema central
+
+[CONFIRMADO] O ebook deverá desenvolver a inteligência de mercado como processo estruturado de transformação de informações sobre mercado, concorrentes e ambiente de negócios em conhecimento utilizável na tomada de decisão.
+
+[PREMISSA EDITORIAL] O eixo articulador será:
+
+**necessidade decisória → coleta → tratamento → análise → interpretação → comunicação → decisão → monitoramento contínuo.**
+
+A disciplina não deverá tratar inteligência de mercado como simples levantamento de informações nem como coleção de ferramentas isoladas.
+
+---
+
+# 5. Recorte acadêmico
+
+O ebook deverá concentrar-se em três dimensões integradas:
+
+1. **Inteligência de mercado:** compreensão de mercados, clientes, setores, movimentos competitivos e variáveis relevantes para o negócio.
+
+2. **Monitoramento da concorrência:** identificação de concorrentes, fontes de informação, sinais competitivos, movimentos estratégicos e alterações no ambiente.
+
+3. **Apoio à tomada de decisão:** transformação das análises em relatórios, indicadores, dashboards, recomendações e evidências úteis para decisões gerenciais.
+
+---
+
+# 6. Limites do escopo
+
+[PREMISSA EDITORIAL] O ebook não deverá transformar-se em:
+
+* manual técnico de programação;
+* curso avançado de estatística;
+* treinamento específico sobre uma única plataforma de BI;
+* manual de pesquisa de marketing;
+* curso genérico de estratégia empresarial;
+* catálogo de ferramentas digitais;
+* manual de espionagem empresarial;
+* compilação de matrizes estratégicas sem interpretação;
+* curso exclusivamente sobre dashboards;
+* texto exclusivamente teórico e desconectado da decisão empresarial.
+
+Métodos quantitativos poderão aparecer quando necessários para interpretação de informações, mas deverão ser apresentados em nível compatível com os objetivos da disciplina.
+
+O monitoramento competitivo deverá restringir-se a práticas éticas, legais e legitimamente acessíveis de obtenção e análise de informações.
+
+---
+
+# 8. Perfil dos estudantes
+
+[PREMISSA EDITORIAL] O ebook será planejado para estudantes de pós-graduação, especialização ou MBA, especialmente profissionais relacionados a:
+
+* administração e gestão;
+* marketing;
+* área comercial;
+* planejamento;
+* estratégia;
+* inteligência de mercado;
+* desenvolvimento de negócios;
+* produtos;
+* consultoria;
+* empreendedorismo;
+* áreas responsáveis por análises gerenciais.
+
+Não será pressuposto domínio avançado de ciência de dados, estatística, inteligência competitiva ou ferramentas de BI.
+
+O estudante poderá possuir experiência prática significativa, porém conhecimento técnico desigual sobre métodos de análise e estruturação de inteligência.
+
+---
+
+# 10. Necessidades de aprendizagem
+
+O estudante deverá desenvolver capacidade para:
+
+* reconhecer quais informações são relevantes para determinada decisão;
+* diferenciar dado, informação, análise e inteligência;
+* evitar coleta indiscriminada de dados;
+* avaliar confiabilidade e relevância das fontes;
+* delimitar corretamente mercados e concorrentes;
+* estruturar processos regulares de monitoramento;
+* interpretar sinais competitivos;
+* escolher métodos de análise adequados ao problema;
+* sintetizar grande quantidade de informação;
+* transformar análise em comunicação gerencial;
+* construir indicadores relacionados a perguntas decisórias;
+* reconhecer limitações e incertezas;
+* produzir recomendações fundamentadas sem apresentar inferências como fatos.
+
+---
+
+# 11. Objetivo geral
+
+Capacitar o estudante a estruturar e aplicar processos de inteligência de mercado e monitoramento competitivo, utilizando fontes, métodos de análise e instrumentos de comunicação capazes de transformar informações de mercado em evidências relevantes para a tomada de decisão empresarial.
+
+---
+
+# 17. Princípios metodológicos
+
+O ebook deverá seguir uma abordagem predominantemente aplicada, sem perder fundamentação conceitual.
+
+A progressão pedagógica será:
+
+**compreender → estruturar → coletar → mapear → monitorar → analisar → comunicar → decidir.**
+
+Cada ferramenta deverá surgir associada a uma pergunta ou problema concreto.
+
+Sempre que possível, a apresentação de um método deverá responder:
+
+* qual problema o método ajuda a compreender;
+* quais informações são necessárias;
+* como o método funciona;
+* o que seu resultado permite afirmar;
+* o que seu resultado não permite afirmar;
+* quais limitações existem;
+* como o resultado pode contribuir para uma decisão.
+
+---
+
+# 18. Estratégia integradora do ebook
+
+[COMPLEMENTO PROPOSTO] O percurso poderá ser articulado por um **Projeto Integrador de Inteligência de Mercado**.
+
+O estudante acompanhará uma organização hipotética ou uma empresa selecionada para fins educacionais e desenvolverá progressivamente um pequeno sistema de inteligência.
+
+O projeto poderá resultar em um **Dossiê de Inteligência Competitiva para Apoio à Decisão**, composto por:
+
+1. problema de negócio;
+2. perguntas de inteligência;
+3. delimitação do mercado;
+4. identificação de concorrentes;
+5. fontes prioritárias;
+6. plano de monitoramento;
+7. análise competitiva;
+8. indicadores;
+9. síntese executiva;
+10. recomendação para decisão.
+
+O projeto não precisa substituir atividades independentes, mas poderá conectá-las.
+
+---
+
+# 19. Arquitetura geral do ebook
+
+## Introdução
+
+Função: apresentar o problema central da disciplina e mostrar por que acumular dados não equivale a produzir inteligência.
+
+## Capítulo 1
+
+**Definições e Escopo da Inteligência de Mercado Contemporânea**
+
+Função: construir a base conceitual.
+
+## Capítulo 2
+
+**Alinhamento da Inteligência de Mercado aos Objetivos de Negócio**
+
+Função: conectar inteligência às decisões reais da organização.
+
+## Capítulo 3
+
+**Ciclo da Inteligência de Mercado: Coleta, Tratamento, Análise e Disseminação**
+
+Função: estruturar o processo de produção de inteligência.
+
+## Capítulo 4
+
+**Mapeamento de Mercado e Identificação de Concorrentes**
+
+Função: determinar quem e o que deverá ser observado.
+
+## Capítulo 5
+
+**Monitoramento da Concorrência e Fontes de Informação Estratégica**
+
+Função: estabelecer acompanhamento sistemático do ambiente competitivo.
+
+## Capítulo 6
+
+**Métodos e Ferramentas de Análise Competitiva**
+
+Função: converter informações em interpretação.
+
+## Capítulo 7
+
+**Relatórios Gerenciais, Dashboards e Visualização para Apoio à Decisão**
+
+Função: converter análise em comunicação executiva.
+
+## Capítulo 8
+
+**Tomada de Decisão Baseada em Dados e Inteligência Competitiva Aplicada**
+
+Função: integrar todo o percurso e utilizá-lo na decisão.
+
+## Conclusão
+
+Função: consolidar a inteligência de mercado como processo contínuo e integrado.
+
+---

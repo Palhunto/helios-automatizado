@@ -1,0 +1,46 @@
+stages:
+  - id: create_project
+    depends_on: []
+
+  - id: academic_questionnaire
+    depends_on: [create_project]
+
+  - id: consolidated_answers
+    depends_on: [academic_questionnaire]
+
+  - id: academic_plan
+    depends_on: [consolidated_answers]
+    requires_event: academic_plan_authorized
+
+  - id: writing_context_load
+    depends_on: [academic_plan]
+
+  - id: text_generation
+    depends_on: [writing_context_load]
+
+  - id: reference_reconciliation
+    depends_on: [text_generation]
+
+  - id: text_consolidation
+    depends_on: [text_generation]
+
+  - id: visual_planning
+    depends_on: [text_consolidation]
+
+  - id: visual_anchor_enrichment
+    depends_on: [visual_planning]
+
+  - id: visual_validation
+    depends_on: [visual_anchor_enrichment]
+
+  - id: image_routing
+    depends_on: [visual_validation]
+
+  - id: image_production
+    depends_on: [image_routing]
+
+  - id: docs_formatting
+    depends_on: [text_consolidation, image_production]
+
+  - id: final_qa
+    depends_on: [docs_formatting]

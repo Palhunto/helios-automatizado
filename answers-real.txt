@@ -1,0 +1,139 @@
+RESPOSTAS CONSOLIDADAS PARA O PLANEJAMENTO DO EBOOK
+
+1. Disciplina e contexto
+
+[CONFIRMADO] A disciplina que servirá de base para o ebook é “Inteligência de Mercado, Monitoramento da Concorrência e Ferramentas para Tomada de Decisão”.
+
+[PREMISSA EDITORIAL] A disciplina insere-se no campo da gestão, estratégia e inteligência competitiva, com foco na utilização sistemática de informações de mercado e da concorrência para subsidiar decisões empresariais.
+
+[PREMISSA EDITORIAL] O conteúdo deverá articular fundamentos de inteligência de mercado, processos de coleta e análise de informações, monitoramento competitivo, métodos de análise, visualização de dados e aplicação das evidências ao processo decisório.
+
+[PENDENTE] Não foram informados curso específico, modalidade, carga horária, ementa institucional oficial, posição da disciplina na matriz curricular ou documentos institucionais complementares.
+
+[PREMISSA EDITORIAL] Para fins de desenvolvimento, a estrutura de capítulos fornecida poderá funcionar como referência para uma ementa de trabalho, sem ser tratada como ementa institucional oficial.
+
+
+2. Perfil dos estudantes
+
+[PREMISSA EDITORIAL] O ebook deverá ser direcionado prioritariamente a estudantes de pós-graduação, especialização ou MBA vinculados às áreas de gestão, negócios, marketing, estratégia, inteligência de mercado, planejamento ou áreas correlatas.
+
+[PREMISSA EDITORIAL] O público poderá apresentar formação acadêmica e experiências profissionais heterogêneas, incluindo profissionais que atuem ou pretendam atuar em funções relacionadas à gestão, análise de mercado, marketing, comercial, planejamento, estratégia ou apoio à tomada de decisão.
+
+[PREMISSA EDITORIAL] Não deverá ser presumido domínio prévio de técnicas avançadas de inteligência competitiva, análise de dados ou ferramentas analíticas. Conceitos e métodos deverão ser introduzidos progressivamente, com explicação de sua finalidade e de suas aplicações.
+
+[PREMISSA EDITORIAL] Entre as principais necessidades de aprendizagem estão compreender como transformar informações dispersas em inteligência útil, distinguir dados relevantes de informações pouco significativas, estruturar processos de monitoramento de mercado e concorrentes e comunicar análises de forma adequada aos responsáveis pela decisão.
+
+[PREMISSA EDITORIAL] Uma dificuldade relevante poderá ser a passagem da simples coleta de dados para a análise estratégica. O material deverá, portanto, enfatizar interpretação, comparação, contextualização e utilização das informações na tomada de decisão.
+
+[PREMISSA EDITORIAL] O contexto profissional considerado deverá envolver situações organizacionais em que decisões relacionadas a mercados, concorrentes, posicionamento, oportunidades, ameaças e prioridades estratégicas dependam de informações estruturadas e analisadas.
+
+
+3. Aprendizagem e aplicação
+
+[PREMISSA EDITORIAL] O objetivo geral da disciplina será capacitar o estudante a compreender, estruturar e aplicar processos de inteligência de mercado e monitoramento da concorrência, utilizando métodos, ferramentas e evidências para apoiar decisões organizacionais.
+
+[PREMISSA EDITORIAL] Ao final da disciplina, o estudante deverá ser capaz de compreender os fundamentos e o escopo da inteligência de mercado contemporânea; relacionar atividades de inteligência aos objetivos estratégicos da organização; estruturar o ciclo de coleta, tratamento, análise e disseminação de informações; mapear mercados e identificar concorrentes relevantes; selecionar e avaliar fontes de informação estratégica; aplicar métodos de análise competitiva; organizar resultados em relatórios, dashboards e recursos de visualização; e utilizar evidências para fundamentar decisões empresariais.
+
+[PREMISSA EDITORIAL] As competências desenvolvidas deverão incluir pensamento analítico, interpretação estratégica de informações, avaliação crítica de fontes, análise de concorrentes, síntese de evidências, comunicação gerencial e tomada de decisão orientada por dados.
+
+[PREMISSA EDITORIAL] Como resultados de aprendizagem, espera-se que o estudante consiga transformar informações de mercado em análises estruturadas, identificar movimentos competitivos relevantes, selecionar ferramentas adequadas para diferentes problemas de análise e produzir informações acionáveis para gestores e tomadores de decisão.
+
+[PREMISSA EDITORIAL] As evidências de aprendizagem poderão incluir análises comparativas de concorrentes, mapas de mercado, aplicação de métodos de análise competitiva, interpretação de indicadores, elaboração de estruturas de dashboards ou relatórios gerenciais e resolução de situações decisórias baseadas em dados.
+
+[PREMISSA EDITORIAL] As aplicações profissionais deverão abranger planejamento estratégico, marketing, gestão comercial, desenvolvimento de negócios, posicionamento competitivo, identificação de oportunidades, avaliação de ameaças e apoio a decisões gerenciais.
+
+
+4. Estrutura de capítulos
+
+[CONFIRMADO] O ebook deverá seguir a seguinte estrutura geral:
+
+Introdução
+
+A introdução deverá contextualizar a relevância da inteligência de mercado e do monitoramento da concorrência em ambientes empresariais caracterizados por grande disponibilidade de informações, mudanças competitivas e necessidade de decisões fundamentadas.
+
+Capítulo 1 — Definições e Escopo da Inteligência de Mercado Contemporânea
+
+[CONFIRMADO] Este capítulo estabelecerá os fundamentos conceituais da disciplina.
+
+[PREMISSA EDITORIAL] Deverá diferenciar inteligência de mercado de simples coleta de dados e apresentar sua relação com inteligência competitiva, pesquisa de mercado, análise estratégica e suporte à decisão.
+
+Capítulo 2 — Alinhamento da Inteligência de Mercado aos Objetivos de Negócio
+
+[CONFIRMADO] O capítulo deverá relacionar a inteligência de mercado às necessidades estratégicas da organização.
+
+[PREMISSA EDITORIAL] Deverá demonstrar que processos de inteligência precisam partir de questões decisórias, prioridades organizacionais e objetivos de negócio, evitando coleta indiscriminada de informações.
+
+Capítulo 3 — Ciclo da Inteligência de Mercado: Coleta, Tratamento, Análise e Disseminação
+
+[CONFIRMADO] O capítulo deverá apresentar o processo estruturado de produção da inteligência de mercado.
+
+[PREMISSA EDITORIAL] Deverá desenvolver as etapas de definição das necessidades informacionais, coleta, organização, tratamento, análise, síntese e disseminação das informações aos usuários responsáveis pelas decisões.
+
+Capítulo 4 — Mapeamento de Mercado e Identificação de Concorrentes
+
+[CONFIRMADO] O capítulo deverá tratar do reconhecimento da estrutura competitiva do mercado.
+
+[PREMISSA EDITORIAL] Deverá abordar delimitação de mercado, identificação de concorrentes diretos e indiretos, segmentos, atores relevantes, posicionamentos e critérios para priorização dos concorrentes que merecem acompanhamento.
+
+Capítulo 5 — Monitoramento da Concorrência e Fontes de Informação Estratégica
+
+[CONFIRMADO] O capítulo deverá desenvolver procedimentos de acompanhamento sistemático dos concorrentes.
+
+[PREMISSA EDITORIAL] Deverá discutir fontes públicas, institucionais, comerciais e digitais de informação, critérios de confiabilidade, atualização e relevância, além da necessidade de utilização ética e lícita das informações.
+
+Capítulo 6 — Métodos e Ferramentas de Análise Competitiva
+
+[CONFIRMADO] O capítulo deverá apresentar métodos capazes de transformar dados coletados em interpretações competitivas.
+
+[PREMISSA EDITORIAL] Poderá incluir técnicas de comparação, análise de posicionamento, benchmarking competitivo, análise de forças competitivas, matrizes e outras ferramentas compatíveis com problemas de inteligência de mercado, desde que sua aplicação seja explicada criticamente e não apenas apresentada como modelo pronto.
+
+Capítulo 7 — Relatórios Gerenciais, Dashboards e Visualização para Apoio à Decisão
+
+[CONFIRMADO] O capítulo deverá tratar da comunicação dos resultados produzidos pelo processo de inteligência.
+
+[PREMISSA EDITORIAL] Deverá abordar seleção de indicadores, síntese de informações, construção de relatórios executivos, princípios de dashboards, visualização de dados e adaptação da apresentação ao perfil e às necessidades do tomador de decisão.
+
+Capítulo 8 — Tomada de Decisão Baseada em Dados e Inteligência Competitiva Aplicada
+
+[CONFIRMADO] O capítulo deverá integrar os conhecimentos desenvolvidos anteriormente e direcioná-los à decisão.
+
+[PREMISSA EDITORIAL] Deverá explorar como evidências provenientes da inteligência de mercado podem apoiar escolhas estratégicas, reduzir incertezas, comparar alternativas e identificar oportunidades e ameaças, reconhecendo também os limites dos dados e das análises.
+
+Conclusão
+
+[CONFIRMADO] A conclusão encerrará a estrutura do ebook.
+
+[PREMISSA EDITORIAL] Deverá sintetizar a inteligência de mercado como processo contínuo que conecta necessidades estratégicas, coleta de informações, análise, comunicação e decisão, retomando a relação entre monitoramento competitivo e capacidade organizacional de responder ao mercado.
+
+
+5. Diretrizes acadêmicas, metodológicas, bibliográficas e editoriais
+
+[PREMISSA EDITORIAL] A abordagem deverá ser acadêmica e aplicada, equilibrando fundamentação conceitual, métodos de análise e situações de utilização profissional.
+
+[PREMISSA EDITORIAL] O eixo central deverá ser a transformação de dados e informações de mercado em inteligência útil para decisões, evitando reduzir a disciplina a uma apresentação isolada de ferramentas.
+
+[PREMISSA EDITORIAL] Os métodos e instrumentos deverão ser apresentados em função dos problemas que ajudam a analisar. Sempre que pertinente, deverão ser explicitados finalidade, forma de utilização, limitações e condições de interpretação.
+
+[PREMISSA EDITORIAL] O ebook deverá enfatizar a qualidade e confiabilidade das informações, distinguindo coleta, tratamento, análise, interpretação e decisão.
+
+[PREMISSA EDITORIAL] O monitoramento da concorrência deverá ser tratado dentro de parâmetros éticos e legais, utilizando informações obtidas de maneira legítima e evitando qualquer associação entre inteligência competitiva e práticas ilícitas de obtenção de informações.
+
+[COMPLEMENTO PROPOSTO] Estudos de caso e situações hipotéticas poderão acompanhar problemas como entrada de um novo concorrente, mudança de posicionamento, alteração de preços, lançamento de produtos, transformação de canais ou identificação de oportunidades de mercado.
+
+[COMPLEMENTO PROPOSTO] Atividades poderão envolver definição de necessidades de inteligência, identificação e avaliação de fontes, mapeamento de concorrentes, aplicação de métodos de análise, elaboração de sínteses executivas e interpretação de dashboards ou indicadores para tomada de decisão.
+
+[PREMISSA EDITORIAL] Os recursos visuais deverão possuir função educacional e poderão incluir representações do ciclo da inteligência de mercado, mapas competitivos, estruturas de monitoramento, matrizes analíticas, fluxos de informação, exemplos de dashboards e modelos conceituais que sintetizem relações importantes.
+
+[PREMISSA EDITORIAL] O texto deverá utilizar linguagem acadêmica clara, terminologia precisa e explicações progressivas, evitando tanto superficialidade quanto complexidade técnica desnecessária.
+
+[PREMISSA EDITORIAL] A bibliografia deverá combinar literatura acadêmica pertinente, obras reconhecidas nas áreas de estratégia, inteligência competitiva, pesquisa e análise de mercado e fontes institucionais confiáveis quando forem necessárias informações metodológicas ou regulatórias.
+
+[PREMISSA EDITORIAL] Nenhuma referência bibliográfica, dado, norma, legislação ou estatística deverá ser inventada. As referências efetivamente utilizadas no desenvolvimento deverão ser verificáveis e incluídas posteriormente na bibliografia final.
+
+[PREMISSA EDITORIAL] Na ausência de orientação institucional específica, poderá ser utilizado o sistema de citação autor-data.
+
+[PENDENTE] Não foram fornecidos autores obrigatórios, bibliografia institucional, normas específicas da instituição, legislação obrigatória ou padrão formal de referências.
+
+[PREMISSA EDITORIAL] A identidade visual deverá utilizar fundo branco #FFFFFF, azul-escuro profundo como cor estrutural principal, cinza-grafite para textos, linhas e detalhes, cinzas médio e claro para áreas secundárias e verde-petróleo suave apenas como destaque pontual. A tipografia deverá ser sans serif, limpa, moderna e legível, com hierarquia clara e composição sem excesso de elementos decorativos.
+
+[PREMISSA EDITORIAL] Imagens, gráficos, diagramas e dashboards deverão ser utilizados apenas quando contribuírem para compreensão, análise ou síntese dos conceitos, evitando recursos puramente decorativos.

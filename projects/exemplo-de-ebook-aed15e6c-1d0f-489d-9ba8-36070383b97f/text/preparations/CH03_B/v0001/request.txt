@@ -1,0 +1,162 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade CH03_B conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+unit_id: CH03_B
+ordem: 7
+caracteres_com_espacos: 9000..10000
+continuity_from: CH03_A
+headings_obrigatorios: Exercícios analíticos e aplicados
+headings_proibidos: nenhum
+heading_final: Exercícios analíticos e aplicados
+listas_permitidas: não
+</especificacao_unidade>
+
+<contexto_da_unidade>
+# CAPÍTULO 3 — CICLO DA INTELIGÊNCIA DE MERCADO: COLETA, TRATAMENTO, ANÁLISE E DISSEMINAÇÃO
+
+## Função educacional
+
+Apresentar inteligência de mercado como processo contínuo.
+
+## Objetivo de aprendizagem
+
+Estruturar um fluxo de inteligência desde a demanda até o uso da informação.
+
+## Conteúdos centrais
+
+### 1. Planejamento da inteligência
+
+* problema;
+* pergunta;
+* usuário;
+* prazo;
+* fontes;
+* produto esperado.
+
+### 2. Coleta
+
+Obtenção sistemática de informações relevantes.
+
+### 3. Tratamento
+
+* organização;
+* classificação;
+* padronização;
+* eliminação de duplicidades;
+* contextualização.
+
+### 4. Validação
+
+Avaliação de:
+
+* origem;
+* consistência;
+* atualidade;
+* confirmação por outras fontes.
+
+### 5. Análise
+
+Identificação de:
+
+* padrões;
+* relações;
+* diferenças;
+* tendências;
+* sinais;
+* explicações possíveis.
+
+### 6. Síntese
+
+Transformação da análise em informação compreensível para o usuário.
+
+### 7. Disseminação
+
+Entrega da inteligência de acordo com público, urgência e finalidade.
+
+### 8. Feedback
+
+Verificar se a inteligência respondeu à necessidade original.
+
+### 9. Atualização contínua
+
+O ciclo como processo recorrente.
+
+## Atividade
+
+**“Desenho de um ciclo de inteligência”**
+
+O estudante deverá construir o fluxo necessário para responder a uma demanda gerencial.
+
+## Evidência
+
+Mapa do processo contendo entrada, etapas, responsáveis, fontes e produto de inteligência.
+
+## Recurso visual principal
+
+**Título:** Ciclo da Inteligência de Mercado.
+
+Planejamento → Coleta → Tratamento → Análise → Disseminação → Feedback → novo ciclo.
+
+## Recurso visual complementar
+
+**Título:** Onde a inteligência pode falhar.
+
+Mostrar pontos críticos:
+
+* pergunta inadequada;
+* fonte ruim;
+* informação desatualizada;
+* análise enviesada;
+* comunicação insuficiente.
+
+## Conexão
+
+Definido o processo, o estudante avançará para o objeto principal da observação: o mercado e sua estrutura competitiva.
+
+---
+
+</contexto_da_unidade>
+
+<continuidade>
+<unidade_anterior id="CH03_A">
+Transformar necessidades informacionais em um processo operacional exige definir como a inteligência será produzida desde o surgimento da demanda até o retorno de seus resultados ao usuário. O ciclo de inteligência organiza essa passagem por meio de atividades interdependentes de planejamento, coleta, tratamento, validação, análise, síntese, disseminação e feedback. A representação em etapas facilita a compreensão, mas não implica execução rigidamente linear. Novas evidências podem exigir revisão da pergunta, fontes inicialmente suficientes podem revelar lacunas e análises preliminares podem demandar coleta adicional. O ciclo deve ser entendido como estrutura de coordenação e controle capaz de se adaptar às condições do problema.
+
+O planejamento constitui o primeiro momento dessa organização porque traduz a necessidade decisória em parâmetros de trabalho. Uma demanda bem formulada precisa indicar qual problema está sendo enfrentado, qual pergunta deverá ser respondida, quem utilizará o resultado, em que prazo a inteligência será necessária, que fontes parecem pertinentes e qual produto se espera ao final. Esses elementos orientam decisões posteriores. Se a pergunta não estiver clara, a coleta tende a se expandir sem limite; se o usuário não estiver identificado, a síntese pode apresentar nível inadequado de detalhe; se o prazo não for conhecido, refinamentos podem chegar tarde demais para influenciar a decisão.
+
+Planejar também significa reconhecer restrições antes que se convertam em falhas. Determinada análise pode depender de informações indisponíveis, bases de difícil acesso ou indicadores atualizados apenas depois da decisão. Nessas circunstâncias, a equipe precisa ajustar expectativas e explicitar quais perguntas podem ser respondidas com segurança. Choo (2002) destaca que organizações lidam com ambientes marcados por ambiguidade e informação incompleta, tornando inadequada a expectativa de converter toda necessidade decisória em certeza. O planejamento deve antecipar essa condição, estabelecer prioridades e indicar graus possíveis de confiança.
+
+A coleta inicia a obtenção sistemática das informações necessárias, mas sua qualidade depende diretamente das escolhas anteriores. Fontes não devem ser selecionadas apenas porque são conhecidas ou fáceis de consultar. Uma pergunta sobre expansão de concorrentes pode exigir documentos corporativos, registros públicos, anúncios de vagas, comunicação institucional e informações setoriais; uma pergunta sobre mudanças no comportamento de clientes demandará outras evidências. O princípio central é que a fonte seja escolhida em função da questão. Quanto mais específica a necessidade, maior a possibilidade de definir o que coletar e quando interromper a busca.
+
+A sistematicidade é especialmente importante no monitoramento contínuo. Registros irregulares dificultam comparações temporais e podem produzir conclusões distorcidas. No acompanhamento de preços, por exemplo, observações ocasionais não permitem distinguir movimentos duradouros de promoções pontuais. A periodicidade precisa corresponder à velocidade do fenômeno: variáveis dinâmicas podem exigir acompanhamento frequente, enquanto mudanças estruturais podem ser observadas em intervalos maiores. Coletar sistematicamente não significa coletar incessantemente, mas manter regularidade suficiente para tornar as informações comparáveis.
+
+O volume obtido durante a coleta ainda não constitui uma base pronta para análise. Informações chegam em formatos, unidades, datas e níveis de detalhamento distintos. O tratamento é responsável por torná-las organizáveis e comparáveis, incluindo classificação, padronização, identificação de duplicidades, registro de origem e contextualização. O mesmo anúncio pode ser reproduzido por diferentes veículos; contabilizar todas as reproduções como confirmações independentes criaria uma impressão artificial de robustez. Reconhecer a origem comum evita que repetição seja confundida com triangulação.
+
+Padronizar exige atenção ao significado das variáveis. Dois relatórios podem usar o mesmo termo para medir fenômenos diferentes, enquanto fontes distintas podem apresentar valores em períodos, moedas, territórios ou categorias incompatíveis. A contextualização preserva elementos necessários à interpretação: um preço sem data, canal, região ou condição promocional pode tornar-se inútil; uma declaração pública sem autoria e circunstância perde parte de seu significado. O tratamento interfere diretamente na validade das análises e na possibilidade de reconstruir o percurso da informação.
+
+Depois do tratamento, a validação avalia a qualidade das evidências disponíveis. Origem, consistência, atualidade e possibilidade de confirmação constituem dimensões fundamentais. Uma fonte oficial pode ter elevada autoridade sobre determinados fatos e ainda ser insuficiente para interpretar seus efeitos. Uma publicação especializada pode oferecer contexto relevante, mas depender de informações não verificadas. Uma base historicamente confiável pode estar desatualizada para uma decisão de curto prazo. A avaliação deve considerar a adequação da fonte ao tipo de afirmação que se pretende sustentar.
+
+A consistência interna também merece exame. Valores incompatíveis, mudanças metodológicas não documentadas ou afirmações que contradizem evidências robustas devem gerar investigação. Contradição não significa necessariamente erro: fontes podem medir dimensões distintas ou captar momentos diferentes do fenômeno. Quando a divergência não puder ser resolvida, a incerteza deve permanecer explícita. A triangulação contribui para esse controle ao confrontar informações de fontes independentes. Sua lógica não é contar quantas vezes uma afirmação aparece, mas verificar se evidências distintas convergem. Confirmar um fato, porém, não equivale a confirmar sua interpretação.
+
+É nessa passagem que a análise adquire centralidade. Analisar significa procurar padrões, relações, diferenças, tendências, sinais e explicações possíveis nas informações validadas. O trabalho deixa de perguntar apenas o que ocorreu e passa a investigar o que a combinação das evidências pode significar. Uma sequência de reduções de preço, mudanças de comunicação e expansão de canal pode sugerir reposicionamento competitivo, mas essa hipótese precisa ser confrontada com alternativas, como ajuste temporário de estoque, resposta a pressões de demanda ou tentativa de defender participação.
+
+A qualidade analítica depende da capacidade de manter separadas evidência e explicação. Kahneman, Sibony e Sunstein (2021) chamam atenção para a variabilidade e os vieses presentes em julgamentos humanos, reforçando a importância de procedimentos que tornem inferências examináveis. Na inteligência de mercado, isso implica registrar quais observações sustentam cada hipótese, identificar evidências contrárias e reconhecer explicações concorrentes. A primeira narrativa plausível não deve ser automaticamente convertida em conclusão. Quanto maior o impacto da decisão, maior a necessidade de examinar alternativas.
+
+Tendências também exigem cuidado. Uma variação observada durante poucos períodos pode representar apenas oscilação, enquanto uma mudança consistente ao longo do tempo pode indicar transformação relevante. O analista precisa considerar duração, intensidade, base de comparação e fatores externos. Diferenças entre concorrentes só adquirem significado quando relacionadas a dimensões relevantes para o mercado analisado. Comparações indiscriminadas produzem tabelas extensas, mas pouco conhecimento. O objetivo da análise é reduzir complexidade de maneira argumentada e conectar evidências às perguntas previamente definidas.
+
+A síntese começa quando os resultados analíticos precisam ser convertidos em uma estrutura compreensível para o usuário. Nem toda evidência utilizada durante a investigação deve aparecer com o mesmo peso no produto final. É necessário identificar a mensagem principal, selecionar os elementos que a sustentam, apresentar incertezas e demonstrar as implicações mais relevantes. Síntese não significa eliminar detalhes arbitrariamente, mas hierarquizar informação segundo sua importância decisória. A comunicação executiva deve concentrar-se nos achados capazes de alterar julgamento ou ação.
+
+Essa transformação exige preservar rastreabilidade. Mesmo quando o produto final é conciso, deve ser possível retornar às evidências que sustentaram a conclusão. A síntese torna-se frágil quando simplifica tanto o percurso que já não permite distinguir fato, interpretação e hipótese. Registros internos, documentação de fontes e manutenção das premissas analíticas fazem parte da qualidade do ciclo, ainda que não apareçam integralmente na comunicação entregue ao gestor.
+
+A disseminação coloca a inteligência à disposição de quem precisa utilizá-la. Formato, momento e nível de detalhamento devem corresponder à finalidade. Uma mudança competitiva com efeito potencial imediato pode exigir alerta breve seguido de análise aprofundada; um estudo de entrada em mercado pode demandar documento estruturado e discussão com gestores. Entregar informação correta no momento inadequado reduz seu valor. Da mesma forma, um produto tecnicamente sofisticado perde efetividade se o usuário não consegue identificar sua implicação principal.
+
+O ciclo não termina com a entrega. O feedback permite verificar se a inteligência respondeu à pergunta original, se o produto foi compreensível, se novas lacunas surgiram e se a decisão gerou outras necessidades informacionais. Uma resposta pode revelar que a pergunta inicial estava incompleta. A análise de um concorrente, por exemplo, pode mostrar que o fator decisivo não é sua política de preços, mas uma mudança de canal que altera o acesso ao cliente. Nesse caso, o ciclo incorpora a descoberta e redefine o foco.
+
+Essa recorrência torna a atualização contínua um componente estrutural da inteligência de mercado. Ambientes competitivos mudam, fontes são renovadas, hipóteses perdem validade e decisões alteram as condições que precisam ser monitoradas. O processo retorna ao planejamento com conhecimento acumulado e perguntas mais precisas. Assim, o ciclo não se encerra depois da disseminação, mas funciona como mecanismo de aprendizagem organizacional no qual cada rodada pode modificar necessidades, fontes, prioridades e critérios de análise.
+
+Os principais pontos de falha aparecem quando uma dessas conexões é rompida. Uma pergunta inadequada compromete a investigação; uma fonte frágil contamina evidências posteriores; informação desatualizada pode produzir diagnóstico sobre um ambiente que já mudou; análise enviesada pode converter fatos consistentes em interpretação equivocada; comunicação insuficiente pode impedir que um resultado tecnicamente robusto influencie a decisão. A confiabilidade da inteligência depende menos da perfeição isolada de uma etapa do que da coerência entre todas elas. Com o fluxo definido, torna-se possível avançar para a questão sobre aquilo que deverá ser observado de maneira sistemática.
+</unidade_anterior>
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

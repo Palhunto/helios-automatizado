@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AcademicQuestionnaire",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_id", "version", "prompt", "questions"],
+  "$defs": {
+    "questionBase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question_number", "canonical_question_number", "canonical_text", "observed_text", "wording_status"],
+      "properties": {
+        "question_number": {"type": "integer", "minimum": 1, "maximum": 5},
+        "canonical_question_number": {"type": "integer", "minimum": 1, "maximum": 5},
+        "canonical_text": {"type": "string", "minLength": 1},
+        "observed_text": {"type": "string", "minLength": 1},
+        "wording_status": {"enum": ["normalized_match", "review_confirmed"]}
+      }
+    }
+  },
+  "properties": {
+    "project_id": {"type": "string", "minLength": 1},
+    "version": {"type": "integer", "minimum": 1},
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": {"const": "omega_academic_planning"},
+        "version": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/questionBase"}, {"properties": {"question_number": {"const": 1}, "canonical_question_number": {"const": 1}}}]},
+        {"allOf": [{"$ref": "#/$defs/questionBase"}, {"properties": {"question_number": {"const": 2}, "canonical_question_number": {"const": 2}}}]},
+        {"allOf": [{"$ref": "#/$defs/questionBase"}, {"properties": {"question_number": {"const": 3}, "canonical_question_number": {"const": 3}}}]},
+        {"allOf": [{"$ref": "#/$defs/questionBase"}, {"properties": {"question_number": {"const": 4}, "canonical_question_number": {"const": 4}}}]},
+        {"allOf": [{"$ref": "#/$defs/questionBase"}, {"properties": {"question_number": {"const": 5}, "canonical_question_number": {"const": 5}}}]}
+      ],
+      "items": false
+    }
+  }
+}

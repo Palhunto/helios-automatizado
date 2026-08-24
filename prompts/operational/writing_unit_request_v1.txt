@@ -1,0 +1,13 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade {{UNIT_ID}} conforme a especificação operacional abaixo.
+
+<especificacao_unidade>
+{{UNIT_SPEC}}
+</especificacao_unidade>
+
+<continuidade>
+{{CONTINUITY}}
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

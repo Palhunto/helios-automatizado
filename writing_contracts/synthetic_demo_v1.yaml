@@ -1,0 +1,27 @@
+id: synthetic_demo
+version: 1
+separator: "\n---\n"
+validation:
+  allow_lists: false
+  forbidden_phrases: []
+  linguistic_warnings:
+    repeated_first_word: true
+    repeated_initial: true
+    repeated_article: true
+    initial_run_length: 3
+    articles: [o, a, os, as, um, uma]
+units:
+  - unit_id: START
+    order: 10
+    min_characters: 40
+    max_characters: 240
+  - unit_id: BODY
+    order: 20
+    min_characters: 60
+    max_characters: 320
+    continuity_from: [START]
+  - unit_id: END
+    order: 30
+    min_characters: 30
+    max_characters: 180
+    continuity_from: [BODY]

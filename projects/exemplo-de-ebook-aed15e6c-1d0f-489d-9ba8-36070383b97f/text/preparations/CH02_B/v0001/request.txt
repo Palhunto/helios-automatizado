@@ -1,0 +1,140 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade CH02_B conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+unit_id: CH02_B
+ordem: 5
+caracteres_com_espacos: 9000..10000
+continuity_from: CH02_A
+headings_obrigatorios: Exercícios analíticos e aplicados
+headings_proibidos: nenhum
+heading_final: Exercícios analíticos e aplicados
+listas_permitidas: não
+</especificacao_unidade>
+
+<contexto_da_unidade>
+# CAPÍTULO 2 — ALINHAMENTO DA INTELIGÊNCIA DE MERCADO AOS OBJETIVOS DE NEGÓCIO
+
+## Função educacional
+
+Evitar a coleta de informações desconectada das prioridades organizacionais.
+
+## Objetivo de aprendizagem
+
+Converter problemas e objetivos empresariais em necessidades específicas de inteligência.
+
+## Conteúdos centrais
+
+### 1. O ponto de partida deve ser a decisão
+
+Inteligência não começa pela ferramenta nem pela fonte.
+
+### 2. Objetivos estratégicos e necessidades informacionais
+
+Exemplos:
+
+* crescer;
+* defender participação;
+* entrar em mercado;
+* reposicionar produto;
+* avaliar concorrente;
+* ajustar preço;
+* desenvolver canal.
+
+### 3. Perguntas de inteligência
+
+Transformação de problemas genéricos em questões investigáveis.
+
+### 4. Perguntas ruins e perguntas úteis
+
+Evitar demandas como “descubra tudo sobre o concorrente”.
+
+### 5. Priorização
+
+Critérios:
+
+* impacto;
+* urgência;
+* relevância;
+* incerteza;
+* possibilidade de ação.
+
+### 6. Usuário da inteligência
+
+Identificar quem decidirá e qual nível de detalhe será necessário.
+
+### 7. Necessidades permanentes e necessidades pontuais
+
+Distinguir monitoramento contínuo de projetos específicos.
+
+## Aplicação
+
+Converter um objetivo empresarial em conjunto de perguntas de inteligência.
+
+## Atividade
+
+**“Do problema à pergunta”**
+
+Situação: uma empresa considera entrar em um novo segmento.
+
+O estudante deverá formular perguntas relacionadas a:
+
+* tamanho e dinâmica;
+* concorrentes;
+* posicionamento;
+* canais;
+* barreiras;
+* riscos;
+* oportunidades.
+
+## Evidência
+
+Conjunto priorizado de perguntas de inteligência.
+
+## Recurso visual
+
+**Título:** Da estratégia à necessidade informacional.
+
+Objetivo de negócio → Decisão → Pergunta → Informação necessária → Análise.
+
+## Conexão com o próximo capítulo
+
+Depois de definir o que a organização precisa saber, deve-se criar um processo para produzir essa inteligência.
+
+---
+
+</contexto_da_unidade>
+
+<continuidade>
+<unidade_anterior id="CH02_A">
+﻿A finalidade organizacional é o ponto em que a inteligência de mercado deixa de ser apenas uma capacidade informacional e passa a responder a uma necessidade concreta de gestão. Se o capítulo anterior estabeleceu que coleta, monitoramento, análise e inteligência não são atividades equivalentes, a consequência imediata é que nenhuma delas deveria começar pela ferramenta disponível ou pela fonte mais acessível. O ponto de partida deve ser uma decisão, um problema ou um objetivo cuja realização dependa de compreender melhor o ambiente. Essa inversão é decisiva: em vez de perguntar primeiro quais dados podem ser obtidos, a organização precisa esclarecer o que pretende decidir e quais incertezas dificultam essa escolha.
+
+Uma empresa que pretende crescer, por exemplo, pode perseguir expansão geográfica, aumento de participação em mercados atuais, entrada em novos segmentos, ampliação de portfólio ou desenvolvimento de canais. Cada trajetória produz necessidades informacionais diferentes. O objetivo “crescer” é estratégico, mas ainda é amplo demais para orientar coleta e análise. Se a alternativa considerada for entrar em uma nova região, torna-se necessário compreender demanda potencial, estrutura competitiva, barreiras locais, comportamento de canais e requisitos regulatórios. Se o crescimento depender de elevar participação em um mercado já atendido, outras questões ganham prioridade, como causas de perda de clientes, elasticidade a preço, força dos concorrentes e segmentos nos quais a empresa possui maior capacidade de diferenciação.
+
+Essa passagem do objetivo para a necessidade de inteligência evita um problema frequente: transformar a área de inteligência em receptora de demandas vagas. Solicitações como “analise o mercado”, “veja o que os concorrentes estão fazendo” ou “descubra oportunidades” parecem relevantes, mas não definem uma questão investigável. Elas deixam em aberto o horizonte temporal, o escopo, o usuário da análise e o tipo de decisão que poderá ser influenciado. Como consequência, o trabalho tende a acumular informações sem critério claro de suficiência. A qualidade da inteligência depende, portanto, da capacidade de decompor problemas amplos em perguntas específicas, capazes de direcionar fontes, métodos e critérios de interpretação. Essa preocupação dialoga com Choo (2002), ao relacionar uso organizacional da informação, construção de sentido e tomada de decisão.
+
+A formulação de perguntas de inteligência cumpre exatamente essa função. Perguntas bem construídas conectam uma preocupação gerencial a evidências que podem ser buscadas e analisadas. Uma empresa interessada em reposicionar um produto não precisa apenas saber “como o mercado está”. Pode precisar compreender em quais atributos os concorrentes concentram sua proposta de valor, quais segmentos demonstram maior sensibilidade a esses atributos, como os preços se distribuem entre posicionamentos e quais espaços de diferenciação permanecem pouco explorados. A pergunta transforma uma intenção genérica em estrutura de investigação e também estabelece limites para evitar que a coleta se expanda indefinidamente.
+
+Nesse processo, objetivos estratégicos e perguntas de inteligência não são sinônimos. O objetivo expressa o resultado desejado; a pergunta identifica o que a organização precisa compreender para avaliar como agir. Defender participação de mercado, por exemplo, pode exigir investigar se a perda recente está associada a preço, canal, produto, atendimento, novos entrantes ou mudanças de preferência. Ajustar preço pode demandar conhecimento sobre elasticidade, posicionamento relativo, reação provável dos concorrentes e impacto sobre margens. Desenvolver um canal pode exigir compreender comportamento de compra, economia do canal, cobertura dos competidores e possíveis conflitos com estruturas existentes. A inteligência se torna relevante justamente quando reduz incertezas ligadas a essas escolhas.
+
+Perguntas ruins geralmente apresentam amplitude excessiva, ambiguidade ou ausência de consequência decisória. “Descubra tudo sobre o concorrente” é um exemplo clássico porque não indica quais dimensões são materialmente relevantes. Mesmo que fosse possível responder de maneira extensa, grande parte das informações não alteraria a escolha do gestor. Uma pergunta mais útil poderia investigar se os movimentos recentes desse concorrente indicam intenção consistente de disputar determinado segmento, quais evidências sustentam essa interpretação e que impacto plausível isso produziria sobre a posição da empresa. Essa formulação ainda admite incerteza, mas permite selecionar sinais, estabelecer comparações e distinguir fatos de hipóteses.
+
+Outra característica de perguntas úteis é a possibilidade de ação. Uma investigação pode ser intelectualmente interessante e ainda possuir baixo valor gerencial se nenhuma decisão puder ser alterada por suas conclusões. Antes de iniciar uma coleta extensa, convém perguntar o que a organização faria de modo diferente caso a resposta fosse positiva, negativa ou inconclusiva. Se qualquer resultado levar à mesma ação, a necessidade daquela investigação deve ser questionada. Esse critério não reduz a inteligência a decisões imediatas; monitoramentos de longo prazo também podem ser relevantes. Contudo, mesmo nesses casos deve existir ligação com uma capacidade de perceber mudanças e revisar decisões quando determinados sinais surgirem.
+
+A priorização torna-se necessária porque recursos analíticos são limitados e o ambiente oferece mais questões possíveis do que uma organização consegue investigar com profundidade. Impacto, urgência, relevância, incerteza e possibilidade de ação fornecem critérios complementares. Uma questão de alto impacto pode merecer atenção mesmo sem urgência imediata, enquanto um evento urgente pode exigir resposta rápida ainda que seu efeito potencial seja moderado. Incerteza também importa: investir grande esforço para confirmar algo já conhecido pode gerar pouco ganho decisório. Em contrapartida, áreas nas quais a organização está prestes a comprometer recursos significativos com baixa compreensão do ambiente tendem a justificar investigação mais intensa.
+
+O usuário da inteligência é outro elemento que modifica a formulação da necessidade. A mesma questão pode exigir produtos diferentes conforme quem decide. Uma diretoria que avalia entrada em mercado pode necessitar de síntese das principais evidências, riscos, alternativas e condições de revisão. Uma equipe responsável por executar a entrada precisará de maior detalhe sobre canais, concorrentes, clientes e operação. O analista não deve confundir aprofundamento técnico com utilidade. Informação adequada é aquela que corresponde ao nível de decisão, ao conhecimento prévio do usuário e ao momento em que a análise será utilizada.
+
+Também é útil separar necessidades pontuais de necessidades permanentes. Algumas decisões geram projetos delimitados, como avaliar a aquisição de uma empresa, testar a entrada em um segmento ou analisar uma mudança específica de preço. Nesses casos, existe uma questão relativamente definida, um horizonte e um produto final. Outras necessidades são recorrentes porque o ambiente precisa ser acompanhado de maneira contínua. Mudanças regulatórias, preços de concorrentes, evolução tecnológica, comportamento de canais ou sinais de entrada de novos atores podem justificar monitoramento permanente. A inteligência madura combina os dois formatos e evita tanto a investigação episódica sem memória quanto o monitoramento contínuo sem finalidade.
+
+A distinção é relevante porque necessidades permanentes não devem ser confundidas com coleta indiscriminada. Monitorar continuamente não significa registrar tudo. É necessário definir quais variáveis funcionam como sinais, com que frequência devem ser observadas e sob quais condições uma mudança exige análise aprofundada. Um indicador de preço pode ser acompanhado semanalmente, por exemplo, enquanto mudanças estruturais em um setor podem exigir avaliação mensal ou trimestral. O desenho deve refletir a velocidade do fenômeno, a importância para a decisão e o custo de perder um sinal relevante. Assim, até mesmo rotinas permanentes permanecem subordinadas a perguntas e critérios previamente estabelecidos.
+
+Considere uma organização que estuda entrar em um novo segmento. A formulação inicial “devemos entrar?” é importante, mas ainda ampla. Para torná-la investigável, é necessário desdobrar o problema em dimensões capazes de produzir evidência: compreender tamanho e dinâmica do segmento, identificar concorrentes e intensidade competitiva, examinar posicionamentos existentes, avaliar canais de acesso, reconhecer barreiras e estimar riscos e oportunidades. Essas dimensões não constituem respostas prontas. Elas organizam a investigação para que diferentes evidências possam convergir em uma avaliação mais consistente da alternativa estratégica.
+
+Ao converter objetivos em necessidades informacionais, a organização estabelece o elo que faltava entre estratégia e produção de inteligência. O objetivo de negócio define a direção; a decisão delimita o problema; a pergunta identifica a incerteza; a informação necessária orienta a coleta; a análise transforma evidências em interpretação. Esse encadeamento reduz desperdício, melhora a relevância do trabalho e cria critérios para avaliar se a inteligência produzida realmente respondeu à necessidade original. Depois que se determina o que precisa ser conhecido, o desafio seguinte é estruturar um processo capaz de produzir essa inteligência de forma confiável, repetível e adequada ao tempo da decisão.
+
+</unidade_anterior>
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

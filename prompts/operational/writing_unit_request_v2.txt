@@ -1,0 +1,17 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade {{UNIT_ID}} conforme a especificação operacional e o recorte acadêmico congelado abaixo.
+
+<especificacao_unidade>
+{{UNIT_SPEC}}
+</especificacao_unidade>
+
+<contexto_da_unidade>
+{{ACADEMIC_CONTEXT}}
+</contexto_da_unidade>
+
+<continuidade>
+{{CONTINUITY}}
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

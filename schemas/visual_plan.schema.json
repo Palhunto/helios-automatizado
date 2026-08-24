@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VisualPlan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "figures"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "figure_id",
+          "order",
+          "number",
+          "name",
+          "section",
+          "exact_position",
+          "main_concept",
+          "conceptual_synthesis",
+          "justification",
+          "objective",
+          "visual_type",
+          "complexity",
+          "generation_prompt"
+        ],
+        "properties": {
+          "figure_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "chapter": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "maximum": 8
+          },
+          "section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exact_position": {
+            "type": "string",
+            "minLength": 1
+          },
+          "main_concept": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conceptual_synthesis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "justification": {
+            "type": "string",
+            "minLength": 1
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "complexity": {
+            "enum": [
+              "Editorial direta",
+              "Editorial estruturada",
+              "Síntese conceitual"
+            ]
+          },
+          "generation_prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "anchor_text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "position_relative_to_anchor": {
+            "enum": [
+              "before",
+              "after",
+              null
+            ]
+          },
+          "anchor_before": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "anchor_after": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "anchor_validation_status": {
+            "enum": [
+              "unvalidated",
+              "valid",
+              "ambiguous",
+              "missing",
+              "invalid"
+            ]
+          },
+          "renderer": {
+            "enum": [
+              "unassigned",
+              "svg",
+              "image_ai",
+              "manual_review"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

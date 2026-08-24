@@ -1,0 +1,20 @@
+Continue na mesma conversa em que o contexto de redação foi carregado e confirmado. Não reinicie o checkpoint de contexto e não produza resumo.
+
+Produza exclusivamente a unidade INTRO conforme a especificação operacional abaixo.
+
+<especificacao_unidade>
+unit_id: INTRO
+ordem: 1
+caracteres_com_espacos: 9000..10000
+continuity_from: nenhuma
+headings_obrigatorios: nenhum
+headings_proibidos: Exercícios analíticos e aplicados
+heading_final: nenhum
+listas_permitidas: não
+</especificacao_unidade>
+
+<continuidade>
+Nenhuma dependência textual declarada pelo contract.
+</continuidade>
+
+Entregue somente o texto da unidade solicitada.

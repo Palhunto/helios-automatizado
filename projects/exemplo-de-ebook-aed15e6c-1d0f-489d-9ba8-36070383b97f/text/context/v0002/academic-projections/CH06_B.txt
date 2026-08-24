@@ -1,0 +1,96 @@
+# CAPÍTULO 6 — MÉTODOS E FERRAMENTAS DE ANÁLISE COMPETITIVA
+
+## Função educacional
+
+Desenvolver capacidade analítica, evitando a aplicação mecânica de matrizes.
+
+## Objetivo de aprendizagem
+
+Selecionar e aplicar métodos de análise de acordo com a questão estratégica investigada.
+
+## Conteúdos centrais
+
+### 1. Ferramenta não substitui pergunta
+
+O método deve ser selecionado após a definição do problema.
+
+### 2. Benchmarking competitivo
+
+Comparação estruturada entre organizações ou práticas.
+
+### 3. Perfil do concorrente
+
+Dimensões possíveis:
+
+* oferta;
+* posicionamento;
+* preço;
+* clientes;
+* canais;
+* recursos;
+* movimentos recentes.
+
+### 4. Grupos estratégicos
+
+Identificação de empresas com padrões competitivos semelhantes.
+
+### 5. Análise das forças competitivas
+
+[COMPLEMENTO PROPOSTO] Utilização do modelo das cinco forças de Michael Porter quando compatível com o problema analisado.
+
+### 6. Análise de posicionamento competitivo
+
+Comparação por atributos relevantes para o mercado.
+
+### 7. Matrizes comparativas
+
+Utilização de critérios claramente definidos.
+
+### 8. Tendências e sinais
+
+Separar:
+
+* evidência observada;
+* interpretação;
+* hipótese;
+* implicação.
+
+### 9. Construção de cenários simples
+
+Considerar possíveis movimentos futuros sem tratar projeções como previsões certas.
+
+### 10. Limites das ferramentas
+
+Nenhuma matriz deverá ser apresentada como representação completa da realidade.
+
+## Atividade
+
+**“Análise de três concorrentes”**
+
+O estudante aplica pelo menos dois métodos ao mesmo conjunto de organizações e compara o que cada método revela.
+
+## Evidência
+
+Análise estruturada com:
+
+* dados;
+* critérios;
+* interpretação;
+* limitações;
+* conclusão.
+
+## Recurso visual
+
+**Título:** Da pergunta ao método analítico.
+
+Pergunta → tipo de evidência → método → interpretação → implicação.
+
+## Recurso complementar
+
+Matriz comparativa de concorrentes apresentada como exemplo didático.
+
+## Conexão
+
+Uma análise tecnicamente boa pode perder valor caso não seja comunicada adequadamente ao gestor.
+
+---

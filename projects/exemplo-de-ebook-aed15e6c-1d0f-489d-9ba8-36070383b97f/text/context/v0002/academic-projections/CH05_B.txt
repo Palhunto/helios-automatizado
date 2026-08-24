@@ -1,0 +1,115 @@
+# CAPÍTULO 5 — MONITORAMENTO DA CONCORRÊNCIA E FONTES DE INFORMAÇÃO ESTRATÉGICA
+
+## Função educacional
+
+Transformar observação ocasional em monitoramento estruturado.
+
+## Objetivo de aprendizagem
+
+Selecionar fontes e organizar um processo contínuo de acompanhamento competitivo.
+
+## Conteúdos centrais
+
+### 1. Monitoramento como processo
+
+Diferença entre consulta pontual e acompanhamento sistemático.
+
+### 2. O que monitorar
+
+Exemplos:
+
+* produtos;
+* preços;
+* posicionamento;
+* canais;
+* campanhas;
+* contratações;
+* expansão;
+* parcerias;
+* tecnologia;
+* comunicação;
+* investimentos;
+* mudanças organizacionais.
+
+### 3. Fontes públicas
+
+* websites corporativos;
+* relatórios;
+* documentos institucionais;
+* bases públicas;
+* órgãos oficiais;
+* publicações especializadas.
+
+### 4. Fontes comerciais e setoriais
+
+* estudos;
+* bases especializadas;
+* associações;
+* eventos;
+* pesquisas.
+
+### 5. Fontes digitais
+
+Conteúdo publicado publicamente por organizações, executivos e mercado.
+
+### 6. Avaliação das fontes
+
+Critérios:
+
+* confiabilidade;
+* atualidade;
+* precisão;
+* independência;
+* cobertura;
+* rastreabilidade.
+
+### 7. Triangulação
+
+Evitar conclusões relevantes apoiadas em uma única fonte frágil.
+
+### 8. Frequência de monitoramento
+
+Diferenciar informações que exigem:
+
+* acompanhamento contínuo;
+* semanal;
+* mensal;
+* trimestral;
+* eventual.
+
+### 9. Sinais competitivos
+
+Distinguir fato isolado de padrão significativo.
+
+### 10. Aspectos éticos
+
+Reforçar práticas legítimas de inteligência.
+
+## Atividade
+
+**“Plano de monitoramento competitivo”**
+
+O estudante deverá escolher concorrentes prioritários e definir:
+
+* variável monitorada;
+* fonte;
+* frequência;
+* responsável;
+* sinal de alerta;
+* finalidade decisória.
+
+## Evidência
+
+Plano estruturado de monitoramento.
+
+## Recurso visual
+
+**Título:** Arquitetura de monitoramento da concorrência.
+
+Concorrente → Variável → Fonte → Frequência → Sinal → Interpretação → Ação.
+
+## Conexão
+
+A coleta e o monitoramento produzem matéria-prima. O próximo capítulo ensina a transformá-la em interpretação.
+
+---

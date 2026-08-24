@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CitationLedger",
+  "description": "Detection ledger only; it is not bibliographic Reference Reconciliation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["boundary", "extraction_rule_version", "occurrences"],
+  "properties": {
+    "boundary": {"const": "Citation Ledger != Reference Reconciliation"},
+    "extraction_rule_version": {"type": "integer", "minimum": 1},
+    "occurrences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["unit_id", "ordinal", "raw_citation_text", "observed_author", "normalized_author", "year_text", "parsed_year", "start_offset", "end_offset"],
+        "properties": {
+          "unit_id": {"type": "string", "minLength": 1},
+          "ordinal": {"type": "integer", "minimum": 1},
+          "raw_citation_text": {"type": "string", "minLength": 1},
+          "observed_author": {"type": "string", "minLength": 1},
+          "normalized_author": {"type": "string", "minLength": 1},
+          "year_text": {"type": "string", "pattern": "^[0-9]{4}[a-z]?$"},
+          "parsed_year": {"type": ["integer", "null"], "minimum": 1000, "maximum": 2999},
+          "start_offset": {"type": "integer", "minimum": 0},
+          "end_offset": {"type": "integer", "minimum": 1}
+        }
+      }
+    }
+  }
+}

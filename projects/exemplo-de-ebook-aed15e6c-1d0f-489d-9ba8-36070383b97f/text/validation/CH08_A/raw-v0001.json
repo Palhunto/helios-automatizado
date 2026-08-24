@@ -1,0 +1,1 @@
+{"character_count":9833,"disposition":"review_required","findings":[{"code":"WRITING_REPEATED_FIRST_WORD","evidence":null,"message":"Consecutive paragraphs begin with 'A'","severity":"warning"},{"code":"WRITING_REPEATED_ARTICLE_OPENING","evidence":null,"message":"Consecutive paragraphs begin with articles","severity":"warning"}],"unit_id":"CH08_A"}

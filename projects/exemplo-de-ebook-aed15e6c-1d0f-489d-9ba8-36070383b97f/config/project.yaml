@@ -1,0 +1,31 @@
+project:
+  name: "Exemplo de Ebook"
+  slug: "exemplo-de-ebook"
+
+editorial:
+  discipline: "Disciplina de exemplo"
+  desired_structure: |
+    Descrever a estrutura confirmada dos oito capítulos centrais.
+  additional_materials: []
+
+prompts:
+  academic_planning:
+    id: omega_academic_planning
+    version: 1
+  writing:
+    id: omega_writing
+    version: 1
+  visual_planning:
+    id: omega_visual_planning
+    version: 1
+  image_global_style:
+    id: omega_image_global_style
+    version: 1
+
+outputs:
+  google_docs_id: null
+
+runtime:
+  language: "pt-BR"
+  allow_api_fallback: false
+  browser_automation_enabled: false
