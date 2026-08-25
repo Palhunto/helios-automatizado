@@ -1,0 +1,6 @@
+layouts:
+  - id: helios_pagination_layout
+    version: 1
+    status: active
+    path: helios_pagination_layout_v1.yaml
+    sha256: 206e15338dd708c12665c23b36f38b28efb2a6df67f239f6876ae52325e03390

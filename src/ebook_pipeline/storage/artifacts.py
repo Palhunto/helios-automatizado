@@ -21,6 +21,7 @@ PROJECT_DIRECTORIES = (
     "text/accepted",
     "text/references",
     "text/consolidated",
+    "visual-plan/pagination",
     "visual-plan/raw",
     "visual-plan/accepted",
     "visual-plan/anchors",

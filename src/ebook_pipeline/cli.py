@@ -29,6 +29,7 @@ from ebook_pipeline.core.projects import ProjectService
 from ebook_pipeline.core.recovery import RecoveryService
 from ebook_pipeline.core.runtime_config import ResolvedProjectRuntime
 from ebook_pipeline.logging_setup import configure_logging, log_event
+from ebook_pipeline.pagination.service import PaginationService
 from ebook_pipeline.storage.artifacts import ArtifactStore
 from ebook_pipeline.storage.database import Database
 from ebook_pipeline.writing.models import TextUnitSubmission, WritingUnitRecoveryResult
@@ -42,6 +43,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--pipeline-config", type=Path)
     parser.add_argument("--prompt-registry", type=Path)
     parser.add_argument("--writing-contract-registry", type=Path)
+    parser.add_argument("--pagination-layout-registry", type=Path)
     parser.add_argument("--log-level")
     parser.add_argument("--max-attempts", type=int)
     parser.add_argument("--browser-channel", choices=("chrome", "chromium"))
@@ -184,6 +186,20 @@ def build_parser() -> argparse.ArgumentParser:
     consolidated_show.add_argument("project_id")
     consolidated_show.add_argument("--version", type=int)
 
+    pagination = commands.add_parser("pagination", help="Create canonical local pagination")
+    pagination_commands = pagination.add_subparsers(dest="pagination_command", required=True)
+    pagination_create = pagination_commands.add_parser("create", help="Create or resume snapshot")
+    pagination_create.add_argument("project_id")
+    pagination_create.add_argument("--layout-id", default="helios_pagination_layout")
+    pagination_create.add_argument("--layout-version", type=int, default=1)
+    pagination_show = pagination_commands.add_parser("show", help="Show snapshot manifest")
+    pagination_show.add_argument("project_id")
+    pagination_show.add_argument("--version", type=int)
+    pagination_status = pagination_commands.add_parser("status", help="Show current/stale state")
+    pagination_status.add_argument("project_id")
+    pagination_validate = pagination_commands.add_parser("validate", help="Validate snapshots")
+    pagination_validate.add_argument("project_id")
+
     browser = commands.add_parser("browser", help="Automate ChatGPT Plus through Playwright")
     browser_commands = browser.add_subparsers(dest="browser_command", required=True)
     browser_setup = browser_commands.add_parser(
@@ -318,6 +334,7 @@ def _app_config(args: argparse.Namespace) -> AppConfig:
             "pipeline_config": args.pipeline_config,
             "prompt_registry": args.prompt_registry,
             "writing_contract_registry": args.writing_contract_registry,
+            "pagination_layout_registry": args.pagination_layout_registry,
             "log_level": args.log_level,
             "max_attempts": args.max_attempts,
             "browser_channel": args.browser_channel,
@@ -330,17 +347,26 @@ def _app_config(args: argparse.Namespace) -> AppConfig:
 
 def _services(
     config: AppConfig,
-) -> tuple[ProjectService, RecoveryService, ArtifactStore, AcademicService, WritingService]:
+) -> tuple[
+    ProjectService,
+    RecoveryService,
+    ArtifactStore,
+    AcademicService,
+    WritingService,
+    PaginationService,
+]:
     load_pipeline_config(config.pipeline_config)
     database = Database(config.database_path)
     store = ArtifactStore(config.projects_dir)
     academic = AcademicService(config, database, store)
+    writing = WritingService(config, database, store, academic)
     return (
         ProjectService(config, database, store),
         RecoveryService(config, database, store),
         store,
         academic,
-        WritingService(config, database, store, academic),
+        writing,
+        PaginationService(config, database, store, writing),
     )
 
 
@@ -411,12 +437,14 @@ def _configure_project_log(
 def run(args: argparse.Namespace) -> int:
     config = _app_config(args)
     logger = configure_logging(config.log_level)
-    projects, recovery, store, academic, writing = _services(config)
+    projects, recovery, store, academic, writing, pagination = _services(config)
 
     if args.command == "academic":
         return _run_academic(args, config, projects, store, academic)
     if args.command == "writing":
         return _run_writing(args, config, projects, store, writing)
+    if args.command == "pagination":
+        return _run_pagination(args, config, projects, store, pagination)
     if args.command == "browser":
         return _run_browser(args, config, projects, store, writing)
 
@@ -789,6 +817,46 @@ def _run_writing(
         )
         return 0
     raise AssertionError(f"Unhandled writing command: {command} {action}")
+
+
+def _run_pagination(
+    args: argparse.Namespace,
+    config: AppConfig,
+    projects: ProjectService,
+    store: ArtifactStore,
+    pagination: PaginationService,
+) -> int:
+    project = projects.get(args.project_id)
+    _configure_project_log(config, store, project)
+    command = args.pagination_command
+    if command == "create":
+        snapshot = pagination.create(
+            project.id,
+            layout_id=args.layout_id,
+            layout_version=args.layout_version,
+        )
+        print(_json(asdict(snapshot)))
+        return 0
+    if command == "show":
+        snapshot, manifest = pagination.show(project.id, args.version)
+        print(_json({"manifest": manifest, "snapshot": asdict(snapshot)}))
+        return 0
+    if command == "status":
+        print(_json(pagination.status(project.id)))
+        return 0
+    if command == "validate":
+        issues = pagination.validate(project.id)
+        print(
+            _json(
+                {
+                    "issues": [_issue_payload(issue) for issue in issues],
+                    "project_id": project.id,
+                    "valid": not issues,
+                }
+            )
+        )
+        return 0 if not issues else 5
+    raise AssertionError(f"Unhandled pagination command: {command}")
 
 
 def _run_browser(

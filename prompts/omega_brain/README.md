@@ -16,7 +16,9 @@ Para alterar um prompt:
 
 - `academic_planning_v1.txt`: perguntas padronizadas → respostas consolidadas → planejamento acadêmico.
 - `writing_v1.txt`: carregamento do planejamento + produção das 18 partes.
-- `visual_planning_v1.txt`: seleção e planejamento editorial das figuras.
+- `visual_planning_v1.txt`: snapshot histórico de seleção livre e planejamento editorial das figuras.
+- `visual_planning_v2.txt`: cobertura obrigatória de exatamente uma proposta para cada página
+  elegível dos capítulos 1–8, preservando os critérios qualitativos da V1.
 - `image_global_style_v1.txt`: identidade visual global aplicada às imagens geradas.
 
 ## Importante

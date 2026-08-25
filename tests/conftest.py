@@ -9,6 +9,7 @@ from ebook_pipeline.academic.service import AcademicService
 from ebook_pipeline.config import AppConfig
 from ebook_pipeline.core.projects import ProjectService
 from ebook_pipeline.core.recovery import RecoveryService
+from ebook_pipeline.pagination.service import PaginationService
 from ebook_pipeline.storage.artifacts import ArtifactStore
 from ebook_pipeline.storage.database import Database
 from ebook_pipeline.writing.service import WritingService
@@ -23,6 +24,7 @@ class ServiceBundle:
     recovery: RecoveryService
     academic: AcademicService
     writing: WritingService
+    pagination: PaginationService
 
 
 @pytest.fixture
@@ -49,6 +51,7 @@ def services(tmp_path: Path, repository_root: Path) -> ServiceBundle:
     database = Database(config.database_path)
     store = ArtifactStore(config.projects_dir)
     academic = AcademicService(config, database, store)
+    writing = WritingService(config, database, store, academic)
     return ServiceBundle(
         config=config,
         database=database,
@@ -56,5 +59,6 @@ def services(tmp_path: Path, repository_root: Path) -> ServiceBundle:
         projects=ProjectService(config, database, store),
         recovery=RecoveryService(config, database, store),
         academic=academic,
-        writing=WritingService(config, database, store, academic),
+        writing=writing,
+        pagination=PaginationService(config, database, store, writing),
     )

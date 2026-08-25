@@ -107,8 +107,10 @@ O sistema mantém ledger de citações para apoiar correspondência entre corpo 
 
 O especialista visual:
 - analisa o material inteiro;
-- seleciona apenas conceitos que realmente ganham com síntese visual;
-- evita decoração e quota artificial;
+- recebe um snapshot canônico das páginas elegíveis dos capítulos 1–8;
+- produz exatamente uma proposta para cada página elegível;
+- seleciona, dentro de cada página obrigatória, o conceito com maior ganho pedagógico/editorial;
+- evita decoração e complexidade artificial sem omitir páginas;
 - produz prompts independentes.
 
 Campos canônicos:
@@ -130,8 +132,22 @@ Complexidade:
 - Síntese conceitual
 
 ### Correção canônica
-Não existe regra "uma imagem por página".
-Quantidade menor de imagens fortes é preferível a muitas superficiais.
+O workflow operacional OmegaBrain original prevalece: existe exatamente uma figura para cada página
+elegível dos capítulos 1–8. Introdução, conclusão, referências e páginas externas a esses capítulos
+não participam da cobertura. "Evitar excesso" regula qualidade, densidade e complexidade; não
+autoriza deixar uma página elegível sem proposta.
+
+A paginação é fornecida por `VisualPaginationSnapshot` versionado, ligado por ID e hash à
+`TextConsolidation` exata. Cada página possui `page_key` estável, ordem, capítulo, unidades e
+intervalos verificáveis no texto consolidado. É proibido estimar páginas silenciosamente por número
+de caracteres.
+
+Em M4.0, `helios_pagination_layout@1` fixa A4, margens, tipografia, page breaks e o slot visual das
+páginas elegíveis antes de qualquer imagem. Capítulos CH01–CH08 iniciam nova página por boundary
+estrutural; isso não autoriza injetar `Capítulo N` visível. Headings só alteram o layout quando já
+existem no source e são declarados no layout editorial. Fontes e licenças são assets versionados e
+obrigatórios, sem fallback do sistema. Chromium mede folhas DOM explícitas; o manifest JSON é a
+fonte operacional e o PDF é evidência visual.
 
 ---
 
@@ -142,7 +158,8 @@ A posição editorial precisa ser convertida em localização operacional.
 Após o plano:
 - obter `anchor_text` literal;
 - obter `before|after`;
-- validar no texto consolidado;
+- validar literalidade e unicidade dentro do source span da `page_key` + unidade tipada atribuídas;
+- provar que a ocorrência pertence à mesma `page_key` e unidade tipada da figura;
 - não alterar a proposta da figura.
 
 ---
@@ -158,9 +175,10 @@ Para cada figura:
 - retry limitado;
 - não regenerar figura `done` com mesmos inputs.
 
-Renderer futuro:
-- SVG/Python quando o recurso for estrutural e determinístico;
-- IA quando a síntese exigir composição pictórica/editorial.
+No M5, o Image Manager prepara lifecycle, versões, batches, hashes, estados e artifacts. No M6, a
+produção real ocorre via GPT, com captura/download, reconciliação por `visual_id`, retry somente de
+`missing|failed` e validação de completude. SVG/Python permanece fallback excepcional, não rota
+primária.
 
 ---
 

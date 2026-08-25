@@ -15,9 +15,16 @@ prompts:
 
   - id: omega_visual_planning
     version: 1
-    status: active
+    status: superseded
     path: omega_brain/visual_planning_v1.txt
     sha256: 4492eadfb29795bc4374b7d685634dd6775c9b3d89f882b55a5d38eccf186708
+    domain: visual_planning
+
+  - id: omega_visual_planning
+    version: 2
+    status: active
+    path: omega_brain/visual_planning_v2.txt
+    sha256: 4b5b75aa9c6d9fdc22593350ff2d28316f634893d27bd3ca523197d05d81bcb0
     domain: visual_planning
 
   - id: omega_image_global_style

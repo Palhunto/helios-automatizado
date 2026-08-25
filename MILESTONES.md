@@ -146,67 +146,84 @@ Um fluxo acadêmico + textual de teste consegue avançar sem intervenção norma
 # M4 — Planejamento visual
 
 ## Objetivo
-Transformar o prompt visual canônico em artefatos estruturados e localizáveis.
+Transformar paginação e planejamento visual canônicos em artefatos estruturados, localizáveis e
+com cobertura completa das páginas elegíveis dos capítulos 1–8.
 
 ## Escopo
-- importação/captura do planejamento;
-- parser dos campos canônicos;
+- domínio/importação do planejamento primeiro; captura posterior reutiliza o adapter M3 sem mover
+  regra de negócio para o browser;
+- `VisualPaginationSnapshot` versionado e ligado à `TextConsolidation` exata;
+- layout `helios_pagination_layout@1`, fontes licenciadas congeladas e medição local real em páginas
+  DOM A4 explícitas;
+- artifacts HTML, PDF e manifest `helios_pagination_snapshot@1`, com PDF determinístico dentro do
+  mesmo `renderer_fingerprint`;
+- conjunto determinístico de páginas elegíveis com `page_key`, capítulo, unidade e intervalos no
+  texto consolidado;
+- parser estrutural estrito dos campos canônicos, tolerando somente LF/CRLF e whitespace de borda;
 - `VisualFigure`;
 - `VisualPlan`;
 - enriquecimento de âncora literal;
-- validação de âncora no texto consolidado;
-- sem quota de figuras;
+- validação de âncora na página e unidade canônicas do texto consolidado;
+- cobertura obrigatória de exatamente uma figura por página elegível;
+- numeração global, positiva, única, contígua e ordenada pelas páginas elegíveis;
+- finalização explícita com `helios_visual_manifest@1`;
 - repair dirigido;
 - testes.
 
 ## Aceite
 - todas as figuras aceitas têm os campos editoriais obrigatórios;
-- cada figura tem âncora operacional validada;
-- o plano pode ter zero, uma ou várias figuras por capítulo;
-- nenhum renderer é executado ainda.
+- o pagination snapshot é current e compatível com a consolidação textual;
+- `figure_count == eligible_page_count` e os conjuntos de `page_key` são iguais;
+- existe exatamente uma figura por página elegível, sem gaps, duplicidades ou páginas externas;
+- cada figura referencia capítulo e unidade tipados e tem âncora operacional validada dentro da
+  mesma página e unidade;
+- a numeração global é exatamente `1..N`, na ordem das páginas elegíveis;
+- zero figuras só é válido quando zero páginas são elegíveis;
+- a promoção ocorre somente por `finalize` explícito e produz `helios_visual_manifest@1`;
+- nenhum renderer de imagens é executado; o renderer local permitido no M4 limita-se à paginação
+  canônica e ao PDF visual correspondente.
 
 ---
 
 # M5 — Image Manager
 
 ## Objetivo
-Garantir que figura planejada tenha identidade, manifest, arquivo e recovery.
+Controlar o lifecycle de produção de cada figura planejada sem executar ainda a produção real.
 
 ## Escopo
-- manifest;
-- nome determinístico;
-- prompt hash;
-- file hash;
-- status/tentativas;
-- um arquivo por figura;
+- identidade por `visual_id` e vínculo ao manifest aceito do M4;
+- versões e batches;
+- prompt hash e style hash;
+- estados, tentativas e recovery;
+- reservations de artifacts e nomes determinísticos;
 - não sobrescrever;
-- retry limitado;
-- integração com geração de imagem disponível no fluxo Plus quando aplicável.
+- preparação idempotente do conjunto completo.
 
 ## Aceite
-Rodar o mesmo projeto duas vezes não regenera figuras `done` com mesmo hash.
+Rodar o mesmo projeto duas vezes preserva o mesmo lifecycle e não duplica items, batches ou
+reservations com os mesmos inputs.
 
 ---
 
-# M6 — Renderização híbrida
+# M6 — Produção real de imagens
 
 ## Objetivo
-Direcionar figuras adequadas para renderer determinístico e reduzir geração IA desnecessária.
+Produzir todas as imagens previstas no manifest aceito por meio do GPT e reconciliar os artifacts
+capturados com segurança.
 
 ## Escopo
-- classificação de renderer;
-- SVG/Python;
-- componentes reutilizáveis;
-- fluxos;
-- comparações;
-- ciclos;
-- matrizes;
-- sequências;
-- export PNG quando necessário;
-- manutenção da identidade visual.
+- produção real via GPT;
+- uma figura por operação identificada por `visual_id`;
+- captura/download;
+- reconciliação por `visual_id`;
+- retry somente de itens `missing` ou `failed`;
+- validação de completude do batch;
+- preservação de hashes, versões e artifacts do M5;
+- renderer determinístico somente como fallback excepcional explícito.
 
 ## Aceite
-Os tipos suportados geram artefatos estáveis, legíveis e idempotentes.
+Todas as figures esperadas possuem exatamente um artifact reconciliado e válido; rerun não refaz
+items concluídos e retry não alcança items fora de `missing|failed`.
 
 ---
 

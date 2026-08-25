@@ -12,11 +12,11 @@ def test_migrations_are_idempotent(tmp_path: Path) -> None:
     database = Database(tmp_path / "data" / "helios.db")
     with database.connection() as connection:
         first = connection.execute("SELECT * FROM schema_migrations").fetchall()
-        assert len(first) == 6
+        assert len(first) == 7
         assert connection.execute("PRAGMA foreign_keys").fetchone()[0] == 1
     with database.connection() as connection:
         second = connection.execute("SELECT * FROM schema_migrations").fetchall()
-        assert len(second) == 6
+        assert len(second) == 7
 
 
 def test_migration_drift_is_rejected(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:

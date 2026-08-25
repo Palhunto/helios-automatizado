@@ -1,7 +1,7 @@
 # PROJECT_STATE.md
 
 CURRENT_MILESTONE: M4
-STATUS: READY_TO_START
+STATUS: IN_PROGRESS
 SPEC_REVISION: OMEGABRAIN_REAL_PROMPTS_V1
 LAST_REVIEW: 2026-08-24
 
@@ -725,20 +725,76 @@ O M3 está `COMPLETE`. O gate antigo não deve ser reexecutado.
 
 ## M4 — Planejamento Visual
 
-O M4 foi autorizado e está preparado para início, mas nenhuma implementação visual foi criada
-neste cleanup. As fontes de verdade já lidas são `MILESTONES.md`, `ARCHITECTURE.md`,
-`docs/SOURCE_WORKFLOW.md`, `docs/OMEGABRAIN_SPEC.md`, `docs/DATA_MODEL.md`, `QA.md` e o snapshot
-imutável `prompts/omega_brain/visual_planning_v1.txt`.
+O M4 foi autorizado e iniciado por M4.0 — Canonical Pagination. `visual_planning_v1.txt` permanece
+imutável e histórico; novos projetos visuais usam `omega_visual_planning@2`, SHA-256
+`4b5b75aa9c6d9fdc22593350ff2d28316f634893d27bd3ca523197d05d81bcb0`.
+
+M4.0 implementado:
+
+- registry e contract estritos `helios_pagination_layout@1`, SHA-256
+  `206e15338dd708c12665c23b36f38b28efb2a6df67f239f6876ae52325e03390`;
+- Noto Sans e Noto Serif variáveis, respectivas licenças OFL e hashes congelados; ausência ou drift
+  falha antes do Chromium, sem fallback para fonte do sistema;
+- migration `0007_m4_canonical_pagination.sql`, SHA-256
+  `1975e7f9409cae277bdfedc6d9191fc364f78b55beae3a0be10775f3153432ca`, somente com snapshot,
+  páginas e unit spans;
+- ledger reversível de Unicode code points e UTF-8 bytes, reconstruído a partir dos accepted
+  Artifacts + separator da `TextConsolidation`;
+- paginação por medição real em Chromium/Playwright local sobre folhas DOM A4 explícitas, sem
+  estimativa por caracteres;
+- capítulos CH01–CH08 começam em página nova por boundary estrutural, sem heading visível
+  injetado; apenas heading observado e declarado no layout altera a composição;
+- slot fixo de 170×78 mm em todas e somente as páginas elegíveis;
+- contadores distintos de página global do documento, página interna do capítulo e ordem elegível,
+  com `page_key` `CHnn-Pmmm`;
+- artifacts versionados HTML, PDF A4 canônico e manifest JSON
+  `helios_pagination_snapshot@1`, que permanece a fonte operacional;
+- identidade inclui consolidação, contracts, layout, fontes/licenças, paginator/template,
+  canonicalização e `renderer_fingerprint` qualificado por SO, Python, Playwright, Chromium e pypdf;
+- PDF determinístico para o mesmo input + fingerprint; fingerprints diferentes produzem nova
+  identidade sem promessa de byte equality entre ambientes;
+- idempotência, stale derivado, integridade DB/filesystem, recovery após checkpoints e CLI
+  `pagination create|show|status|validate`;
+- helper de validação de anchor futura exige literal único somente no source span da `page_key` e
+  unidade tipada atribuídas, não unicidade global no ebook.
+
+Verificação do M4.0:
+
+- `527 passed` em Python 3.12, incluindo unitários, integração SQLite, Chromium local headless,
+  idempotência, stale, recovery, HTML/PDF/manifest e regressão M1–M3;
+- Ruff sem erros em `src` e `tests`;
+- mypy estrito sem erros em 127 arquivos de `src` e `tests`;
+- `git diff --check` sem erros;
+- QA visual local das folhas A4 de INTRO e `CH01-P001`, sem browser externo.
 
 Próximo escopo permitido:
 
 - importar/capturar o planejamento visual preservando o bruto;
-- parsear somente os campos canônicos em `VisualPlan` e `VisualFigure`;
-- enriquecer e validar âncoras literais contra o texto consolidado;
-- implementar persistência, versionamento, idempotência, recovery, schemas e testes do M4.
+- parsear estritamente os campos canônicos em `VisualPlan` e `VisualFigure`;
+- exigir exatamente uma figura por página elegível dos capítulos 1–8, numeração global `1..N` e
+  ligações tipadas de `page_key`, capítulo e unidade;
+- enriquecer e validar âncoras literais contra a página e unidade do texto consolidado;
+- promover somente por `finalize` explícito para `helios_visual_manifest@1`;
+- implementar persistência, versionamento, idempotência, recovery, schemas e testes do restante
+  do M4.
 
-Continuam fora do escopo do M4: geração de imagens, Image Manager, renderer SVG/Python, Google Docs
-e UI.
+M4 termina em paginação + planejamento + figures + anchors + accepted manifest. M5 controla Image
+Manager, lifecycle, versões, batches, hashes, estados e artifacts. M6 produz imagens via GPT,
+captura/download, reconcilia por `visual_id`, repete somente `missing|failed` e valida completude;
+renderer determinístico de imagens é fallback excepcional. O renderer de M4.0 pagina texto e não
+gera imagens. Google Docs e UI continuam fora do M4.
+
+Decisões de design resolvidas antes da implementação:
+
+- `page` operacional é obrigatório por `page_key`; `page` editorial permanece raw;
+- parser estrutural estrito, tolerando somente LF/CRLF e whitespace de borda;
+- zero figures é inválido quando existem páginas elegíveis;
+- numbering é global e contíguo `1..N`;
+- anchor enrichment usa contrato operacional versionado separado;
+- domínio/import vêm primeiro; integração browser posterior reutiliza M3;
+- `finalize` é explícito;
+- accepted schema é `helios_visual_manifest@1`;
+- `section` raw é preservado e a integridade usa capítulo/unidade tipados.
 
 ## Regra
 

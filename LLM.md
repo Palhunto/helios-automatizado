@@ -129,7 +129,12 @@ Reparo semântico deve ser dirigido apenas à inconsistência encontrada.
 
 ### 5. Planejamento visual — M4
 
-O snapshot canônico pede, por figura:
+O snapshot canônico V2 recebe um `VisualPaginationSnapshot` compatível com a consolidação e exige
+exatamente uma proposta para cada página elegível dos capítulos 1–8. Dentro de cada página, o LLM
+seleciona o conceito de maior ganho pedagógico/editorial; cobertura obrigatória não permite figura
+decorativa, vazia ou semanticamente irrelevante.
+
+Por figura, pede:
 - número/nome;
 - página;
 - seção;
@@ -147,7 +152,10 @@ Complexidade visual permitida pelo prompt:
 - `Editorial estruturada`;
 - `Síntese conceitual`.
 
-Não existe meta de figura por página.
+A página editorial é preservada como observada. `page_key`, capítulo e unidade são ligações
+operacionais validadas pelo código contra o snapshot, nunca inferidas pelo LLM. A numeração é global
+`1..N` na ordem das páginas elegíveis. Zero figuras só é permitido quando zero páginas são
+elegíveis. O parser é estruturalmente estrito e tolera apenas LF/CRLF e whitespace de borda.
 
 ### 6. Enriquecimento de âncora — M4
 
@@ -156,17 +164,26 @@ Como "posição exata" pode ser semanticamente clara, mas não máquina-localiz�
 - relação `before|after`;
 - contexto opcional.
 
-Python então valida literalidade e unicidade.
+Python então valida literalidade e unicidade dentro do source span da `page_key` atribuída e da
+unidade tipada da figura. O mesmo literal pode existir em outra página do ebook; não se exige
+unicidade global.
 
 Não alterar a proposta visual nessa subetapa.
 
-### 7. Geração de imagem — M5
+O enriquecimento usa contrato operacional versionado separado. Domínio/import vêm primeiro; uma
+integração posterior com browser reutiliza M3 sem colocar regras de negócio no adapter.
+
+### 7. Image Manager — M5; produção — M6
 
 Cada figura usa:
 1. `generation_prompt` integral do planejamento;
 2. `image_global_style` versionado.
 
 Não misturar prompts de figuras diferentes.
+
+M5 controla lifecycle, versões, batches, hashes, estados e artifacts. M6 executa produção real via
+GPT, captura/download, reconciliação por `visual_id`, retry somente de `missing|failed` e validação
+de completude. Renderer determinístico é fallback excepcional.
 
 ## Reparo semântico
 

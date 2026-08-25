@@ -24,8 +24,11 @@ stages:
   - id: text_consolidation
     depends_on: [text_generation]
 
-  - id: visual_planning
+  - id: visual_pagination
     depends_on: [text_consolidation]
+
+  - id: visual_planning
+    depends_on: [visual_pagination]
 
   - id: visual_anchor_enrichment
     depends_on: [visual_planning]

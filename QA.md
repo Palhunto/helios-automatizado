@@ -175,7 +175,7 @@
 - o cleanup final não abre browser real e não altera código de produção;
 - a suíte completa precisa permanecer verde, junto de Ruff e mypy estrito em `src` e `tests`;
 - com essas evidências, M3 está concluído e M4 pode iniciar sem antecipar geração de imagens,
-  renderer, Google Docs ou UI.
+  renderer de imagens, Google Docs ou UI. O paginador local de M4.0 é permitido.
 
 ## QA — Planejamento acadêmico
 
@@ -241,9 +241,34 @@ pendente para milestone posterior.
 
 ## QA — Planejamento visual
 
+### Paginação canônica M4.0
+
+- o layout resolve exatamente `helios_pagination_layout@1` por ID, versão e SHA-256;
+- fontes e respectivas licenças existem e correspondem aos hashes congelados antes de abrir
+  Chromium; fonte do sistema nunca é fallback;
+- a paginação usa medição real via Chromium em folhas DOM A4 explícitas, nunca estimativa por
+  caracteres;
+- cada `CH01_A` ... `CH08_A` inicia nova página por boundary estrutural, sem heading visível
+  injetado; somente heading observado no source e declarado no layout altera a tipografia;
+- cada página elegível dos capítulos CH01–CH08 contém exatamente um slot visual fixo; páginas de
+  INTRO e CONCLUSION não contêm slot;
+- `document_page_number`, `chapter_page_number` e `eligible_page_number` são contadores distintos,
+  positivos e contíguos em seus próprios escopos;
+- `page_key` é `CHnn-Pmmm`, derivada do capítulo e do número interno, e é única no snapshot;
+- spans Unicode code point e UTF-8 byte são half-open, reversíveis e ligados ao accepted Artifact
+  de cada unidade e ao texto consolidado exato;
+- HTML, PDF A4 e manifest JSON são artifacts do mesmo StageRun; o manifest
+  `helios_pagination_snapshot@1` é a fonte operacional canônica;
+- com mesmo input e mesmo `renderer_fingerprint`, rerender produz os mesmos bytes de PDF;
+  fingerprints diferentes têm identidades de snapshot diferentes e não são comparados por bytes;
+- mudança da consolidação, layout, fontes, Python, Playwright, Chromium, pypdf ou SO torna o snapshot anterior
+  stale por proveniência, sem apagar seu histórico;
+- crash depois de HTML ou PDF retoma a mesma identidade, valida/reutiliza bytes iguais e não cria
+  página, Artifact ou StageRun duplicado.
+
 Cada figura aceita deve preservar:
 - número/nome;
-- página quando informada;
+- página editorial como observada;
 - seção;
 - posição exata;
 - conceito principal;
@@ -260,21 +285,46 @@ Valores canônicos de complexidade:
 - `Síntese conceitual`.
 
 Além disso, antes de geração:
+- existe `VisualPaginationSnapshot` current e exatamente compatível com a `TextConsolidation`;
+- o snapshot contém um conjunto conhecido e determinístico de páginas elegíveis dos capítulos 1–8;
+- cada página elegível possui `page_key`, ordem global, capítulo tipado, unit spans e intervalo
+  verificável no texto consolidado;
+- nenhuma página é estimada silenciosamente por contagem de caracteres;
+- `figure_count == eligible_page_count`;
+- o conjunto de `VisualFigure.page_key` é exatamente igual ao conjunto de páginas elegíveis;
+- existe exatamente uma figura por `page_key`, sem gap ou duplicidade;
+- nenhuma figura referencia página inexistente, introdução, conclusão, referências ou conteúdo
+  externo aos capítulos 1–8;
+- cada figura possui `page_key`, capítulo e unidade tipados e coerentes com o snapshot;
+- a numeração global é positiva, única, contígua `1..N` e segue a ordem das páginas elegíveis;
+- zero figuras só é válido quando o conjunto elegível também é zero;
 - `anchor_text` operacional existe;
-- anchor é validável no texto consolidado;
+- anchor é literal e único dentro do source span da `page_key` e unidade tipada atribuídas; o mesmo
+  literal pode existir em outra página do ebook;
+- o intervalo do anchor pertence à mesma página canônica e unidade tipada da figura;
 - `position_relative_to_anchor` é `before` ou `after`;
-- não existe quota de figuras por página;
-- figura decorativa não deve ser criada somente para preencher espaço.
+- anchor inválido gera nova versão sem modificar `VisualFigure`;
+- cobertura obrigatória não autoriza figura decorativa ou sem função pedagógica/editorial;
+- `finalize` é explícito e falha se qualquer invariante estiver ausente;
+- o accepted manifest segue `helios_visual_manifest@1` e congela as duas proveniências, prompt,
+  páginas, figures, anchors selecionados, hashes e contagens.
+
+Parser M4:
+- estruturalmente estrito;
+- tolera somente LF/CRLF e whitespace de borda;
+- rejeita labels ausentes, duplicados, fora de ordem ou aliases não versionados;
+- nunca corrige semanticamente um label ou inventa campo ausente.
 
 ## QA — Imagens
 
-- `figure_id` único;
+- no M5, `visual_id` e `figure_id` são únicos e ligados ao manifest aceito;
+- lifecycle, versões, batches, estados, hashes e artifact reservations são idempotentes;
 - prompt hash estável;
 - nome de arquivo determinístico;
-- arquivo válido;
-- file hash registrado;
-- rerun não gera novamente `done`;
-- retry limitado;
+- no M6, cada `visual_id` esperado reconcilia exatamente um arquivo válido e um file hash;
+- rerun não gera novamente item concluído;
+- retry alcança somente `missing|failed`;
+- completude compara o conjunto produzido com o conjunto esperado do batch;
 - conflito não sobrescreve arquivo existente.
 
 ## QA — Docs

@@ -65,7 +65,22 @@ Exactly 18:
 
 ## C. Visual planning
 
-Select concepts only with real pedagogical/communication gain.
+The operational OmegaBrain workflow requires exactly one visual proposal for each eligible canonical
+page in chapters 1–8. Within every required page, select the concept with the strongest real
+pedagogical/communication gain. Mandatory coverage does not authorize decorative or semantically
+empty figures.
+
+Eligible pages come exclusively from a versioned `VisualPaginationSnapshot` bound by exact ID and
+hash provenance to one `TextConsolidation`. Every eligible page has a stable `page_key`, global
+order, typed chapter/unit mapping, and verifiable text ranges. Character-count page estimation is
+forbidden. Introduction, conclusion, references, and pages outside chapters 1–8 are excluded.
+
+The canonical M4.0 producer uses `helios_pagination_layout@1`, pinned licensed fonts and real
+Chromium measurement over explicit A4 DOM pages. Chapter boundaries cause page breaks but never
+inject a visible heading. A heading affects layout only when present in the source and explicitly
+declared by the editorial layout. Every eligible page reserves its visual slot before image
+production. The JSON manifest is operationally canonical; the PDF is visual evidence and is byte
+deterministic only within the same exact input and `renderer_fingerprint`.
 
 Required editorial fields:
 - number/name;
@@ -80,7 +95,24 @@ Required editorial fields:
 - complexity;
 - independent prompt.
 
-No fixed number of figures.
+Operational fields include canonical `page_key`, typed chapter/unit links, and a separate versioned
+anchor. The editorial `page` and `section` values are preserved as observed but do not establish
+referential integrity.
+
+Anchor uniqueness is local to the assigned page's source span and selected typed unit span. The
+same literal may occur elsewhere in the ebook without invalidating that anchor.
+
+For an accepted plan:
+
+```text
+figure_count == eligible_page_count
+set(figure.page_key) == set(eligible_page.page_key)
+count(figures where page_key == P) == 1 for every eligible page P
+figure.number == eligible_page.order == 1..N
+```
+
+Zero figures are valid only when the compatible pagination snapshot contains zero eligible pages.
+Promotion is an explicit finalize operation and produces `helios_visual_manifest@1`.
 
 ## D. Image style
 
@@ -105,7 +137,7 @@ The software may add fields that do not alter editorial meaning:
 - versions;
 - statuses;
 - anchor text;
-- renderer;
+- canonical page/chapter/unit links;
 - file paths.
 
 The software must not silently:
@@ -113,4 +145,6 @@ The software must not silently:
 - turn premise into confirmed;
 - change planned visual concept;
 - invent bibliography;
-- create extra figures to satisfy quota.
+- estimate pagination from character count;
+- omit an eligible page or create duplicate/out-of-scope page coverage;
+- use required coverage as justification for a decorative or semantically empty figure.

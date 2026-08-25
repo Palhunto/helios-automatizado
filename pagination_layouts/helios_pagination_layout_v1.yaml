@@ -1,0 +1,94 @@
+schema: helios_pagination_layout@1
+id: helios_pagination_layout
+version: 1
+page:
+  format: A4
+  orientation: portrait
+  width_mm: 210.0
+  height_mm: 297.0
+  print_margin_mm: 0.0
+  header: {x_mm: 20.0, y_mm: 8.0, width_mm: 170.0, height_mm: 6.0}
+  footer: {x_mm: 20.0, y_mm: 283.0, width_mm: 170.0, height_mm: 6.0}
+  eligible_text: {x_mm: 20.0, y_mm: 18.0, width_mm: 170.0, height_mm: 174.0}
+  noneligible_text: {x_mm: 20.0, y_mm: 18.0, width_mm: 170.0, height_mm: 261.0}
+  visual_slot: {x_mm: 20.0, y_mm: 198.0, width_mm: 170.0, height_mm: 78.0}
+  visual_media_max_height_mm: 66.0
+  visual_caption_height_mm: 10.0
+  visual_gap_mm: 6.0
+typography:
+  body:
+    font_role: serif
+    font_size_pt: 10.5
+    line_height: 1.45
+    font_weight: 400
+  h1:
+    font_role: sans
+    font_size_pt: 18.0
+    line_height: 1.2
+    font_weight: 700
+  h2:
+    font_role: sans
+    font_size_pt: 13.0
+    line_height: 1.25
+    font_weight: 600
+  h3:
+    font_role: sans
+    font_size_pt: 11.0
+    line_height: 1.3
+    font_weight: 600
+  paragraph_gap_mm: 3.0
+  text_align: left
+  hyphens: none
+  orphans: 2
+  widows: 2
+chapter_boundary:
+  chapter_units_start_new_page: true
+  inject_visible_heading: false
+  visible_heading_policy: source_only
+heading_rules:
+  - exact_text: Exercícios analíticos e aplicados
+    level: 2
+fonts:
+  - role: sans
+    family: Noto Sans
+    style: normal
+    weight_min: 100
+    weight_max: 900
+    path: assets/fonts/NotoSans-wdth-wght.ttf
+    sha256: bfb7bb691513f12e734dc346c03a03f784912432d7e3fa8e56efcf906fe86b3d
+    license_path: assets/fonts/NotoSans-OFL.txt
+    license_sha256: cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a
+  - role: serif
+    family: Noto Serif
+    style: normal
+    weight_min: 100
+    weight_max: 900
+    path: assets/fonts/NotoSerif-wdth-wght.ttf
+    sha256: 4d8e6761424656867019081a1a01336f3cb086982682698714054fc33f782713
+    license_path: assets/fonts/NotoSerif-OFL.txt
+    license_sha256: cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a
+renderer:
+  engine: chromium_explicit_dom_v1
+  paginator_version: 1
+  template_version: 1
+  pdf_canonicalization_version: 1
+  measurement_epsilon_px: 0.25
+units:
+  - {unit_id: INTRO, order: 1, section: introduction, eligible: false, starts_new_page: true}
+  - {unit_id: CH01_A, order: 2, section: chapter, chapter_id: CH01, eligible: true, starts_new_page: true}
+  - {unit_id: CH01_B, order: 3, section: chapter, chapter_id: CH01, eligible: true, starts_new_page: false}
+  - {unit_id: CH02_A, order: 4, section: chapter, chapter_id: CH02, eligible: true, starts_new_page: true}
+  - {unit_id: CH02_B, order: 5, section: chapter, chapter_id: CH02, eligible: true, starts_new_page: false}
+  - {unit_id: CH03_A, order: 6, section: chapter, chapter_id: CH03, eligible: true, starts_new_page: true}
+  - {unit_id: CH03_B, order: 7, section: chapter, chapter_id: CH03, eligible: true, starts_new_page: false}
+  - {unit_id: CH04_A, order: 8, section: chapter, chapter_id: CH04, eligible: true, starts_new_page: true}
+  - {unit_id: CH04_B, order: 9, section: chapter, chapter_id: CH04, eligible: true, starts_new_page: false}
+  - {unit_id: CH05_A, order: 10, section: chapter, chapter_id: CH05, eligible: true, starts_new_page: true}
+  - {unit_id: CH05_B, order: 11, section: chapter, chapter_id: CH05, eligible: true, starts_new_page: false}
+  - {unit_id: CH06_A, order: 12, section: chapter, chapter_id: CH06, eligible: true, starts_new_page: true}
+  - {unit_id: CH06_B, order: 13, section: chapter, chapter_id: CH06, eligible: true, starts_new_page: false}
+  - {unit_id: CH07_A, order: 14, section: chapter, chapter_id: CH07, eligible: true, starts_new_page: true}
+  - {unit_id: CH07_B, order: 15, section: chapter, chapter_id: CH07, eligible: true, starts_new_page: false}
+  - {unit_id: CH08_A, order: 16, section: chapter, chapter_id: CH08, eligible: true, starts_new_page: true}
+  - {unit_id: CH08_B, order: 17, section: chapter, chapter_id: CH08, eligible: true, starts_new_page: false}
+  - {unit_id: CONCLUSION, order: 18, section: conclusion, eligible: false, starts_new_page: true}

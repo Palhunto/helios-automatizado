@@ -15,7 +15,7 @@ Workflow Engine
  ├─ Browser Adapter          [M3]
  ├─ Visual Planning Domain   [M4]
  ├─ Image Manager            [M5]
- ├─ SVG Renderer             [M6]
+ ├─ Image Production Adapter [M6]
  ├─ Google Docs Adapter      [M7]
  ├─ Final QA                 [M8]
  └─ UI                       [M9]
@@ -54,15 +54,15 @@ REFERENCE_RECONCILIATION
     ↓
 TEXT_CONSOLIDATION
     ↓
+VISUAL_PAGINATION
+    ↓
 VISUAL_PLANNING
     ↓
 VISUAL_ANCHOR_ENRICHMENT
     ↓
 VISUAL_VALIDATION
     ↓
-IMAGE_ROUTING
-    ├─ SVG/PYTHON
-    └─ IMAGE_AI
+IMAGE_LIFECYCLE_PREPARATION
     ↓
 IMAGE_PRODUCTION
     ↓
@@ -84,6 +84,25 @@ A proposta editorial original é preservada e, depois, uma subetapa operacional 
 - opcionalmente contexto anterior/posterior.
 
 Python aceita a âncora apenas se ela existir no texto consolidado e for suficientemente discriminante.
+Além disso, o offset literal precisa pertencer aos intervalos da mesma `page_key` e unidade tipada
+da figura no `VisualPaginationSnapshot` compatível.
+Unicidade é avaliada somente dentro desse source span de página + unidade; repetição do mesmo
+literal em outra página do ebook não invalida a âncora.
+
+## Por que existe `VISUAL_PAGINATION`
+
+M4 exige exatamente uma figura para cada página elegível dos capítulos 1–8. O conjunto de páginas
+não pode ser inferido silenciosamente por contagem de caracteres. Um `VisualPaginationSnapshot`
+imutável referencia a `TextConsolidation` exata e congela a ordem, `page_key`, capítulo, unidades e
+intervalos verificáveis no texto consolidado. Introdução, conclusão, referências e páginas externas
+aos capítulos 1–8 ficam fora de `eligible_pages`.
+
+M4.0 produz esse snapshot localmente por `helios_pagination_layout@1`. Chromium mede o layout real
+em folhas DOM A4 explícitas e depois exporta o mesmo conjunto para PDF; não decide páginas por
+estimativa de caracteres. Cada página elegível já reserva seu slot visual. Boundary de capítulo é
+estrutural e não injeta heading: somente headings existentes no source e declarados pelo layout
+editorial alteram a composição visível. Font assets e licenças são congelados por SHA sem fallback
+do sistema. O manifest JSON é a fonte operacional; HTML e PDF são artifacts verificáveis.
 
 ## Responsabilidades
 
@@ -125,13 +144,18 @@ destinado à mesma conversa já inicializada.
 Opera ChatGPT Plus quando M3 estiver ativo. Não decide regra de negócio.
 
 ### Visual Planning Domain
-Preserva o planejamento visual editorial, adiciona metadados operacionais e valida âncoras.
+Preserva o planejamento visual editorial, importa a paginação canônica, exige cobertura 1:1 das
+páginas elegíveis, adiciona ligações operacionais de página/capítulo/unidade, valida âncoras e
+finaliza explicitamente `helios_visual_manifest@1`.
 
 ### Image Manager
-Controla manifest, hashes, tentativas, arquivos e idempotência.
+No M5, controla lifecycle, versões, batches, hashes, estados, tentativas e artifacts por `visual_id`,
+sem executar a produção real.
 
-### Renderers
-Recebem uma especificação de figura; não controlam workflow.
+### Image Production Adapter
+No M6, produz imagens via GPT, captura/download, reconcilia por `visual_id`, repete somente
+`missing|failed` e valida completude. Renderer determinístico pode existir apenas como fallback
+excepcional explícito e não controla o workflow.
 
 ### Google Docs Adapter
 Aplica operações determinísticas e idempotentes de formatação/inserção.
@@ -178,7 +202,7 @@ SHA256(
   + normalized_inputs
   + prompt_id
   + prompt_version
-  + renderer_version
+  + contract_or_adapter_version
 )
 ```
 
@@ -206,6 +230,7 @@ projects/<slug>-<project_id>/
 │  ├─ references/
 │  └─ consolidated/
 ├─ visual-plan/
+│  ├─ pagination/
 │  ├─ raw/
 │  ├─ accepted/
 │  └─ anchors/

@@ -51,6 +51,21 @@ def test_cli_exposes_targeted_writing_unit_recovery() -> None:
     assert args.unit_id == "CH01_A"
 
 
+def test_cli_exposes_canonical_pagination_commands() -> None:
+    create = build_parser().parse_args(
+        ["pagination", "create", "project-id", "--layout-version", "1"]
+    )
+    show = build_parser().parse_args(["pagination", "show", "project-id", "--version", "2"])
+    status = build_parser().parse_args(["pagination", "status", "project-id"])
+    validate = build_parser().parse_args(["pagination", "validate", "project-id"])
+
+    assert create.pagination_command == "create"
+    assert create.layout_id == "helios_pagination_layout"
+    assert show.pagination_command == "show" and show.version == 2
+    assert status.pagination_command == "status"
+    assert validate.pagination_command == "validate"
+
+
 def test_cli_exposes_single_session_writing_runner() -> None:
     args = build_parser().parse_args(
         ["browser", "run-writing", "project-id"]

@@ -315,6 +315,94 @@ já identifica o primeiro envio da nova linhagem e não é incrementado novament
 
 ## M4 — Visual planning
 
+### VisualPaginationSnapshot
+
+Immutable provenance and identity:
+- `pagination_snapshot_id`
+- `project_id`
+- `stage_run_id`
+- `version`
+- `input_hash`
+- `consolidation_id`
+- `context_id`
+- `production_set_hash`
+- `text_artifact_id`
+- `text_sha256`
+- `consolidation_manifest_artifact_id`
+- `consolidation_manifest_sha256`
+- writing contract ID/version/SHA;
+- layout ID/version/SHA;
+- `renderer_fingerprint` qualificado por SO, Python, Playwright, executável Chromium e pypdf;
+- HTML Artifact/SHA;
+- PDF Artifact/SHA;
+- manifest Artifact/SHA em `helios_pagination_snapshot@1`;
+- `document_page_count`
+- `eligible_page_count`
+- `created_at`
+
+`current` is derived, never persisted. A snapshot is compatible only with the exact
+`TextConsolidation` ID, text Artifact ID and SHA recorded above. Its producer must map page ranges
+back to the decoded consolidated text; it may not infer pages from character counts.
+
+O `input_hash` inclui consolidação, Writing Production Contract, layout, fontes/licenças,
+paginator/template/canonicalização de PDF e `renderer_fingerprint`. Mesmo input e fingerprint
+reutilizam o snapshot; mudança qualificada cria outra versão e preserva a anterior. O manifest JSON
+é canônico operacionalmente; HTML e PDF são evidências visuais. Igualdade byte a byte do PDF é
+exigida somente dentro da mesma identidade/fingerprint.
+
+### VisualPaginationPage
+
+- `pagination_snapshot_id`
+- `document_page_number` — global no documento, incluindo páginas não elegíveis;
+- `eligible`
+- `eligible_page_number` — global `1..N` somente entre páginas elegíveis;
+- `chapter_id` — typed `CH01` ... `CH08` somente quando elegível;
+- `chapter_page_number` — reinicia em cada capítulo;
+- `page_key` — `CHnn-Pmmm`, derivada do número interno do capítulo;
+- `page_source_sha256`
+- text region e, somente quando elegível, slot visual fixo vindos do layout;
+- `unit_spans` — um ou mais ranges tipados que intersectam a página.
+
+### VisualPaginationPageUnitSpan
+
+- snapshot, projeto, página global e `span_order`;
+- `unit_id`, accepted Artifact ID e SHA;
+- offsets half-open globais em Unicode code points e UTF-8 bytes;
+- offsets half-open locais à unidade nos mesmos dois sistemas.
+
+Os dois pares de offsets precisam reproduzir os mesmos bytes/texto. Uma página pode cruzar
+`CHnn_A → CHnn_B`, mas nunca capítulos. Cada `CH01_A` ... `CH08_A` inicia página nova por boundary
+estrutural. Isso não injeta heading visível; somente heading presente no source e declarado em
+`helios_pagination_layout@1` afeta o layout. Font assets e licenças são obrigatórios e verificados
+por SHA antes do Chromium, sem fallback para fontes do sistema.
+
+Eligible pages never belong to introduction, conclusion, references or content external to chapters
+1–8. A page cannot cross chapters. When a page intersects more than one writing unit, the figure
+selects one typed `unit_id` from `unit_spans` and its anchor must fall inside that unit's range.
+
+### VisualPlan
+
+- `visual_plan_id`
+- `project_id`
+- `stage_run_id`
+- `raw_version`
+- `accepted_version`
+- `disposition`
+- exact consolidation provenance
+- exact pagination snapshot provenance
+- exact prompt identity (`prompt_id`, `prompt_version`, `prompt_sha256`)
+- raw Artifact/SHA
+- validation report Artifact/SHA
+- accepted manifest Artifact/SHA
+- `expected_figure_count`
+- `figure_count`
+- `created_at`
+- `accepted_at`
+
+`finalize` is explicit. `accepted_version` and the `helios_visual_manifest@1` artifact can exist only
+when coverage, numbering, structural fields, page/unit/chapter binding and all selected anchors are
+valid.
+
 ### VisualFigure
 Editorial fields:
 - `figure_id`
@@ -332,14 +420,47 @@ Editorial fields:
 - `complexity`
 - `generation_prompt`
 
-Operational enrichment:
+Operational binding:
+- `visual_plan_id`
+- `pagination_snapshot_id`
+- `page_key`
+- `chapter_id`
+- `unit_id`
+- `editorial_sha256`
+
+`number` is global, positive, unique and contiguous `1..N`, following `page_order`. There is exactly
+one figure for every eligible `page_key`; `page` and `section` remain raw editorial values and are
+not foreign keys.
+
+### VisualAnchor
+
+Versioned operational enrichment, separate from `VisualFigure`:
+- `visual_anchor_id`
+- `visual_plan_id`
+- `figure_id`
+- `version`
+- `supersedes_anchor_id`
 - `anchor_text`
 - `position_relative_to_anchor`
 - `anchor_before`
 - `anchor_after`
 - `anchor_validation_status`
-- `renderer`
-- `status`
+- `occurrence_count`
+- `start_offset`
+- `end_offset`
+- `validation_rule_version`
+- exact consolidation and pagination provenance
+- source and validation Artifact/SHA
+
+`validated` requires a literal unique occurrence inside the source span of the exact `page_key` and
+selected typed unit range of the figure. It does not require global uniqueness in the ebook. A
+rejected repair creates a new version and never changes `VisualFigure`.
+
+### `helios_visual_manifest@1`
+
+Canonical accepted manifest containing consolidation provenance, pagination provenance, prompt
+identity, every eligible page, every figure, the selected anchor version for each figure, hashes,
+expected count and actual count.
 
 ---
 
@@ -347,14 +468,18 @@ Operational enrichment:
 
 ### ImageAsset
 - `figure_id`
-- `renderer`
+- `visual_id`
+- `batch_id`
 - `prompt_hash`
 - `style_prompt_hash`
-- `file_path`
-- `file_sha256`
+- artifact reservation and, when produced by M6, file Artifact/SHA
 - `status`
 - `attempts`
 - `created_at`
+
+M5 owns lifecycle, versions, batches, hashes, states and artifacts. M6 owns real GPT production,
+capture/download, reconciliation by `visual_id`, retry of only `missing|failed` and completeness
+validation. A deterministic renderer is only an exceptional fallback.
 
 ## Separação importante
 

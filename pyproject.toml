@@ -7,7 +7,7 @@ name = "helios-ebook-automation"
 version = "0.1.0"
 description = "Local-first ebook production orchestration pipeline"
 requires-python = ">=3.12"
-dependencies = ["pydantic>=2.0", "PyYAML>=6.0", "playwright>=1.46"]
+dependencies = ["pydantic>=2.0", "PyYAML>=6.0", "playwright>=1.46", "pypdf>=6.0"]
 
 [project.scripts]
 ebook = "ebook_pipeline.cli:main"

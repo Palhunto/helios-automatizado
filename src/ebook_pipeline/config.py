@@ -131,6 +131,7 @@ class AppConfig(StrictModel):
     pipeline_config: Path
     prompt_registry: Path = Path("./prompts/registry.yaml")
     writing_contract_registry: Path = Path("./writing_contracts/registry.yaml")
+    pagination_layout_registry: Path = Path("./pagination_layouts/registry.yaml")
     log_level: str = "INFO"
     max_attempts: int = Field(default=3, ge=1)
     browser_channel: Literal["chrome", "chromium"] = "chrome"
@@ -249,6 +250,11 @@ def load_app_config(overrides: dict[str, object] | None = None) -> AppConfig:
         "writing_contract_registry": Path(
             os.environ.get("HELIOS_WRITING_CONTRACT_REGISTRY", "./writing_contracts/registry.yaml")
         ),
+        "pagination_layout_registry": Path(
+            os.environ.get(
+                "HELIOS_PAGINATION_LAYOUT_REGISTRY", "./pagination_layouts/registry.yaml"
+            )
+        ),
         "log_level": os.environ.get("HELIOS_LOG_LEVEL", "INFO"),
         "max_attempts": environment_max_attempts,
         "browser_channel": browser_channel,
@@ -277,6 +283,7 @@ def load_app_config(overrides: dict[str, object] | None = None) -> AppConfig:
             "pipeline_config": config.pipeline_config.resolve(),
             "prompt_registry": config.prompt_registry.resolve(),
             "writing_contract_registry": config.writing_contract_registry.resolve(),
+            "pagination_layout_registry": config.pagination_layout_registry.resolve(),
             "browser_profile_dir": config.browser_profile_dir.resolve(),
         }
     )

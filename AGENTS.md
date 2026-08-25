@@ -39,8 +39,8 @@ Implemente **somente** o milestone em `CURRENT_MILESTONE`.
 - UI final;
 - Playwright antes de M3;
 - Google Docs antes de M7;
-- geração de imagens antes de M5;
-- renderer SVG antes de M6;
+- geração real de imagens antes de M6;
+- renderer determinístico de imagens fora de fallback excepcional explícito;
 - OpenAI API paga sem decisão explícita;
 - abstrações especulativas sem necessidade atual.
 
@@ -61,13 +61,14 @@ O sistema deve preservar a lógica editorial do OmegaBrain, mas retirar do LLM t
 5. `TEXT_GENERATION` — 18 partes
 6. `REFERENCE_RECONCILIATION`
 7. `TEXT_CONSOLIDATION`
-8. `VISUAL_PLANNING`
-9. `VISUAL_ANCHOR_ENRICHMENT`
-10. `VISUAL_VALIDATION`
-11. `IMAGE_ROUTING`
-12. `IMAGE_PRODUCTION`
-13. `DOCS_FORMATTING`
-14. `FINAL_QA`
+8. `VISUAL_PAGINATION`
+9. `VISUAL_PLANNING`
+10. `VISUAL_ANCHOR_ENRICHMENT`
+11. `VISUAL_VALIDATION`
+12. `IMAGE_LIFECYCLE_PREPARATION`
+13. `IMAGE_PRODUCTION`
+14. `DOCS_FORMATTING`
+15. `FINAL_QA`
 
 ## Prioridades de engenharia
 
