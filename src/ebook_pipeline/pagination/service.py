@@ -567,9 +567,7 @@ class PaginationService:
                 "production_set_hash": inputs.consolidation.production_set_hash,
                 "text_artifact_id": inputs.consolidation.text_artifact_id,
                 "text_sha256": inputs.consolidation.text_sha256,
-                "consolidation_manifest_artifact_id": (
-                    inputs.consolidation.manifest_artifact_id
-                ),
+                "consolidation_manifest_artifact_id": (inputs.consolidation.manifest_artifact_id),
                 "consolidation_manifest_sha256": inputs.consolidation.manifest_sha256,
                 "writing_contract": {
                     "id": inputs.context.contract_id,
@@ -593,7 +591,15 @@ class PaginationService:
             snapshot = PaginationRepository(connection).get(snapshot_id)
         self._validate_one(snapshot)
 
-    def _validate_one(self, snapshot: VisualPaginationSnapshot) -> None:
+    def validate_snapshot(self, snapshot_id: str, *, verify_pdf_text: bool = True) -> None:
+        """Validate one immutable snapshot and all of its persisted source evidence."""
+        with self.database.connection() as connection:
+            snapshot = PaginationRepository(connection).get(snapshot_id)
+        self._validate_one(snapshot, verify_pdf_text=verify_pdf_text)
+
+    def _validate_one(
+        self, snapshot: VisualPaginationSnapshot, *, verify_pdf_text: bool = True
+    ) -> None:
         with self.database.connection() as connection:
             project = ProjectRepository(connection).get(snapshot.project_id)
             run = StageRunRepository(connection).get(snapshot.stage_run_id)
@@ -733,14 +739,18 @@ class PaginationService:
                     "HTML visual slot count differs from eligible_page_count",
                 )
             validate_pdf(pdf_bytes, snapshot.document_page_count)
-            reader = PdfReader(io.BytesIO(pdf_bytes))
-            for page_model, pdf_page in zip(manifest["pages"], reader.pages, strict=True):
-                page_key = page_model["page_key"]
-                if page_key is not None and (pdf_page.extract_text() or "").count(page_key) != 1:
-                    raise IntegrityError(
-                        "PAGINATION_PDF_PAGE_KEY_INVALID",
-                        "Eligible page_key must appear exactly once on its corresponding PDF page",
-                    )
+            if verify_pdf_text:
+                reader = PdfReader(io.BytesIO(pdf_bytes))
+                for page_model, pdf_page in zip(manifest["pages"], reader.pages, strict=True):
+                    page_key = page_model["page_key"]
+                    if (
+                        page_key is not None
+                        and (pdf_page.extract_text() or "").count(page_key) != 1
+                    ):
+                        raise IntegrityError(
+                            "PAGINATION_PDF_PAGE_KEY_INVALID",
+                            "Eligible page_key must appear exactly once on its PDF page",
+                        )
 
     @staticmethod
     def _validate_rendered(rendered: RenderedPagination, ledger: SourceLedger) -> None:

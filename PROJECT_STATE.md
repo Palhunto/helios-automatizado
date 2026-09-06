@@ -1,9 +1,9 @@
 # PROJECT_STATE.md
 
 CURRENT_MILESTONE: M4
-STATUS: IN_PROGRESS
+STATUS: COMPLETE
 SPEC_REVISION: OMEGABRAIN_REAL_PROMPTS_V1
-LAST_REVIEW: 2026-08-24
+LAST_REVIEW: 2026-09-06
 
 ## Estado
 
@@ -767,16 +767,96 @@ Verificação do M4.0:
 - `git diff --check` sem erros;
 - QA visual local das folhas A4 de INTRO e `CH01-P001`, sem browser externo.
 
-Próximo escopo permitido:
+M4.1 — VisualPlan Import & Structural Validation implementado:
 
-- importar/capturar o planejamento visual preservando o bruto;
-- parsear estritamente os campos canônicos em `VisualPlan` e `VisualFigure`;
-- exigir exatamente uma figura por página elegível dos capítulos 1–8, numeração global `1..N` e
-  ligações tipadas de `page_key`, capítulo e unidade;
-- enriquecer e validar âncoras literais contra a página e unidade do texto consolidado;
-- promover somente por `finalize` explícito para `helios_visual_manifest@1`;
-- implementar persistência, versionamento, idempotência, recovery, schemas e testes do restante
-  do M4.
+- migration aditiva `0008_m4_visual_plan_import.sql`, SHA-256
+  `6296108db9fe265cc078292de360efdb0b6b7a28e61ac33c240daa08e4847b4b`, limitada a
+  `visual_plans`, `visual_figures`, `visual_figure_page_units` e ao índice composto requerido pelo
+  FK exato da página;
+- raw V2 preservado byte a byte antes do parsing, com prompt `omega_visual_planning@2` congelado e
+  validation report canônico `helios_visual_plan_validation@1`;
+- parser estrutural estrito dos dez campos V2, com LF/CRLF, valores editoriais integrais e rejeição
+  de labels ausentes, duplicados, fora de ordem ou aliases;
+- proveniência exata de prompt, `VisualPaginationSnapshot`, manifest de paginação,
+  `TextConsolidation`, texto e manifest consolidado;
+- cobertura determinística 1:1, igualdade de contagens e conjuntos de `page_key`, rejeição de gaps,
+  duplicatas e páginas inventadas, e numeração global `1..N` na ordem elegível;
+- `chapter_id`, página global e ordem elegível derivados somente do snapshot;
+- D-042 aplicada: cada figure materializada preserva `page_unit_ids` distintos em `span_order`; não
+  existe `unit_id` singular no M4.1 e `Seção` nunca participa do binding;
+- import inválido preserva raw/report e não materializa figures parciais;
+- idempotência por raw + proveniência, versões imutáveis, prompt/artifacts no-clobber, recovery local
+  após checkpoints e validação profunda DB/filesystem;
+- CLI `visual plan import|show|status|validate` e `visual figure list|show`;
+- schemas M4.1 sem anchors, renderer de imagens ou accepted manifest.
+
+Verificação do M4.1:
+
+- `544 passed` em Python 3.12, incluindo parser, coverage, late unit resolution, artifacts,
+  idempotência, invalid report, recovery, migration, CLI e regressão M1–M4.0;
+- Ruff sem erros em todo `src` e `tests`;
+- mypy estrito sem erros em 137 arquivos de `src` e `tests`;
+- `git diff --check` sem erros;
+- nenhum browser externo, ChatGPT, imagem, Image Manager, Google Docs ou UI executado/criado.
+
+M4.2 foi autorizado pelo pedido de analisar, corrigir e concluir a etapa atual, reiterado em
+2026-09-06. `VisualAnchor`, resolução tardia de unidade, reparo versionado e `finalize` explícito
+para `helios_visual_manifest@1` foram implementados e verificados. O M4 está `COMPLETE`;
+`CURRENT_MILESTONE` permanece M4 e M5 não foi iniciado. As alterações locais preexistentes do
+M4.1 foram preservadas.
+
+M4.2 implementado:
+
+- migration aditiva `0009_m4_visual_anchors.sql`, SHA-256
+  `267bad69fd2902a597f375362e0d8f2253c8c50a2381fdf59f9ec9ea4dda9f25`, com
+  `visual_anchors`, `visual_finalizations` e membros congelados em `visual_finalization_anchors`;
+- contrato operacional `helios_visual_anchor_enrichment@1`, SHA-256
+  `07a273649e9cac3ef40dc780b8dbc70215bb50f9ab54a50cec74df0d9e41849e`, separado dos snapshots
+  editoriais; export de request por figura e import JSON estrito, sem envio externo;
+- raw anterior ao parsing, report canônico, versões/predecessores por figura, prompt congelado,
+  proveniência exata, retries limitados e retomada local após checkpoints;
+- busca literal que conta sobreposições, exige unicidade na página e contenção em um único unit
+  span; unidade singular e offsets Unicode/UTF-8 calculados pelo código; contexto opcional
+  precisa ser literal/adjacente e não substitui unicidade;
+- seleção explícita da última tentativa por figura; inválida/incompleta impede finalize, sem
+  fallback silencioso para uma versão anterior; dados editoriais permanecem intactos;
+- `visual plan finalize` persiste um accepted manifest imutável e os IDs exatos das âncoras;
+  reparos posteriores geram outra finalização e mantêm manifests históricos consultáveis;
+- CLI `visual anchor request|import|show|recover`, `visual plan finalize|manifest`, status com
+  estado da finalização e validação integral de imports, âncoras e manifests;
+- cinco novos schemas Draft 2020-12 para candidato, registro de âncora, relatório, finalização
+  e accepted manifest; validação de artefatos reais de teste contra os schemas;
+- validação M4.1 endurecida para todos os IDs/hashes de proveniência, identidade do StageRun,
+  tipo/owner dos artifacts, prompt congelado e contagem esperada; plano inválido deixou de ser
+  apresentado como current;
+- fontes e bytes produzidos são relidos após checkpoints, antes do commit, impedindo promoção
+  após alteração concorrente ou corrupção;
+- fingerprint deixou de abrir Chromium. Um roundtrip local sem HTTP conclui a inicialização do
+  driver antes do encerramento. Âncoras mantêm verificação de hashes/ledger/geometria e reservam
+  a extração textual integral do PDF para a validação da paginação; fontes de um lote são
+  reutilizadas somente em memória durante a própria chamada;
+- README e RUNBOOK atualizados, corrigindo a indicação antiga de que M4 não havia começado.
+
+Verificação final de fechamento do M4:
+
+- suíte completa: `570 passed` em Python 3.12, em 624,78 s, incluindo M0–M4, migração com dados,
+  CLI, schemas, reparo, restart, corrupção antes do commit e recovery;
+- um teste adicional de fingerprint passou separadamente após sua inclusão; os 571 testes
+  atualmente coletados estão cobertos por essas execuções;
+- Ruff sem erros em `src tests` e mypy estrito sem erros em 146 arquivos;
+- oito probes locais consecutivos do driver produziram um único fingerprint estável, sem abrir
+  browser, sem HTTP e sem avisos de inicialização pendente;
+- 16 schemas JSON válidos em Draft 2020-12 e manifest persistido de integração validado;
+- sete snapshots históricos de prompt e migrations 0001–0008 preservados por SHA;
+- wheel construído com CLI, todos os módulos visuais e migrations 0001–0009, instalado em um
+  diretório isolado de teste com as dependências existentes;
+- CLI desse wheel consultou o manifest V1 e repetiu finalize V2 de um fixture de 16 figures,
+  preservando as contagens de StageRuns, Artifacts, anchors e finalizations;
+- `git diff --check` sem erros de whitespace; nenhum milestone futuro foi implementado.
+
+O aceite desta etapa é técnico/local. O teste semântico e a importação do planejamento visual de
+um ebook real são operações de produção; nenhum envio ChatGPT, geração de imagem ou alteração do
+SQLite do ebook real foi necessário para esta revisão. M5, M6, M7, UI e API paga não foram iniciados.
 
 M4 termina em paginação + planejamento + figures + anchors + accepted manifest. M5 controla Image
 Manager, lifecycle, versões, batches, hashes, estados e artifacts. M6 produz imagens via GPT,
@@ -794,7 +874,10 @@ Decisões de design resolvidas antes da implementação:
 - domínio/import vêm primeiro; integração browser posterior reutiliza M3;
 - `finalize` é explícito;
 - accepted schema é `helios_visual_manifest@1`;
-- `section` raw é preservado e a integridade usa capítulo/unidade tipados.
+- `section` raw é preservado e nunca é binding operacional;
+- M4.1 preserva `page_unit_ids` de todos os unit spans da página em ordem; a unidade singular só é
+  resolvida no M4.2 por uma âncora integralmente contida em exatamente um span, nunca por `Seção`,
+  extensão dominante ou semântica.
 
 ## Regra
 

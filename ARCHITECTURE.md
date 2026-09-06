@@ -84,10 +84,12 @@ A proposta editorial original é preservada e, depois, uma subetapa operacional 
 - opcionalmente contexto anterior/posterior.
 
 Python aceita a âncora apenas se ela existir no texto consolidado e for suficientemente discriminante.
-Além disso, o offset literal precisa pertencer aos intervalos da mesma `page_key` e unidade tipada
-da figura no `VisualPaginationSnapshot` compatível.
-Unicidade é avaliada somente dentro desse source span de página + unidade; repetição do mesmo
-literal em outra página do ebook não invalida a âncora.
+No M4.1, a figura preserva `page_unit_ids`, derivados dos unit spans da página em ordem, sem eleger
+uma unidade por extensão, `Seção` ou semântica. No M4.2, o offset literal precisa ficar integralmente
+contido em exatamente um desses unit spans; só então a âncora recebe `unit_id` singular e a figura
+pode expor `resolved_unit_id`. Boundary atravessado e ocorrência ambígua entre units da mesma página
+são inválidos. Unicidade é local a essa página + unidade resolvida; repetição em outra página não
+invalida a âncora.
 
 ## Por que existe `VISUAL_PAGINATION`
 
@@ -145,8 +147,17 @@ Opera ChatGPT Plus quando M3 estiver ativo. Não decide regra de negócio.
 
 ### Visual Planning Domain
 Preserva o planejamento visual editorial, importa a paginação canônica, exige cobertura 1:1 das
-páginas elegíveis, adiciona ligações operacionais de página/capítulo/unidade, valida âncoras e
-finaliza explicitamente `helios_visual_manifest@1`.
+páginas elegíveis e adiciona ligações operacionais de página/capítulo e conjunto de unidades. O
+M4.1 importa raw antes do parsing e valida a estrutura sem anchors; o M4.2 valida âncoras e finaliza
+explicitamente `helios_visual_manifest@1`.
+
+O enriquecimento local usa `VisualAnchorService`: JSON bruto por figura, prompt operacional
+congelado, relatório determinístico e unidade resolvida pela ocorrência literal na página.
+`VisualFinalizationService` valida o conjunto completo e persiste uma aceitação separada, com os
+IDs exatos das versões de âncora selecionadas. Reparos não reescrevem figures ou manifests aceitos.
+Um import posterior inválido impede a próxima finalização até novo reparo válido. A CLI oferece
+export do request, import/show/recover de âncora e finalize/manifest; transporte externo não é
+necessário para o domínio M4.
 
 ### Image Manager
 No M5, controla lifecycle, versões, batches, hashes, estados, tentativas e artifacts por `visual_id`,

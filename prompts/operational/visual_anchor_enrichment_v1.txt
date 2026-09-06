@@ -1,0 +1,15 @@
+Contrato operacional helios_visual_anchor_enrichment@1.
+Preserve integralmente a proposta editorial da figura fornecida.
+Converta sua posição editorial em uma âncora literal na página canônica fornecida.
+Escolha um trecho não vazio que ocorra exatamente uma vez nesta página e fique
+inteiramente dentro de uma única unidade, sem atravessar sua fronteira.
+Não normalize pontuação, espaços, quebras de linha ou Unicode do trecho copiado.
+Responda somente com um objeto JSON, sem cercas Markdown, com estes campos:
+{"anchor_text":"trecho literal", "position_relative_to_anchor":"after"}
+A relação deve ser "before" ou "after", conforme a posição editorial.
+Opcionalmente inclua "anchor_before" e "anchor_after" com contexto literal
+imediatamente adjacente, dentro da mesma página. Contexto não dispensa unicidade.
+Não produza IDs, hashes, offsets, status, nomes de arquivo ou metadados operacionais.
+Se a proposta não puder ser localizada com segurança, não invente trecho: informe
+a dificuldade para revisão humana; uma resposta fora do contrato será preservada
+como tentativa inválida e não poderá ser finalizada.

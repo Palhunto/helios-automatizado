@@ -30,7 +30,7 @@ def test_m3_migration_creates_projection_and_browser_contracts(tmp_path: Path) -
             for row in connection.execute(
                 "SELECT version FROM schema_migrations ORDER BY version"
             ).fetchall()
-        ] == [1, 2, 3, 4, 5, 6, 7]
+        ] == list(range(1, 10))
 
     with database.connection() as connection:
         assert connection.execute(

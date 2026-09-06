@@ -22,6 +22,6 @@ def test_m1_migration_creates_relational_contract_and_reopens(tmp_path: Path) ->
         migrations = connection.execute(
             "SELECT version FROM schema_migrations ORDER BY version"
         ).fetchall()
-        assert [row[0] for row in migrations] == [1, 2, 3, 4, 5, 6, 7]
+        assert [row[0] for row in migrations] == list(range(1, 10))
     with database.connection() as connection:
         assert connection.execute("PRAGMA foreign_key_check").fetchall() == []

@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "visual_anchor_id",
+    "version",
+    "figure_id",
+    "visual_plan_id",
+    "project_id",
+    "page_key",
+    "input_hash",
+    "raw_sha256",
+    "validation_rule_version",
+    "pagination_snapshot_id",
+    "pagination_manifest_sha256",
+    "consolidation_id",
+    "text_sha256",
+    "prompt",
+    "candidate",
+    "validation"
+  ],
+  "properties": {
+    "schema": {
+      "const": "helios_visual_anchor_validation@1"
+    },
+    "visual_anchor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "figure_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_plan_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "page_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "raw_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "validation_rule_version": {
+      "const": "literal_page_unit@1"
+    },
+    "pagination_snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pagination_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "consolidation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "text_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "const": "helios_visual_anchor_enrichment"
+        },
+        "version": {
+          "const": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "candidate": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "description": "Operational V1 payload: no IDs, offsets or inferred editorial fields.",
+          "properties": {
+            "anchor_text": {
+              "minLength": 1,
+              "title": "Anchor Text",
+              "type": "string"
+            },
+            "position_relative_to_anchor": {
+              "enum": [
+                "before",
+                "after"
+              ],
+              "title": "Position Relative To Anchor",
+              "type": "string"
+            },
+            "anchor_before": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Anchor Before"
+            },
+            "anchor_after": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Anchor After"
+            }
+          },
+          "required": [
+            "anchor_text",
+            "position_relative_to_anchor"
+          ],
+          "title": "AnchorCandidate",
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "validation": {
+      "properties": {
+        "valid": {
+          "title": "Valid",
+          "type": "boolean"
+        },
+        "code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Code"
+        },
+        "occurrence_count": {
+          "title": "Occurrence Count",
+          "type": "integer"
+        },
+        "unit_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit Id"
+        },
+        "start_offset": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start Offset"
+        },
+        "end_offset": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End Offset"
+        },
+        "byte_start": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Byte Start"
+        },
+        "byte_end": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Byte End"
+        }
+      },
+      "required": [
+        "valid",
+        "code",
+        "occurrence_count"
+      ],
+      "title": "AnchorValidation",
+      "type": "object",
+      "additionalProperties": false
+    }
+  }
+}

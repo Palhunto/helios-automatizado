@@ -43,8 +43,10 @@ class ChromiumPaginationRenderer:
             with sync_playwright() as driver:
                 executable = driver.chromium.executable_path
                 executable_sha256 = sha256_file(Path(executable))
-                browser = driver.chromium.launch(headless=True)
-                browser.close()
+                # Complete a local protocol roundtrip before closing the driver; querying
+                # executable_path alone can leave its asynchronous initialization pending.
+                # No browser is launched and no HTTP request is issued.
+                driver.request.new_context().dispose()
         except Exception as exc:
             raise IntegrityError(
                 "PAGINATION_RENDERER_UNAVAILABLE",

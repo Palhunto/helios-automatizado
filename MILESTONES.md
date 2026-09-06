@@ -175,8 +175,8 @@ com cobertura completa das páginas elegíveis dos capítulos 1–8.
 - o pagination snapshot é current e compatível com a consolidação textual;
 - `figure_count == eligible_page_count` e os conjuntos de `page_key` são iguais;
 - existe exatamente uma figura por página elegível, sem gaps, duplicidades ou páginas externas;
-- cada figura referencia capítulo e unidade tipados e tem âncora operacional validada dentro da
-  mesma página e unidade;
+- cada figura referencia capítulo e `page_unit_ids` tipados; a âncora operacional resolve uma única
+  unidade somente quando seu intervalo fica integralmente contido nela dentro da mesma página;
 - a numeração global é exatamente `1..N`, na ordem das páginas elegíveis;
 - zero figuras só é válido quando zero páginas são elegíveis;
 - a promoção ocorre somente por `finalize` explícito e produz `helios_visual_manifest@1`;

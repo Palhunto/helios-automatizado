@@ -3,7 +3,7 @@ from pathlib import Path
 from ebook_pipeline.storage.database import Database
 
 
-def test_m4_migration_contains_only_pagination_entities(tmp_path: Path) -> None:
+def test_m4_0_migration_entities_remain_present(tmp_path: Path) -> None:
     database = Database(tmp_path / "helios.db")
     with database.connection() as connection:
         tables = {
@@ -12,11 +12,11 @@ def test_m4_migration_contains_only_pagination_entities(tmp_path: Path) -> None:
                 "SELECT name FROM sqlite_master WHERE type = 'table' AND name LIKE 'visual_%'"
             ).fetchall()
         }
-        assert tables == {
+        assert {
             "visual_pagination_snapshots",
             "visual_pagination_pages",
             "visual_pagination_page_unit_spans",
-        }
+        } <= tables
         migration = connection.execute(
             "SELECT name FROM schema_migrations WHERE version = 7"
         ).fetchone()

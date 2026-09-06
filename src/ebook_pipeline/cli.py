@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import logging
 import sys
@@ -32,6 +33,9 @@ from ebook_pipeline.logging_setup import configure_logging, log_event
 from ebook_pipeline.pagination.service import PaginationService
 from ebook_pipeline.storage.artifacts import ArtifactStore
 from ebook_pipeline.storage.database import Database
+from ebook_pipeline.visual_planning.enrichment import VisualAnchorService
+from ebook_pipeline.visual_planning.finalization import VisualFinalizationService
+from ebook_pipeline.visual_planning.service import VisualPlanningService
 from ebook_pipeline.writing.models import TextUnitSubmission, WritingUnitRecoveryResult
 from ebook_pipeline.writing.service import WritingService
 
@@ -200,6 +204,52 @@ def build_parser() -> argparse.ArgumentParser:
     pagination_validate = pagination_commands.add_parser("validate", help="Validate snapshots")
     pagination_validate.add_argument("project_id")
 
+    visual = commands.add_parser("visual", help="Manage visual planning imports")
+    visual_commands = visual.add_subparsers(dest="visual_command", required=True)
+    visual_plan = visual_commands.add_parser("plan", help="Manage visual plans")
+    visual_plan_commands = visual_plan.add_subparsers(dest="visual_action", required=True)
+    visual_plan_import = visual_plan_commands.add_parser("import", help="Import V2 raw")
+    visual_plan_import.add_argument("project_id")
+    visual_plan_import.add_argument("file")
+    visual_plan_show = visual_plan_commands.add_parser("show", help="Show an import")
+    visual_plan_show.add_argument("project_id")
+    visual_plan_show.add_argument("--version", type=int)
+    visual_plan_show.add_argument("--raw", action="store_true")
+    visual_plan_status = visual_plan_commands.add_parser("status", help="Show current state")
+    visual_plan_status.add_argument("project_id")
+    visual_plan_validate = visual_plan_commands.add_parser("validate", help="Validate imports")
+    visual_plan_validate.add_argument("project_id")
+    visual_finalize = visual_plan_commands.add_parser(
+        "finalize", help="Accept or resume visual plan"
+    )
+    visual_finalize.add_argument("project_id")
+    visual_finalize.add_argument("--plan-version", type=int)
+    visual_manifest = visual_plan_commands.add_parser(
+        "manifest", help="Read accepted visual manifest"
+    )
+    visual_manifest.add_argument("project_id")
+    visual_manifest.add_argument("--version", type=int)
+    visual_anchor = visual_commands.add_parser("anchor", help="Enrich and repair literal anchors")
+    anchor_commands = visual_anchor.add_subparsers(dest="visual_action", required=True)
+    for anchor_action in ("request", "import", "show", "recover"):
+        anchor_parser = anchor_commands.add_parser(anchor_action)
+        anchor_parser.add_argument("project_id")
+        anchor_parser.add_argument("figure_id")
+        if anchor_action == "import":
+            anchor_parser.add_argument("file")
+        if anchor_action == "show":
+            anchor_parser.add_argument("--version", type=int)
+    visual_figure = visual_commands.add_parser("figure", help="Inspect visual figures")
+    visual_figure_commands = visual_figure.add_subparsers(
+        dest="visual_action", required=True
+    )
+    visual_figure_list = visual_figure_commands.add_parser("list", help="List figures")
+    visual_figure_list.add_argument("project_id")
+    visual_figure_list.add_argument("--plan-version", type=int)
+    visual_figure_show = visual_figure_commands.add_parser("show", help="Show a figure")
+    visual_figure_show.add_argument("project_id")
+    visual_figure_show.add_argument("figure_id")
+
     browser = commands.add_parser("browser", help="Automate ChatGPT Plus through Playwright")
     browser_commands = browser.add_subparsers(dest="browser_command", required=True)
     browser_setup = browser_commands.add_parser(
@@ -354,19 +404,22 @@ def _services(
     AcademicService,
     WritingService,
     PaginationService,
+    VisualPlanningService,
 ]:
     load_pipeline_config(config.pipeline_config)
     database = Database(config.database_path)
     store = ArtifactStore(config.projects_dir)
     academic = AcademicService(config, database, store)
     writing = WritingService(config, database, store, academic)
+    pagination = PaginationService(config, database, store, writing)
     return (
         ProjectService(config, database, store),
         RecoveryService(config, database, store),
         store,
         academic,
         writing,
-        PaginationService(config, database, store, writing),
+        pagination,
+        VisualPlanningService(config, database, store, pagination),
     )
 
 
@@ -437,7 +490,7 @@ def _configure_project_log(
 def run(args: argparse.Namespace) -> int:
     config = _app_config(args)
     logger = configure_logging(config.log_level)
-    projects, recovery, store, academic, writing, pagination = _services(config)
+    projects, recovery, store, academic, writing, pagination, visual = _services(config)
 
     if args.command == "academic":
         return _run_academic(args, config, projects, store, academic)
@@ -445,6 +498,8 @@ def run(args: argparse.Namespace) -> int:
         return _run_writing(args, config, projects, store, writing)
     if args.command == "pagination":
         return _run_pagination(args, config, projects, store, pagination)
+    if args.command == "visual":
+        return _run_visual(args, config, projects, store, visual)
     if args.command == "browser":
         return _run_browser(args, config, projects, store, writing)
 
@@ -857,6 +912,85 @@ def _run_pagination(
         )
         return 0 if not issues else 5
     raise AssertionError(f"Unhandled pagination command: {command}")
+
+
+def _run_visual(
+    args: argparse.Namespace,
+    config: AppConfig,
+    projects: ProjectService,
+    store: ArtifactStore,
+    visual: VisualPlanningService,
+) -> int:
+    project = projects.get(args.project_id)
+    _configure_project_log(config, store, project)
+    command = args.visual_command
+    action = args.visual_action
+    anchors = VisualAnchorService(visual)
+    finalizations = VisualFinalizationService(visual)
+    if command == "anchor":
+        if action == "request":
+            print(_json(anchors.request(project.id, args.figure_id)))
+            return 0
+        if action == "import":
+            anchor, report = anchors.import_raw(project.id, args.figure_id, _input_bytes(args.file))
+        elif action == "recover":
+            anchor, report = anchors.recover(project.id, args.figure_id)
+        else:
+            anchor, report = anchors.show(project.id, args.figure_id, args.version)
+        print(_json({"anchor": asdict(anchor), "validation_report": report}))
+        return 0 if anchor.disposition == "valid" else 2
+    if command == "plan" and action == "finalize":
+        accepted, manifest = finalizations.finalize(project.id, args.plan_version)
+        print(_json({"finalization": asdict(accepted), "manifest": manifest}))
+        return 0
+    if command == "plan" and action == "manifest":
+        accepted, manifest = finalizations.show(project.id, args.version)
+        print(_json({"finalization": asdict(accepted), "manifest": manifest}))
+        return 0
+    if command == "plan" and action == "import":
+        plan, report = visual.import_raw(project.id, _input_bytes(args.file))
+        print(_json({"plan": asdict(plan), "validation_report": report}))
+        return 0 if plan.disposition == "valid" else 2
+    if command == "plan" and action == "show":
+        plan, figures, report, raw = visual.show(project.id, args.version)
+        payload: dict[str, object] = {
+            "plan": asdict(plan),
+            "figures": [asdict(figure) for figure in figures],
+            "validation_report": report,
+        }
+        if args.raw:
+            try:
+                payload["raw"] = raw.decode("utf-8")
+            except UnicodeDecodeError:
+                payload["raw_base64"] = base64.b64encode(raw).decode("ascii")
+                payload["raw_encoding"] = "base64"
+        print(_json(payload))
+        return 0
+    if command == "plan" and action == "status":
+        print(_json({
+            **visual.status(project.id), "finalization": finalizations.status(project.id)
+        }))
+        return 0
+    if command == "plan" and action == "validate":
+        issues = visual.validate(project.id) + finalizations.validate(project.id)
+        print(
+            _json(
+                {
+                    "issues": [_issue_payload(issue) for issue in issues],
+                    "project_id": project.id,
+                    "valid": not issues,
+                }
+            )
+        )
+        return 0 if not issues else 5
+    if command == "figure" and action == "list":
+        plan, figures = visual.list_figures(project.id, args.plan_version)
+        print(_json({"plan": asdict(plan), "figures": [asdict(item) for item in figures]}))
+        return 0
+    if command == "figure" and action == "show":
+        print(_json(asdict(visual.show_figure(project.id, args.figure_id))))
+        return 0
+    raise AssertionError(f"Unhandled visual command: {command} {action}")
 
 
 def _run_browser(

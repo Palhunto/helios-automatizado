@@ -95,12 +95,14 @@ Required editorial fields:
 - complexity;
 - independent prompt.
 
-Operational fields include canonical `page_key`, typed chapter/unit links, and a separate versioned
-anchor. The editorial `page` and `section` values are preserved as observed but do not establish
-referential integrity.
+Operational fields include canonical `page_key`, typed chapter and ordered `page_unit_ids`, plus a
+separate versioned anchor. The editorial `page` and `section` values are preserved as observed but
+do not establish referential integrity. A singular unit is deliberately unresolved in M4.1.
 
-Anchor uniqueness is local to the assigned page's source span and selected typed unit span. The
-same literal may occur elsewhere in the ebook without invalidating that anchor.
+In M4.2, a valid anchor must be wholly contained in exactly one `page_unit_ids` span; that span
+becomes `anchor.unit_id`/`resolved_unit_id`. Crossing a unit boundary or ambiguity between units on
+the same page is invalid. The same literal may occur elsewhere in the ebook without invalidating
+that anchor.
 
 For an accepted plan:
 

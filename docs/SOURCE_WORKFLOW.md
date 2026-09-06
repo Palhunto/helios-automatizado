@@ -158,8 +158,10 @@ A posição editorial precisa ser convertida em localização operacional.
 Após o plano:
 - obter `anchor_text` literal;
 - obter `before|after`;
-- validar literalidade e unicidade dentro do source span da `page_key` + unidade tipada atribuídas;
-- provar que a ocorrência pertence à mesma `page_key` e unidade tipada da figura;
+- no plano, preservar `page_unit_ids` exatamente dos unit spans da `page_key`, sem unidade dominante;
+- validar literalidade dentro da `page_key` e contenção integral em exatamente uma dessas units;
+- rejeitar boundary atravessado ou ocorrência ambígua entre units da mesma página;
+- atribuir `anchor.unit_id` somente depois dessa prova;
 - não alterar a proposta da figura.
 
 ---

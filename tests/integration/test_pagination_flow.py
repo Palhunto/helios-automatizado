@@ -20,6 +20,9 @@ def _ready_canonical_consolidation(
     services: ServiceBundle,
     project_config_path: Path,
     repository_root: Path,
+    *,
+    contract_id: str = "omega_writing_production",
+    character_target: int = 9200,
 ) -> str:
     project = services.projects.create(project_config_path)
     prompt = PromptRegistry(repository_root / "prompts" / "registry.yaml").resolve(
@@ -40,7 +43,7 @@ def _ready_canonical_consolidation(
     services.academic.import_plan(project.id, b"# Plano academico\nDesenvolvimento aprovado.")
     context = services.writing.create_context(
         project.id,
-        contract_id="omega_writing_production",
+        contract_id=contract_id,
         contract_version=1,
     )
     acknowledgement = services.writing.acknowledge_context(
@@ -60,7 +63,7 @@ def _ready_canonical_consolidation(
             f"Discussão acadêmica da unidade {unit.unit_id} articula ação, teoria, prática e "
             "evidência contextual com precisão conceitual. "
         )
-        body = (stem * ((9200 // len(stem)) + 2))[: 9200 - len(suffix)]
+        body = (stem * ((character_target // len(stem)) + 2))[: character_target - len(suffix)]
         submission = services.writing.import_unit(
             project.id, unit.unit_id, (body + suffix).encode()
         )

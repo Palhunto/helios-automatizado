@@ -266,7 +266,13 @@ pendente para milestone posterior.
 - crash depois de HTML ou PDF retoma a mesma identidade, valida/reutiliza bytes iguais e não cria
   página, Artifact ou StageRun duplicado.
 
-Cada figura aceita deve preservar:
+### Importação e validação estrutural M4.1
+
+Antes do parsing, o raw é persistido byte a byte. Import inválido conserva raw e validation report,
+conclui sua unidade de importação e não materializa `VisualFigure` parcial. O prompt V2 usado fica
+congelado por ID, versão e SHA; rerun com os mesmos bytes e proveniência reutiliza a mesma identidade.
+
+Cada figura estruturalmente válida deve preservar:
 - número/nome;
 - página editorial como observada;
 - seção;
@@ -295,19 +301,40 @@ Além disso, antes de geração:
 - existe exatamente uma figura por `page_key`, sem gap ou duplicidade;
 - nenhuma figura referencia página inexistente, introdução, conclusão, referências ou conteúdo
   externo aos capítulos 1–8;
-- cada figura possui `page_key`, capítulo e unidade tipados e coerentes com o snapshot;
+- cada figura possui `page_key`, capítulo e `page_unit_ids` exatamente iguais aos unit spans
+  distintos da página em `span_order`;
 - a numeração global é positiva, única, contígua `1..N` e segue a ordem das páginas elegíveis;
 - zero figuras só é válido quando o conjunto elegível também é zero;
+
+### Enriquecimento e finalize M4.2
+
 - `anchor_text` operacional existe;
-- anchor é literal e único dentro do source span da `page_key` e unidade tipada atribuídas; o mesmo
+- no M4.2, anchor resolve `unit_id` singular pertencente a `figure.page_unit_ids`, sem usar `Seção`,
+  extensão dominante ou inferência semântica;
+- anchor é literal e único dentro do source span da `page_key` e unidade resolvida; o mesmo
   literal pode existir em outra página do ebook;
-- o intervalo do anchor pertence à mesma página canônica e unidade tipada da figura;
+- o intervalo do anchor pertence integralmente a exatamente um unit span da mesma página;
+- anchor que atravessa boundary ou possui ocorrência ambígua entre units da página é rejeitada;
 - `position_relative_to_anchor` é `before` ou `after`;
 - anchor inválido gera nova versão sem modificar `VisualFigure`;
 - cobertura obrigatória não autoriza figura decorativa ou sem função pedagógica/editorial;
 - `finalize` é explícito e falha se qualquer invariante estiver ausente;
 - o accepted manifest segue `helios_visual_manifest@1` e congela as duas proveniências, prompt,
   páginas, figures, anchors selecionados, hashes e contagens.
+- JSON com campo ausente, duplicado, desconhecido, tipo inválido ou cerca Markdown é preservado
+  como raw inválido; metadados operacionais não são aceitos do modelo;
+- contexto opcional é literal/adjacente na página e não substitui unicidade;
+- offsets Unicode e UTF-8 correspondem exatamente ao trecho validado;
+- import idêntico é idempotente; reparo diferente gera versão e predecessor sem reescrever figura;
+- a seleção usa a última tentativa de cada figura, inclusive inválida ou incompleta, para impedir
+  fallback silencioso; histórico aceito permanece íntegro e consultável;
+- falhas nos checkpoints raw/report/manifest retomam a mesma identidade e respeitam max_attempts;
+- corrupção de raw, report, fonte ou manifest e troca de binding impedem promoção;
+- fontes e outputs são relidos antes do commit, após os checkpoints;
+- migration 0009 preserva os dados e hashes das migrations 0001–0008;
+- schemas de candidato, âncora, relatório, finalização e manifest são Draft 2020-12;
+- fingerprint não abre browser; verifica bytes do executável e conclui o protocolo local antes
+  de encerrar o driver. `pagination validate` mantém a inspeção textual completa do PDF.
 
 Parser M4:
 - estruturalmente estrito;

@@ -1,4 +1,11 @@
 prompts:
+  - id: helios_visual_anchor_enrichment
+    version: 1
+    status: active
+    path: operational/visual_anchor_enrichment_v1.txt
+    sha256: 07a273649e9cac3ef40dc780b8dbc70215bb50f9ab54a50cec74df0d9e41849e
+    domain: visual_anchor_operation
+
   - id: omega_academic_planning
     version: 1
     status: active

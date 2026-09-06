@@ -152,8 +152,9 @@ Complexidade visual permitida pelo prompt:
 - `Editorial estruturada`;
 - `Síntese conceitual`.
 
-A página editorial é preservada como observada. `page_key`, capítulo e unidade são ligações
-operacionais validadas pelo código contra o snapshot, nunca inferidas pelo LLM. A numeração é global
+A página editorial é preservada como observada. `page_key`, capítulo e `page_unit_ids` são ligações
+operacionais validadas pelo código contra o snapshot, nunca inferidas pelo LLM. A unidade singular
+só é resolvida por uma âncora válida no M4.2. A numeração é global
 `1..N` na ordem das páginas elegíveis. Zero figuras só é permitido quando zero páginas são
 elegíveis. O parser é estruturalmente estrito e tolera apenas LF/CRLF e whitespace de borda.
 
@@ -164,14 +165,21 @@ Como "posição exata" pode ser semanticamente clara, mas não máquina-localiz�
 - relação `before|after`;
 - contexto opcional.
 
-Python então valida literalidade e unicidade dentro do source span da `page_key` atribuída e da
-unidade tipada da figura. O mesmo literal pode existir em outra página do ebook; não se exige
-unicidade global.
+Python então valida literalidade e unicidade dentro da `page_key` e exige contenção integral em
+exatamente um dos `page_unit_ids` da figura. Esse span fornece o `unit_id` singular da âncora;
+boundary atravessado ou ocorrência ambígua entre units da página é rejeitado. O mesmo literal pode
+existir em outra página do ebook; não se exige unicidade global.
 
 Não alterar a proposta visual nessa subetapa.
 
 O enriquecimento usa contrato operacional versionado separado. Domínio/import vêm primeiro; uma
 integração posterior com browser reutiliza M3 sem colocar regras de negócio no adapter.
+
+No M4.2, o contrato é `helios_visual_anchor_enrichment@1`, exportável por `visual anchor request`.
+Seu JSON contém `anchor_text`, `position_relative_to_anchor` e contexto adjacente opcional
+`anchor_before`/`anchor_after`. A CLI importa o bruto por figura; código resolve a unidade e os
+offsets. A importação não envia mensagens ao ChatGPT. A aceitação exige `visual plan finalize`
+explícito e todas as últimas versões de âncora válidas.
 
 ### 7. Image Manager — M5; produção — M6
 

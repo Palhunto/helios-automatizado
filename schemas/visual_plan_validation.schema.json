@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "helios_visual_plan_validation@1",
+  "title": "M4.1 VisualPlan Validation Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "project_id", "visual_plan_id", "raw_version", "raw_sha256", "valid",
+    "expected_figure_count", "actual_figure_count", "pagination", "consolidation",
+    "prompt", "bindings", "findings"
+  ],
+  "properties": {
+    "schema": { "const": "helios_visual_plan_validation@1" },
+    "project_id": { "type": "string", "minLength": 1 },
+    "visual_plan_id": { "type": "string", "minLength": 1 },
+    "raw_version": { "type": "integer", "minimum": 1 },
+    "raw_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "valid": { "type": "boolean" },
+    "expected_figure_count": { "type": "integer", "minimum": 0 },
+    "actual_figure_count": { "type": "integer", "minimum": 0 },
+    "pagination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["snapshot_id", "manifest_artifact_id", "manifest_sha256"],
+      "properties": {
+        "snapshot_id": { "type": "string", "minLength": 1 },
+        "manifest_artifact_id": { "type": "string", "minLength": 1 },
+        "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "consolidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text_artifact_id", "text_sha256", "manifest_artifact_id", "manifest_sha256"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "text_artifact_id": { "type": "string", "minLength": 1 },
+        "text_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "manifest_artifact_id": { "type": "string", "minLength": 1 },
+        "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "sha256"],
+      "properties": {
+        "id": { "const": "omega_visual_planning" },
+        "version": { "const": 2 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "figure_order", "number", "page_key", "chapter_id", "document_page_number",
+          "eligible_page_number", "page_unit_ids"
+        ],
+        "properties": {
+          "figure_order": { "type": "integer", "minimum": 1 },
+          "number": { "type": "integer", "minimum": 1 },
+          "page_key": { "type": "string", "pattern": "^CH0[1-8]-P[0-9]{3}$" },
+          "chapter_id": { "type": "string", "pattern": "^CH0[1-8]$" },
+          "document_page_number": { "type": "integer", "minimum": 1 },
+          "eligible_page_number": { "type": "integer", "minimum": 1 },
+          "page_unit_ids": {
+            "type": "array", "minItems": 1, "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "message", "figure_order", "page_key"],
+        "properties": {
+          "code": { "type": "string", "minLength": 1 },
+          "message": { "type": "string", "minLength": 1 },
+          "figure_order": { "type": ["integer", "null"], "minimum": 1 },
+          "page_key": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

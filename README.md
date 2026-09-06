@@ -53,10 +53,11 @@ Eles são fonte de verdade versionada para o comportamento editorial atual.
 
 ## Estado do desenvolvimento
 
-`M0 — Fundação`, `M1 — Planejamento Acadêmico` e `M2 — Produção Textual` estão completos. O
-`M3 — Automação do ChatGPT Plus` está em implementação/aceite: usa Playwright com perfil dedicado,
-conversa por WritingContext, interações persistentes, captura byte-preserving, binding exato ao M2
-e recovery fail-closed. O M4 não foi iniciado.
+M0–M4 estão completos. O M4 entrega paginação canônica local, importação do planejamento visual,
+âncoras literais versionadas e finalização explícita em `helios_visual_manifest@1`.
+As evidências de fechamento estão em `PROJECT_STATE.md` e a revisão em `docs/M4_REVIEW.md`.
+M5–M10 permanecem posteriores: lifecycle de imagens, produção via GPT, Google Docs, QA final,
+interface do operador e hardening de produção.
 
 Leia:
 1. `AGENTS.md`

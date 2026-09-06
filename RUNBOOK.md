@@ -279,3 +279,53 @@ HELIOS_BROWSER_CAPTURE_METHOD_VERSION=rendered_text_v1
 ```
 
 O aplicativo não carrega `.env` automaticamente.
+
+## Planejamento visual — M4
+
+Parta de uma consolidação textual completa e atual. O plano editorial é produzido pelo OmegaBrain
+com o prompt V2 e importado como UTF-8; as âncoras são um enriquecimento separado.
+
+```powershell
+ebook pagination create <project_id>
+ebook pagination validate <project_id>
+ebook visual plan import <project_id> plano-visual.txt
+ebook visual figure list <project_id>
+ebook visual anchor request <project_id> <figure_id>
+ebook visual anchor import <project_id> <figure_id> ancora.json
+ebook visual anchor show <project_id> <figure_id>
+ebook visual plan finalize <project_id>
+ebook visual plan manifest <project_id>
+ebook visual plan validate <project_id>
+ebook visual plan status <project_id>
+```
+
+`anchor request` exporta instrução, proposta e os trechos exatos da página para escolha semântica
+da âncora. Não faz envio externo. O contrato `helios_visual_anchor_enrichment@1` recebe somente:
+
+```json
+{"anchor_text": "Trecho literal copiado da página.", "position_relative_to_anchor": "after"}
+```
+
+Use `before` ou `after`. Os campos opcionais `anchor_before` e `anchor_after` precisam ser contexto
+literal imediatamente adjacente dentro da página; não desambiguam trechos repetidos. IDs, unidade,
+offsets e hashes são calculados pelo programa. Não inclua cercas Markdown no arquivo JSON.
+
+Importe uma âncora por figura. Uma tentativa inválida conserva bruto e relatório; corrija somente
+o JSON daquela figura e importe novamente. Bytes diferentes geram versão nova e preservam a
+proposta editorial. Reimportar bytes idênticos reutiliza a tentativa anterior e não a promove
+automaticamente sobre uma tentativa posterior. Consulte versões com `anchor show --version N`.
+
+`finalize` exige o plano atual, cobertura completa e a versão mais recente válida de cada âncora.
+Falha de uma figura impede a finalização. Novos reparos deixam o manifest anterior preservado;
+um novo `finalize` explícito congela outra versão, sem alterar a anterior. Use `plan manifest
+--version N` para consultar histórico. `plan status` distingue validade estrutural e finalização.
+
+Depois de interrupção, `anchor recover <project_id> <figure_id>` relê o bruto persistido e retoma
+a mesma unidade. Para uma finalização interrompida, repita `plan finalize` com os mesmos inputs.
+Os retries são limitados pela configuração. Fontes alteradas, hashes divergentes ou arquivos
+conflitantes impedem promoção; preserve as evidências e consulte o erro antes de reparar.
+
+`plan validate` verifica integridade de imports, anchors e manifests, incluindo o histórico.
+Uma tentativa editorial rejeitada, mas íntegra, não é corrupção. `pagination validate` inclui
+também a inspeção textual completa do PDF; as operações de âncora verificam seus hashes, tamanho,
+geometria e toda a proveniência operacional sem repetir a extração textual do PDF por figura.

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "helios_visual_anchor_enrichment@1",
+  "additionalProperties": false,
+  "description": "Operational V1 payload: no IDs, offsets or inferred editorial fields.",
+  "properties": {
+    "anchor_text": {
+      "minLength": 1,
+      "title": "Anchor Text",
+      "type": "string"
+    },
+    "position_relative_to_anchor": {
+      "enum": [
+        "before",
+        "after"
+      ],
+      "title": "Position Relative To Anchor",
+      "type": "string"
+    },
+    "anchor_before": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Anchor Before"
+    },
+    "anchor_after": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Anchor After"
+    }
+  },
+  "required": [
+    "anchor_text",
+    "position_relative_to_anchor"
+  ],
+  "title": "AnchorCandidate",
+  "type": "object"
+}

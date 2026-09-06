@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "project_id": {
+      "title": "Project Id",
+      "type": "string"
+    },
+    "visual_plan_id": {
+      "title": "Visual Plan Id",
+      "type": "string"
+    },
+    "stage_run_id": {
+      "title": "Stage Run Id",
+      "type": "string"
+    },
+    "accepted_version": {
+      "title": "Accepted Version",
+      "type": "integer"
+    },
+    "input_hash": {
+      "title": "Input Hash",
+      "type": "string"
+    },
+    "manifest_artifact_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Manifest Artifact Id"
+    },
+    "manifest_sha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Manifest Sha256"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "accepted_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Accepted At"
+    }
+  },
+  "required": [
+    "id",
+    "project_id",
+    "visual_plan_id",
+    "stage_run_id",
+    "accepted_version",
+    "input_hash",
+    "manifest_artifact_id",
+    "manifest_sha256",
+    "created_at",
+    "accepted_at"
+  ],
+  "title": "VisualFinalization",
+  "type": "object",
+  "additionalProperties": false
+}

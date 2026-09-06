@@ -1,0 +1,968 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "finalization_id",
+    "project_id",
+    "accepted_version",
+    "input_hash",
+    "created_at",
+    "plan",
+    "eligible_pages",
+    "expected_figure_count",
+    "figure_count",
+    "figures"
+  ],
+  "properties": {
+    "schema": {
+      "const": "helios_visual_manifest@1"
+    },
+    "finalization_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accepted_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "input_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "project_id": {
+          "title": "Project Id",
+          "type": "string"
+        },
+        "stage_run_id": {
+          "title": "Stage Run Id",
+          "type": "string"
+        },
+        "raw_version": {
+          "title": "Raw Version",
+          "type": "integer"
+        },
+        "disposition": {
+          "enum": [
+            "processing",
+            "valid",
+            "invalid"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "input_hash": {
+          "title": "Input Hash",
+          "type": "string"
+        },
+        "pagination_snapshot_id": {
+          "title": "Pagination Snapshot Id",
+          "type": "string"
+        },
+        "pagination_manifest_artifact_id": {
+          "title": "Pagination Manifest Artifact Id",
+          "type": "string"
+        },
+        "pagination_manifest_sha256": {
+          "title": "Pagination Manifest Sha256",
+          "type": "string"
+        },
+        "consolidation_id": {
+          "title": "Consolidation Id",
+          "type": "string"
+        },
+        "context_id": {
+          "title": "Context Id",
+          "type": "string"
+        },
+        "production_set_hash": {
+          "title": "Production Set Hash",
+          "type": "string"
+        },
+        "text_artifact_id": {
+          "title": "Text Artifact Id",
+          "type": "string"
+        },
+        "text_sha256": {
+          "title": "Text Sha256",
+          "type": "string"
+        },
+        "consolidation_manifest_artifact_id": {
+          "title": "Consolidation Manifest Artifact Id",
+          "type": "string"
+        },
+        "consolidation_manifest_sha256": {
+          "title": "Consolidation Manifest Sha256",
+          "type": "string"
+        },
+        "prompt_id": {
+          "title": "Prompt Id",
+          "type": "string"
+        },
+        "prompt_version": {
+          "title": "Prompt Version",
+          "type": "integer"
+        },
+        "prompt_sha256": {
+          "title": "Prompt Sha256",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "raw_artifact_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Artifact Id"
+        },
+        "validation_report_sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Validation Report Sha256"
+        },
+        "validation_report_artifact_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Validation Report Artifact Id"
+        },
+        "expected_figure_count": {
+          "title": "Expected Figure Count",
+          "type": "integer"
+        },
+        "figure_count": {
+          "title": "Figure Count",
+          "type": "integer"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "validated_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Validated At"
+        }
+      },
+      "required": [
+        "id",
+        "project_id",
+        "stage_run_id",
+        "raw_version",
+        "disposition",
+        "input_hash",
+        "pagination_snapshot_id",
+        "pagination_manifest_artifact_id",
+        "pagination_manifest_sha256",
+        "consolidation_id",
+        "context_id",
+        "production_set_hash",
+        "text_artifact_id",
+        "text_sha256",
+        "consolidation_manifest_artifact_id",
+        "consolidation_manifest_sha256",
+        "prompt_id",
+        "prompt_version",
+        "prompt_sha256",
+        "raw_sha256",
+        "raw_artifact_id",
+        "validation_report_sha256",
+        "validation_report_artifact_id",
+        "expected_figure_count",
+        "figure_count",
+        "created_at",
+        "validated_at"
+      ],
+      "title": "VisualPlan",
+      "type": "object",
+      "additionalProperties": false
+    },
+    "eligible_pages": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "$ref": "#/$defs/page"
+      }
+    },
+    "expected_figure_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "figure_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "project_id",
+          "visual_plan_id",
+          "pagination_snapshot_id",
+          "figure_order",
+          "number",
+          "name",
+          "editorial_page",
+          "section",
+          "exact_position",
+          "main_concept",
+          "conceptual_synthesis",
+          "justification",
+          "objective",
+          "visual_type",
+          "complexity",
+          "generation_prompt",
+          "document_page_number",
+          "eligible_page_number",
+          "page_key",
+          "chapter_id",
+          "page_unit_ids",
+          "editorial_sha256",
+          "visual_id",
+          "resolved_unit_id",
+          "anchor"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "project_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_plan_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pagination_snapshot_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "figure_order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "editorial_page": {
+            "type": "string",
+            "minLength": 1
+          },
+          "section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exact_position": {
+            "type": "string",
+            "minLength": 1
+          },
+          "main_concept": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conceptual_synthesis": {
+            "type": "string",
+            "minLength": 1
+          },
+          "justification": {
+            "type": "string",
+            "minLength": 1
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "complexity": {
+            "enum": [
+              "Editorial direta",
+              "Editorial estruturada",
+              "Síntese conceitual"
+            ]
+          },
+          "generation_prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "document_page_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "eligible_page_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "page_key": {
+            "type": "string",
+            "pattern": "^CH0[1-8]-P[0-9]{3}$"
+          },
+          "chapter_id": {
+            "type": "string",
+            "pattern": "^CH0[1-8]$"
+          },
+          "page_unit_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "editorial_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "visual_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resolved_unit_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "anchor": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "project_id",
+              "visual_plan_id",
+              "figure_id",
+              "stage_run_id",
+              "version",
+              "input_hash",
+              "supersedes_anchor_id",
+              "disposition",
+              "prompt_id",
+              "prompt_version",
+              "prompt_sha256",
+              "raw_sha256",
+              "raw_artifact_id",
+              "report_sha256",
+              "report_artifact_id",
+              "unit_id",
+              "start_offset",
+              "end_offset",
+              "created_at",
+              "validated_at",
+              "anchor_text",
+              "position_relative_to_anchor",
+              "anchor_before",
+              "anchor_after",
+              "validation",
+              "validation_rule_version"
+            ],
+            "properties": {
+              "id": {
+                "title": "Id",
+                "type": "string"
+              },
+              "project_id": {
+                "title": "Project Id",
+                "type": "string"
+              },
+              "visual_plan_id": {
+                "title": "Visual Plan Id",
+                "type": "string"
+              },
+              "figure_id": {
+                "title": "Figure Id",
+                "type": "string"
+              },
+              "stage_run_id": {
+                "title": "Stage Run Id",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "integer"
+              },
+              "input_hash": {
+                "title": "Input Hash",
+                "type": "string"
+              },
+              "supersedes_anchor_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Supersedes Anchor Id"
+              },
+              "disposition": {
+                "const": "valid"
+              },
+              "prompt_id": {
+                "title": "Prompt Id",
+                "type": "string"
+              },
+              "prompt_version": {
+                "title": "Prompt Version",
+                "type": "integer"
+              },
+              "prompt_sha256": {
+                "title": "Prompt Sha256",
+                "type": "string"
+              },
+              "raw_sha256": {
+                "title": "Raw Sha256",
+                "type": "string"
+              },
+              "raw_artifact_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Raw Artifact Id"
+              },
+              "report_sha256": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Report Sha256"
+              },
+              "report_artifact_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Report Artifact Id"
+              },
+              "unit_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start_offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_offset": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "created_at": {
+                "title": "Created At",
+                "type": "string"
+              },
+              "validated_at": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Validated At"
+              },
+              "anchor_text": {
+                "minLength": 1,
+                "title": "Anchor Text",
+                "type": "string"
+              },
+              "position_relative_to_anchor": {
+                "enum": [
+                  "before",
+                  "after"
+                ],
+                "title": "Position Relative To Anchor",
+                "type": "string"
+              },
+              "anchor_before": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Anchor Before"
+              },
+              "anchor_after": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Anchor After"
+              },
+              "validation": {
+                "properties": {
+                  "valid": {
+                    "title": "Valid",
+                    "type": "boolean"
+                  },
+                  "code": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "title": "Code"
+                  },
+                  "occurrence_count": {
+                    "title": "Occurrence Count",
+                    "type": "integer"
+                  },
+                  "unit_id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "title": "Unit Id"
+                  },
+                  "start_offset": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "title": "Start Offset"
+                  },
+                  "end_offset": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "title": "End Offset"
+                  },
+                  "byte_start": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "title": "Byte Start"
+                  },
+                  "byte_end": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": null,
+                    "title": "Byte End"
+                  }
+                },
+                "required": [
+                  "valid",
+                  "code",
+                  "occurrence_count"
+                ],
+                "title": "AnchorValidation",
+                "type": "object",
+                "additionalProperties": false
+              },
+              "validation_rule_version": {
+                "const": "literal_page_unit@1"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "versionedContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "fontProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "font_sha256",
+        "license_sha256",
+        "role"
+      ],
+      "properties": {
+        "family": {
+          "type": "string",
+          "minLength": 1
+        },
+        "font_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "license_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "role": {
+          "enum": [
+            "sans",
+            "serif"
+          ]
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_type",
+        "relative_path",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_type": {
+          "enum": [
+            "pagination_render_html",
+            "pagination_pdf"
+          ]
+        },
+        "relative_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "box": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x_mm",
+        "y_mm",
+        "width_mm",
+        "height_mm"
+      ],
+      "properties": {
+        "x_mm": {
+          "type": "number",
+          "minimum": 0
+        },
+        "y_mm": {
+          "type": "number",
+          "minimum": 0
+        },
+        "width_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "span_order",
+        "artifact_id",
+        "source_sha256",
+        "global_char_start",
+        "global_char_end",
+        "global_byte_start",
+        "global_byte_end",
+        "unit_char_start",
+        "unit_char_end",
+        "unit_byte_start",
+        "unit_byte_end"
+      ],
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "pattern": "^(INTRO|CH0[1-8]_[AB]|CONCLUSION)$"
+        },
+        "span_order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "global_char_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "global_char_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "global_byte_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "global_byte_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unit_char_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unit_char_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unit_byte_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unit_byte_end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chapter_id",
+        "chapter_page_number",
+        "document_page_number",
+        "eligible",
+        "eligible_page_number",
+        "page_key",
+        "page_source_sha256",
+        "text_region",
+        "unit_spans",
+        "visual_slot"
+      ],
+      "properties": {
+        "chapter_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^CH0[1-8]$"
+        },
+        "chapter_page_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "document_page_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "eligible": {
+          "type": "boolean"
+        },
+        "eligible_page_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "page_key": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^CH0[1-8]-P[0-9]{3}$"
+        },
+        "page_source_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "text_region": {
+          "$ref": "#/$defs/box"
+        },
+        "unit_spans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "visual_slot": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/box"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "eligible": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "chapter_id": {
+                "type": "string",
+                "pattern": "^CH0[1-8]$"
+              },
+              "chapter_page_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "eligible_page_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "page_key": {
+                "type": "string",
+                "pattern": "^CH0[1-8]-P[0-9]{3}$"
+              },
+              "visual_slot": {
+                "$ref": "#/$defs/box"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "chapter_id": {
+                "type": "null"
+              },
+              "chapter_page_number": {
+                "type": "null"
+              },
+              "eligible_page_number": {
+                "type": "null"
+              },
+              "page_key": {
+                "type": "null"
+              },
+              "visual_slot": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

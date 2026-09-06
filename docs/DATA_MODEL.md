@@ -377,8 +377,9 @@ estrutural. Isso não injeta heading visível; somente heading presente no sourc
 por SHA antes do Chromium, sem fallback para fontes do sistema.
 
 Eligible pages never belong to introduction, conclusion, references or content external to chapters
-1–8. A page cannot cross chapters. When a page intersects more than one writing unit, the figure
-selects one typed `unit_id` from `unit_spans` and its anchor must fall inside that unit's range.
+1–8. A page cannot cross chapters. When a page intersects more than one writing unit, M4.1 preserves
+every distinct `unit_id` in `span_order`; it does not select a dominant unit. M4.2 resolves one unit
+only from an anchor wholly contained in exactly one of those ranges.
 
 ### VisualPlan
 
@@ -386,30 +387,29 @@ selects one typed `unit_id` from `unit_spans` and its anchor must fall inside th
 - `project_id`
 - `stage_run_id`
 - `raw_version`
-- `accepted_version`
-- `disposition`
-- exact consolidation provenance
-- exact pagination snapshot provenance
+- `disposition` — `processing | valid | invalid` no M4.1;
+- exact consolidation provenance: IDs de contexto/texto/manifest e respectivos hashes;
+- exact pagination snapshot provenance: snapshot e manifest Artifact/SHA;
 - exact prompt identity (`prompt_id`, `prompt_version`, `prompt_sha256`)
 - raw Artifact/SHA
 - validation report Artifact/SHA
-- accepted manifest Artifact/SHA
 - `expected_figure_count`
 - `figure_count`
 - `created_at`
-- `accepted_at`
+- `validated_at`
 
-`finalize` is explicit. `accepted_version` and the `helios_visual_manifest@1` artifact can exist only
-when coverage, numbering, structural fields, page/unit/chapter binding and all selected anchors are
-valid.
+`VisualPlan` permanece sem `accepted_version`, `accepted_at` ou accepted manifest: `valid` significa
+que o raw V2 passou pelo parser e pelos invariantes estruturais e pôde materializar figures.
+No M4.2, a aceitação explícita reside em `VisualFinalization`, separada e imutável, somente quando
+coverage, numbering, bindings e todos os anchors selecionados forem válidos.
 
 ### VisualFigure
 Editorial fields:
-- `figure_id`
-- `order`
+- `id`
+- `figure_order`
 - `number`
 - `name`
-- `page`
+- `editorial_page`
 - `section`
 - `exact_position`
 - `main_concept`
@@ -423,14 +423,17 @@ Editorial fields:
 Operational binding:
 - `visual_plan_id`
 - `pagination_snapshot_id`
+- `document_page_number`
+- `eligible_page_number`
 - `page_key`
 - `chapter_id`
-- `unit_id`
+- `page_unit_ids` — ordered distinct IDs derived exactly from the page unit spans
 - `editorial_sha256`
 
 `number` is global, positive, unique and contiguous `1..N`, following `page_order`. There is exactly
 one figure for every eligible `page_key`; `page` and `section` remain raw editorial values and are
-not foreign keys.
+not foreign keys. M4.1 has no singular figure `unit_id`; `Seção`, span length and semantics cannot
+choose it.
 
 ### VisualAnchor
 
@@ -444,7 +447,8 @@ Versioned operational enrichment, separate from `VisualFigure`:
 - `position_relative_to_anchor`
 - `anchor_before`
 - `anchor_after`
-- `anchor_validation_status`
+- `disposition`: `processing | valid | invalid`
+- `unit_id` / figure `resolved_unit_id`
 - `occurrence_count`
 - `start_offset`
 - `end_offset`
@@ -452,15 +456,42 @@ Versioned operational enrichment, separate from `VisualFigure`:
 - exact consolidation and pagination provenance
 - source and validation Artifact/SHA
 
-`validated` requires a literal unique occurrence inside the source span of the exact `page_key` and
-selected typed unit range of the figure. It does not require global uniqueness in the ebook. A
-rejected repair creates a new version and never changes `VisualFigure`.
+`valid` requires a literal occurrence wholly contained in exactly one span whose `unit_id`
+belongs to `figure.page_unit_ids`; that unit becomes the singular resolved unit. A boundary-crossing
+anchor or ambiguity between units of the same page is rejected. It does not require global
+uniqueness in the ebook. A rejected repair creates a new version and never changes editorial fields.
+
+No SQLite, `visual_anchors` guarda identidade, versão/predecessor, StageRun, prompt operacional,
+raw/report Artifact e SHA, disposição e a unidade/intervalo singular quando válido. Os campos do
+candidato (`anchor_text`, relação e contexto opcional) permanecem no raw e no report, junto de
+`occurrence_count`, offsets UTF-8 e `literal_page_unit@1`; não são campos inventados na importação.
+O report congela os vínculos de consolidação/paginação vindos do plano, e a validação recompõe toda
+essa proveniência. Uma tentativa inválida não ganha unidade ou offsets resolvidos.
+
+### VisualFinalization
+
+- `id`, `project_id`, `visual_plan_id`, `stage_run_id`;
+- `accepted_version` monotônica por projeto e reservada antes da escrita;
+- `input_hash`, incluindo plano e IDs/hashes das âncoras selecionadas;
+- `manifest_artifact_id`, `manifest_sha256`, `created_at`, `accepted_at`.
+
+`visual_finalization_anchors` congela cada par `figure_id + anchor_id`, com FKs compostas de
+projeto/plano/figura. A reserva incompleta não representa aceitação: `accepted_at` só aparece na
+mesma transação do Artifact e StageRun `done`. Falhas não reutilizam paths para outras identidades.
+Finalize exige a versão mais recente válida de cada figura; uma tentativa posterior inválida
+torna a seleção anterior desatualizada, sem apagar o manifest histórico. Currentness é derivada
+das fontes e da seleção, nunca persistida como flag.
 
 ### `helios_visual_manifest@1`
 
 Canonical accepted manifest containing consolidation provenance, pagination provenance, prompt
 identity, every eligible page, every figure, the selected anchor version for each figure, hashes,
 expected count and actual count.
+
+Cada entrada expõe `visual_id = figure.id`, `resolved_unit_id` e os dados/validação da versão de
+âncora selecionada. O manifest contém o registro completo de proveniência do plano, as páginas
+elegíveis, contagens e identificação/versão da finalização. O SHA do próprio manifest permanece
+no Artifact e no SQLite, evitando autorreferência no conteúdo.
 
 ---
 
